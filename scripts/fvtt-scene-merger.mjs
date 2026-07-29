@@ -4695,7 +4695,7 @@ var Mc = es("scene-merger", () => {
 				U("span", Eu, O(e.t(`FVTT_SCENE_MERGER.Options.Content.${n}.Help`)), 1),
 				F(Ec)[n] === "unavailable" ? (V(), H("span", Du, O(e.t("FVTT_SCENE_MERGER.Options.UnavailableV14")), 1)) : G("", !0)
 			]), U("input", {
-				class: "dui-toggle dui-toggle-sm",
+				class: "dui-toggle dui-toggle-sm tw:before:relative! tw:before:h-full! tw:before:w-full! tw:before:rounded-selector! tw:before:text-inherit! tw:before:content-['']! tw:after:content-none! tw:focus-visible:before:outline-none!",
 				type: "checkbox",
 				checked: F(t).content[n],
 				disabled: F(Ec)[n] === "unavailable" || !F(t).setupEditable,
@@ -4775,7 +4775,7 @@ var Mc = es("scene-merger", () => {
 					key: n,
 					class: "tw:flex tw:items-center tw:justify-between tw:gap-3 tw:text-sm"
 				}, [U("span", null, [U("span", $u, O(e.t(`FVTT_SCENE_MERGER.Options.Destination.${n}.Label`)), 1), U("span", ed, O(e.t(`FVTT_SCENE_MERGER.Options.Destination.${n}.Help`)), 1)]), U("input", {
-					class: "dui-checkbox dui-checkbox-sm",
+					class: "dui-checkbox dui-checkbox-sm tw:shrink-0 tw:before:content-none! tw:after:content-none!",
 					type: "checkbox",
 					checked: F(t).destination[n],
 					disabled: !F(t).setupEditable,
@@ -4788,11 +4788,11 @@ var Mc = es("scene-merger", () => {
 	"id",
 	"value",
 	"disabled"
-], pd = ["disabled"], md = { class: "dui-fieldset" }, hd = { class: "dui-fieldset-legend tw:text-[0.68rem]" }, gd = { class: "tw:grid tw:grid-cols-2 tw:gap-x-2 tw:gap-y-1" }, _d = [
+], pd = ["disabled"], md = { class: "dui-fieldset" }, hd = { class: "dui-fieldset-legend tw:text-[0.68rem]" }, gd = { class: "tw:grid tw:grid-cols-2 tw:gap-x-3 tw:gap-y-2" }, _d = [
 	"checked",
 	"disabled",
 	"onChange"
-], vd = { class: "tw:min-w-0 tw:truncate" }, yd = /* @__PURE__ */ Yn({
+], vd = { class: "tw:min-w-0 tw:break-words" }, yd = /* @__PURE__ */ Yn({
 	__name: "StagedSceneControls",
 	props: {
 		scene: {},
@@ -4851,9 +4851,9 @@ var Mc = es("scene-merger", () => {
 			}, O(e.t("FVTT_SCENE_MERGER.Selection.MatchGrid")), 9, pd)])]),
 			U("fieldset", md, [U("legend", hd, O(e.t("FVTT_SCENE_MERGER.Selection.ContentFromSource")), 1), U("div", gd, [(V(), H(B, null, L(r, (t) => U("label", {
 				key: t,
-				class: "dui-label tw:justify-start tw:gap-1 tw:text-[0.68rem]"
+				class: "dui-label tw:min-w-0 tw:justify-start tw:gap-2 tw:text-xs"
 			}, [U("input", {
-				class: "dui-checkbox dui-checkbox-xs",
+				class: "dui-checkbox dui-checkbox-sm tw:shrink-0 tw:before:content-none! tw:after:content-none!",
 				type: "checkbox",
 				checked: a.value?.content?.[t] ?? F(n).content[t],
 				disabled: !F(n).setupEditable || F(Ec)[t] === "unavailable",
@@ -4954,14 +4954,7 @@ var Mc = es("scene-merger", () => {
 				class: "dui-list-row tw:grid-cols-[1.5rem_minmax(0,1fr)_auto] tw:items-start tw:gap-1 tw:px-2 tw:py-1.5"
 			}, [
 				U("span", Wd, O(i + 1), 1),
-				U("div", Gd, [
-					U("div", Kd, O(t.name), 1),
-					U("div", qd, O(o(t.dimensions.sceneWidth, t.dimensions.sceneHeight)), 1),
-					W(yd, {
-						scene: t,
-						t: e.t
-					}, null, 8, ["scene", "t"])
-				]),
+				U("div", Gd, [U("div", Kd, O(t.name), 1), U("div", qd, O(o(t.dimensions.sceneWidth, t.dimensions.sceneHeight)), 1)]),
 				U("div", Jd, [
 					U("button", {
 						class: "dui-btn dui-btn-ghost dui-btn-xs dui-btn-square",
@@ -4991,7 +4984,12 @@ var Mc = es("scene-merger", () => {
 						"aria-label": e.t("FVTT_SCENE_MERGER.Selection.RemoveNamed", { name: t.name }),
 						onClick: (e) => F(r).removeScene(t.id)
 					}, " × ", 8, Qd)
-				])
+				]),
+				W(yd, {
+					class: "tw:col-span-3",
+					scene: t,
+					t: e.t
+				}, null, 8, ["scene", "t"])
 			]))), 128))])
 		])]));
 	}
@@ -5065,7 +5063,7 @@ var Mc = es("scene-merger", () => {
 				role: "alert",
 				class: "dui-alert dui-alert-warning dui-alert-soft tw:items-start tw:py-2 tw:text-sm"
 			}, [u[1] ||= U("span", { "aria-hidden": "true" }, "!", -1), U("span", null, [U("strong", yf, O(e.t(a(t), t.details)), 1), Object.keys(t.details).length ? (V(), H("small", bf, O(o(t)), 1)) : G("", !0)])]))), 128)), U("label", xf, [U("input", {
-				class: "dui-checkbox dui-checkbox-warning dui-checkbox-sm tw:mt-0.5",
+				class: "dui-checkbox dui-checkbox-warning dui-checkbox-sm tw:mt-0.5 tw:shrink-0 tw:before:content-none! tw:after:content-none!",
 				type: "checkbox",
 				checked: F(t).warningsAcknowledged,
 				disabled: !F(t).setupEditable,
@@ -5254,8 +5252,8 @@ var op = class extends Error {
 	}
 	async updateDocuments(e, t) {
 		return this.#e.updateEmbeddedDocuments(e, t, {
-			diff: !1,
-			recursive: !1
+			diff: !0,
+			recursive: !0
 		});
 	}
 };
@@ -5422,31 +5420,63 @@ function kp(e, t, n) {
 //#endregion
 //#region src/module/runtime/merge/batches.ts
 async function Ap(e, t, n, r, i, a, o) {
-	await Pp(n, o, a, async (a, o) => {
+	await Ip(n, o, a, async (a, o) => {
 		let s = await e.createDocuments(t, a);
 		if (s.length !== a.length) throw Error(`Foundry created ${s.length} of ${a.length} requested ${t} documents.`);
-		Np(i, r, o, n.length, `Created ${t} documents`);
+		Fp(i, r, o, n.length, `Created ${t} documents`);
 	});
 }
 async function jp(e, t, n, r, i, a, o, s, c) {
 	let l = 0;
-	return await Pp(n, c, s, async (s, c) => {
+	return await Ip(n, c, s, async (s, c) => {
 		let u = await e.createDocuments(t, s);
 		if (u.length !== s.length) throw Error(`Foundry created ${u.length} of ${s.length} requested ${t} documents.`);
 		l += u.length;
 		let d = Op(u, r);
 		if (d.length > 0) throw i.push(...d), Error(`Foundry created ${t} documents without the provenance needed for safe ID mapping.`);
-		Np(o, a, c, n.length, `Created ${t} documents`);
+		Fp(o, a, c, n.length, `Created ${t} documents`);
 	}), l;
 }
-async function Mp(e, t, n, r, i, a) {
-	await Pp(n, a, i, async (i, a) => {
-		let o = await e.updateDocuments(t, i);
-		if (o.length !== i.length) throw Error(`Foundry updated ${o.length} of ${i.length} requested ${t} documents.`);
-		Np(r, "rewritingReferences", a, n.length, `Finalized ${t} references`);
+async function Mp(e, t, n, r, i, a, o) {
+	await Ip(n, o, a, async (a, o) => {
+		let s = a.map((e) => Np(e, r));
+		qf.debug("Updating embedded document references", {
+			requested: s,
+			type: t
+		});
+		let c = await e.updateDocuments(t, a);
+		if (c.length !== a.length) {
+			let e = c.flatMap((e) => e.id ? [e.id] : []), n = new Set(e), r = s.filter(({ id: e }) => !n.has(e)), i = {
+				missing: r,
+				rejectedUpdates: a.filter((e) => {
+					let t = ep(e);
+					return !t || !n.has(t);
+				}),
+				requested: s,
+				returnedIds: e,
+				type: t
+			};
+			throw qf.error("Foundry rejected embedded document reference updates", i), Error(`Foundry accepted ${c.length} of ${a.length} ${t} reference updates. ${Pp(r)} A validation rule or preUpdate${t} hook may have rejected them; see the console for the rejected update patches.`);
+		}
+		qf.debug("Embedded document references updated", {
+			returnedIds: c.flatMap((e) => e.id ? [e.id] : []),
+			type: t
+		}), Fp(i, "rewritingReferences", o, n.length, `Finalized ${t} references`);
 	});
 }
-function Np(e, t, n, r, i) {
+function Np(e, t) {
+	let n = ep(e) ?? "(missing ID)";
+	return {
+		id: n,
+		name: t.get(n) ?? $f(e.name, "(unnamed)")
+	};
+}
+function Pp(e) {
+	if (e.length === 0) return "Foundry did not identify which updates were omitted.";
+	let t = e.slice(0, 10).map(({ id: e, name: t }) => `${t} [${e}]`), n = e.length - t.length;
+	return `Rejected: ${t.join(", ")}${n > 0 ? `, and ${n} more` : ""}.`;
+}
+function Fp(e, t, n, r, i) {
 	qf.debug("Merge progress", {
 		completed: n,
 		detail: i,
@@ -5459,7 +5489,7 @@ function Np(e, t, n, r, i) {
 		total: r
 	});
 }
-async function Pp(e, t, n, r) {
+async function Ip(e, t, n, r) {
 	for (let i = 0; i < e.length; i += t) {
 		n.throwIfCancelled();
 		let a = e.slice(i, i + t);
@@ -5468,7 +5498,7 @@ async function Pp(e, t, n, r) {
 }
 //#endregion
 //#region src/module/runtime/merge/workflow-data.ts
-function Fp(e, t, n, r) {
+function Lp(e, t, n, r) {
 	let i = new Map(t.map((e) => [e.sceneId, e]));
 	for (let t of e) {
 		if (t.metrics.gridRegionShapes === 0) continue;
@@ -5481,15 +5511,15 @@ function Fp(e, t, n, r) {
 		if (Math.abs(a.gridScale - 1) > 1e-7 || !Js(o, r.options.outputGrid.size)) throw Error(`Scene ${t.name} has grid Region geometry which is not aligned after destination insets.`);
 	}
 }
-function Ip(e, t, n) {
+function Rp(e, t, n) {
 	let r = { ...n }, i = new Map(t.placements.map((e) => [e.sceneId, e]));
 	for (let [n, a] of Object.entries(is)) if (a) for (let o of e) cs(i.get(o.id), t.options.content)[n] || (r[a] = (r[a] ?? 0) + (o.documents[a]?.length ?? 0));
 	return r;
 }
-function Lp(e) {
+function zp(e) {
 	return e.reduce((e, t) => e + Qf(t.behaviors).length, 0);
 }
-function Rp(e, t, n, r, i, a, o) {
+function Bp(e, t, n, r, i, a, o) {
 	let s = [...new Set(a)], c = [...o];
 	return s.length > 0 && c.push(`${s.length} reference or provenance entries require manual review.`), {
 		copied: n,
@@ -5506,7 +5536,7 @@ function Rp(e, t, n, r, i, a, o) {
 }
 //#endregion
 //#region src/module/runtime/prepare-documents.ts
-function zp(e, t, n, r, i) {
+function Vp(e, t, n, r, i) {
 	let a = new Map(t.map((e) => [e.sceneId, e])), o = new Map([...t].sort((e, t) => e.order - t.order).map((e, t) => [e.sceneId, t])), s = Math.max(1, ...e.map((e) => e.documents.Tile?.length ?? 0)) + 1, c = /* @__PURE__ */ new Map(), l = {};
 	for (let t of e) {
 		let e = a.get(t.id);
@@ -5518,7 +5548,7 @@ function zp(e, t, n, r, i) {
 			let a = [...t.documents[e] ?? []];
 			e === "Tile" && a.sort((e, t) => $(e.sort) - $(t.sort));
 			for (let [o, d] of a.entries()) {
-				let a = Bp(Z(d), e, t.id, u, t.grid, r.options.outputGrid, m, p, s, o, n.id, i);
+				let a = Hp(Z(d), e, t.id, u, t.grid, r.options.outputGrid, m, p, s, o, n.id, i);
 				if (!a) {
 					l[e] = (l[e] ?? 0) + 1;
 					continue;
@@ -5533,7 +5563,7 @@ function zp(e, t, n, r, i) {
 		skipped: l
 	};
 }
-function Bp(e, t, n, r, i, a, o, s, c, l, u, d) {
+function Hp(e, t, n, r, i, a, o, s, c, l, u, d) {
 	let f = ep(e);
 	if (!f) return;
 	let p = {
@@ -5549,17 +5579,17 @@ function Bp(e, t, n, r, i, a, o, s, c, l, u, d) {
 		pixelScale: r.pixelScale,
 		sourceSceneId: n,
 		spatial: r
-	}, h = Vp(e, t, r, i, a);
-	t === "Tile" && (h.sort = (s + 1) * c + l), h = Up(h, p), h = Hp(h, m), d?.(h, m), h = wp(h, p);
+	}, h = Up(e, t, r, i, a);
+	t === "Tile" && (h.sort = (s + 1) * c + l), h = Gp(h, p), h = Wp(h, m), d?.(h, m), h = wp(h, p);
 	let g = ic(Z(h), o);
-	return delete g._id, delete g._stats, Wp(g), {
+	return delete g._id, delete g._stats, Kp(g), {
 		creationData: g,
 		data: h,
 		identity: p,
 		type: t
 	};
 }
-function Vp(e, t, n, r, i) {
+function Up(e, t, n, r, i) {
 	let a = {
 		...e,
 		x: $(e.x),
@@ -5593,7 +5623,7 @@ function Vp(e, t, n, r, i) {
 		width: $(e.width)
 	}, n) : t === "AmbientLight" ? tc(a, n) : t === "AmbientSound" ? nc(a, n) : Zs(a, n);
 }
-function Hp(e, t) {
+function Wp(e, t) {
 	let n = e;
 	for (let e of mp()) {
 		let r = e.documentTransformers?.[t.documentType];
@@ -5601,7 +5631,7 @@ function Hp(e, t) {
 	}
 	return n;
 }
-function Up(e, t) {
+function Gp(e, t) {
 	return t.documentType === "Region" && (e.behaviors = Qf(e.behaviors).map((e) => {
 		let n = ep(e);
 		return n ? wp(e, {
@@ -5612,7 +5642,7 @@ function Up(e, t) {
 		}) : e;
 	})), e;
 }
-function Wp(e) {
+function Kp(e) {
 	let t = Qf(e.behaviors);
 	t.length !== 0 && (e.behaviors = t.map((e) => {
 		let t = Z(e);
@@ -5621,37 +5651,76 @@ function Wp(e) {
 }
 //#endregion
 //#region src/module/runtime/reference-updates.ts
-function Gp(e, t, n, r, i) {
-	let a = /* @__PURE__ */ new Map(), o = [], s = 0;
-	for (let [c, l] of e) for (let e of l) {
-		let l = {
+function qp(e, t, n, r, i) {
+	let a = /* @__PURE__ */ new Map(), o = /* @__PURE__ */ new Map(), s = [], c = 0;
+	for (let [l, u] of e) for (let e of u) {
+		let u = {
 			destinationSceneId: n,
 			idMap: t,
 			sourceSceneId: e.identity.sceneId,
 			sourceSceneIds: r
-		}, u = t.get(ks(e.identity.sceneId, c, e.identity.documentId));
-		if (!u) {
-			o.push(`${c}.${e.identity.documentId}`);
+		}, d = t.get(ks(e.identity.sceneId, l, e.identity.documentId));
+		if (!d) {
+			s.push(`${l}.${e.identity.documentId}`);
 			continue;
 		}
-		let d = Bs(c, e.data, l), f = Z(d.value);
-		s += d.rewritten, o.push(...d.unresolved);
+		let f = Bs(l, e.data, u), p = Z(f.value);
+		c += f.rewritten, s.push(...f.unresolved);
 		for (let e of mp()) {
 			if (!e.referenceRewriter) continue;
-			let t = e.referenceRewriter(f, l);
-			f = Z(t.value), s += t.rewritten, o.push(...t.unresolved);
+			let t = e.referenceRewriter(p, u);
+			p = Z(t.value), c += t.rewritten, s.push(...t.unresolved);
 		}
-		i?.(f, l), f._id = u, c === "Region" && Kp(f, e.identity.documentId, l, o), o.push(...qp(f, r, c)), f = Tp(f);
-		let p = a.get(c) ?? [];
-		p.push(f), a.set(c, p);
+		i?.(p, u), p._id = d, l === "Region" && Qp(p, e.identity.documentId, u, s), s.push(...$p(p, r, l)), p = Tp(p), o.set(d, $f(p.name, `${l} from ${e.identity.sceneId}.${e.identity.documentId}`));
+		let m = {
+			...e.creationData,
+			_id: d
+		}, h = a.get(l) ?? [];
+		h.push(Jp(m, p)), a.set(l, h);
 	}
 	return {
-		referencesRewritten: s,
-		unresolved: [...new Set(o)],
+		labels: o,
+		referencesRewritten: c,
+		unresolved: [...new Set(s)],
 		updates: a
 	};
 }
-function Kp(e, t, n, r) {
+function Jp(e, t) {
+	let n = Yp(e, t);
+	return n._id = t._id, n;
+}
+function Yp(e, t) {
+	let n = {};
+	for (let [r, i] of Object.entries(t)) {
+		let t = Xp(e[r], i);
+		t.changed && (n[r] = t.value);
+	}
+	for (let r of Object.keys(e)) Object.hasOwn(t, r) || (n[`-=${r}`] = null);
+	return n;
+}
+function Xp(e, t) {
+	if (Object.is(e, t)) return { changed: !1 };
+	if (Array.isArray(e) && Array.isArray(t)) return Zp(e, t) ? { changed: !1 } : {
+		changed: !0,
+		value: Zf(t)
+	};
+	let n = Q(e), r = Q(t);
+	if (n && r) {
+		let e = Yp(n, r);
+		return Object.keys(e).length === 0 ? { changed: !1 } : {
+			changed: !0,
+			value: e
+		};
+	}
+	return {
+		changed: !0,
+		value: Zf(t)
+	};
+}
+function Zp(e, t) {
+	return e.length === t.length ? e.every((e, n) => !Xp(e, t[n]).changed) : !1;
+}
+function Qp(e, t, n, r) {
 	e.behaviors = Qf(e.behaviors).map((e) => {
 		let i = ep(e);
 		if (!i) return e;
@@ -5662,29 +5731,29 @@ function Kp(e, t, n, r) {
 		} : (r.push(`Region.${t}.RegionBehavior.${i}`), e);
 	});
 }
-function qp(e, t, n) {
+function $p(e, t, n) {
 	let r = Q(e.flags);
 	if (!r) return [];
 	let i = [];
-	return Jp(r, "flags", t, (t) => {
+	return em(r, "flags", t, (t) => {
 		i.push(`${n}.${ep(e) ?? "unknown"}:${t}`);
 	}), i;
 }
-function Jp(e, t, n, r) {
+function em(e, t, n, r) {
 	if (typeof e == "string") {
 		n.some((t) => e.includes(`Scene.${t}.`)) && r(t);
 		return;
 	}
 	if (Array.isArray(e)) {
-		e.forEach((e, i) => Jp(e, `${t}[${i}]`, n, r));
+		e.forEach((e, i) => em(e, `${t}[${i}]`, n, r));
 		return;
 	}
 	let i = Q(e);
-	if (i) for (let [e, a] of Object.entries(i)) Jp(a, `${t}.${e}`, n, r);
+	if (i) for (let [e, a] of Object.entries(i)) em(a, `${t}.${e}`, n, r);
 }
 //#endregion
 //#region src/module/runtime/merge/workflow.ts
-var Yp = 200, Xp = [
+var tm = 200, nm = [
 	["Tile", "copyingTiles"],
 	["Wall", "copyingWalls"],
 	["AmbientLight", "copyingLights"],
@@ -5694,14 +5763,14 @@ var Yp = 200, Xp = [
 	["Region", "copyingRegions"],
 	["Token", "copyingTokens"]
 ];
-async function Zp(e, t, n) {
-	let r = n.cancellation ?? new cp(), i = Math.max(1, n.batchSize ?? Yp), a, o = "beforeDestination";
+async function rm(e, t, n) {
+	let r = n.cancellation ?? new cp(), i = Math.max(1, n.batchSize ?? tm), a, o = "beforeDestination";
 	try {
-		r.throwIfCancelled(), await vp(e), n.runtime.callHook("fvttSceneMergerPreMerge", e, t), o = "calculatingBounds", Np(n, o, 0, 1, "Calculating normalized destination bounds");
+		r.throwIfCancelled(), await vp(e), n.runtime.callHook("fvttSceneMergerPreMerge", e, t), o = "calculatingBounds", Fp(n, o, 0, 1, "Calculating normalized destination bounds");
 		let s = fs(e.placements);
-		r.throwIfCancelled(), o = "creatingScene", Np(n, o, 0, 1, "Creating destination Scene and Level"), a = await n.runtime.createDestination(Qp(e, t, s.width, s.height)), Np(n, o, 1, 1, a.name), r.throwIfCancelled(), Fp(t, s.placements, a, e);
-		let c = $p(t, a.levelId), l = { Level: 1 }, u = [];
-		o = "creatingBackgrounds", Np(n, o, 0, 0, "Preparing background and foreground Tiles");
+		r.throwIfCancelled(), o = "creatingScene", Fp(n, o, 0, 1, "Creating destination Scene and Level"), a = await n.runtime.createDestination(im(e, t, s.width, s.height)), Fp(n, o, 1, 1, a.name), r.throwIfCancelled(), Lp(t, s.placements, a, e);
+		let c = am(t, a.levelId), l = { Level: 1 }, u = [];
+		o = "creatingBackgrounds", Fp(n, o, 0, 0, "Preparing background and foreground Tiles");
 		let d = s.placements.filter((t) => cs(t, e.options.content).backgrounds);
 		if (d.length > 0) {
 			let s = bp(t, d, {
@@ -5710,25 +5779,25 @@ async function Zp(e, t, n) {
 			}, e.options.destination.lockBackgroundTiles);
 			await Ap(a, "Tile", s, o, n, r, i), l.Tile = s.length;
 		}
-		let f = zp(t, s.placements, {
+		let f = Vp(t, s.placements, {
 			...a.dimensions,
 			id: a.id,
 			levelId: a.levelId
-		}, e, (e, t) => n.runtime.callHook("fvttSceneMergerTransformDocument", e, t)), p = Ip(t, e, f.skipped);
-		for (let [e, t] of Xp) {
+		}, e, (e, t) => n.runtime.callHook("fvttSceneMergerTransformDocument", e, t)), p = Rp(t, e, f.skipped);
+		for (let [e, t] of nm) {
 			o = t;
 			let s = f.batches.get(e) ?? [];
-			Np(n, o, 0, s.length, `Preparing ${e} documents`);
+			Fp(n, o, 0, s.length, `Preparing ${e} documents`);
 			let d = await jp(a, e, s.map((e) => e.creationData), c, u, o, n, r, i);
-			l[e] = (l[e] ?? 0) + d, e === "Region" && (l.RegionBehavior = Lp(s.map((e) => e.data)));
+			l[e] = (l[e] ?? 0) + d, e === "Region" && (l.RegionBehavior = zp(s.map((e) => e.data)));
 		}
-		o = "rewritingReferences", Np(n, o, 0, 0, "Rewriting supported internal references");
-		let m = Gp(f.batches, c, a.id, e.sourceSceneIds, (e, t) => n.runtime.callHook("fvttSceneMergerRewriteReferences", e, t));
+		o = "rewritingReferences", Fp(n, o, 0, 0, "Rewriting supported internal references");
+		let m = qp(f.batches, c, a.id, e.sourceSceneIds, (e, t) => n.runtime.callHook("fvttSceneMergerRewriteReferences", e, t));
 		u.push(...m.unresolved);
-		for (let [e, t] of m.updates) await Mp(a, e, t, n, r, i);
-		o = "finalizing", Np(n, o, 0, 1, "Finalizing destination Scene");
-		let h = Rp(t, a, l, p, m.referencesRewritten, u, n.validationWarnings ?? []);
-		return e.options.destination.activateAfterMerge && await a.activate(), e.options.destination.openAfterMerge && await a.open(), await yp(h), n.runtime.callHook("fvttSceneMergerPostMerge", h), Np(n, o, 1, 1, a.name), h;
+		for (let [e, t] of m.updates) await Mp(a, e, t, m.labels, n, r, i);
+		o = "finalizing", Fp(n, o, 0, 1, "Finalizing destination Scene");
+		let h = Bp(t, a, l, p, m.referencesRewritten, u, n.validationWarnings ?? []);
+		return e.options.destination.activateAfterMerge && await a.activate(), e.options.destination.openAfterMerge && await a.open(), await yp(h), n.runtime.callHook("fvttSceneMergerPostMerge", h), Fp(n, o, 1, 1, a.name), h;
 	} catch (e) {
 		let t, r = !!a;
 		if (a && rs({
@@ -5748,7 +5817,7 @@ async function Zp(e, t, n) {
 		});
 	}
 }
-function Qp(e, t, n, r) {
+function im(e, t, n, r) {
 	let i = t[0];
 	if (!i) throw Error("No source Scene is available for destination settings.");
 	let a = {
@@ -5780,7 +5849,7 @@ function Qp(e, t, n, r) {
 		width: n
 	};
 }
-function $p(e, t) {
+function am(e, t) {
 	let n = /* @__PURE__ */ new Map();
 	for (let r of e) {
 		let e = r.levels[0]?.id;
@@ -5792,7 +5861,7 @@ function $p(e, t) {
 }
 //#endregion
 //#region src/module/runtime/scene-snapshots.ts
-var em = [
+var om = [
 	"Tile",
 	"Wall",
 	"AmbientLight",
@@ -5801,7 +5870,7 @@ var em = [
 	"Note",
 	"Region",
 	"Token"
-], tm = new Set([
+], sm = new Set([
 	"circle",
 	"cone",
 	"ellipse",
@@ -5813,20 +5882,20 @@ var em = [
 	"ring",
 	"token"
 ]);
-async function nm() {
-	return Jf().scenes.contents.map((e) => am(e, !1));
+async function cm() {
+	return Jf().scenes.contents.map((e) => dm(e, !1));
 }
-async function rm() {
+async function lm() {
 	return Jf().folders.contents.filter((e) => e.id && e.type === "Scene").map((e) => ({
 		id: e.id ?? "",
 		name: e.name
 	}));
 }
-function im(e) {
-	return e.map((e) => am(Yf(e), !0));
+function um(e) {
+	return e.map((e) => dm(Yf(e), !0));
 }
-function am(e, t) {
-	let n = Jf(), r = om(e), i = e.levels.contents.map((e) => ({
+function dm(e, t) {
+	let n = Jf(), r = fm(e), i = e.levels.contents.map((e) => ({
 		elevation: {
 			bottom: $(e.elevation?.bottom),
 			top: $(e.elevation?.top)
@@ -5834,7 +5903,7 @@ function am(e, t) {
 		id: e.id ?? "",
 		name: e.name ?? "Level"
 	})), a = {
-		background: sm(e),
+		background: pm(e),
 		canMerge: n.user.isGM && Scene.implementation.canUserCreate(n.user) && e.canUserModify(n.user, "update"),
 		dimensions: {
 			height: e.dimensions.height,
@@ -5854,7 +5923,7 @@ function am(e, t) {
 		},
 		id: e.id ?? "",
 		levels: i,
-		metrics: cm(e, r),
+		metrics: mm(e, r),
 		name: e.name ?? "Untitled Scene",
 		thumbnail: e.thumbnail
 	};
@@ -5864,12 +5933,12 @@ function am(e, t) {
 		source: Xf(e)
 	} : a;
 }
-function om(e) {
+function fm(e) {
 	let t = { Level: e.levels.contents.map(Xf) };
-	for (let n of em) t[n] = e.getEmbeddedCollection(n).contents.map(Xf);
+	for (let n of om) t[n] = e.getEmbeddedCollection(n).contents.map(Xf);
 	return t;
 }
-function sm(e) {
+function pm(e) {
 	let t = e.levels.contents[0], n = Q((t ? Xf(t) : void 0)?.background), r = n?.src, i = n?.color, a = typeof r == "string" && r.length > 0, o = typeof i == "string" && i.length > 0 || typeof i == "number" && Number.isFinite(i);
 	return !a && !o ? null : {
 		animated: a && np(r),
@@ -5884,9 +5953,9 @@ function sm(e) {
 		y: 0
 	};
 }
-function cm(e, t) {
+function mm(e, t) {
 	let n = {}, r = 0, i = 0, a = 0, o = 0, s = 0, c = 0, l = 0, u = 0, d = 0, f = 0;
-	c += +!!um(Xf(e));
+	c += +!!gm(Xf(e));
 	for (let t of e.levels.contents) {
 		let n = Xf(t);
 		for (let t of [Q(n.background), Q(n.foreground)]) t?.src && (a += 1, i += +!!np(t.src), l += e.dimensions.sceneWidth * e.dimensions.sceneHeight);
@@ -5894,7 +5963,7 @@ function cm(e, t) {
 	for (let [a, p] of Object.entries(t)) {
 		n[a] = p.length;
 		for (let t of p) {
-			let n = lm(t, e.id ?? "");
+			let n = hm(t, e.id ?? "");
 			i += n.animated, r += n.attachedRegion, o += n.crossReferences, s += n.gridShapes, c += n.moduleFlags, l += n.texturePixels, u += n.tokenRegionShapes, d += n.regionBehaviors, f += n.unsupportedRegionShapes;
 		}
 	}
@@ -5912,64 +5981,64 @@ function cm(e, t) {
 		unsupportedRegionShapes: f
 	};
 }
-function lm(e, t) {
+function hm(e, t) {
 	let n = Q(e.texture), r = n?.src, i = Q(e.attachment), a = Qf(e.shapes), o = Qf(e.behaviors);
 	return {
 		animated: +!!np(r),
 		attachedRegion: +(typeof i?.token == "string" && i.token.length > 0),
-		crossReferences: dm(e, t),
+		crossReferences: _m(e, t),
 		gridShapes: a.filter((e) => $f(e.type) === "grid").length,
-		moduleFlags: +!!um(e),
-		regionBehaviors: o.filter((e) => fm(e) || $f(e.type).toLowerCase().includes("changelevel")).length,
+		moduleFlags: +!!gm(e),
+		regionBehaviors: o.filter((e) => vm(e) || $f(e.type).toLowerCase().includes("changelevel")).length,
 		texturePixels: n ? $(e.width) * $(e.height) : 0,
 		tokenRegionShapes: a.filter((e) => $f(e.type) === "token").length,
-		unsupportedRegionShapes: a.filter((e) => !tm.has($f(e.type))).length
+		unsupportedRegionShapes: a.filter((e) => !sm.has($f(e.type))).length
 	};
 }
-function um(e) {
+function gm(e) {
 	let t = Q(e.flags);
 	return !!(t && Object.keys(t).some((e) => e !== "core" && e !== "fvtt-scene-merger"));
 }
-function dm(e, t) {
+function _m(e, t) {
 	if (typeof e == "string") return [...e.matchAll(/Scene\.([A-Za-z0-9_-]+)/g)].filter((e) => e[1] !== t).length;
-	if (Array.isArray(e)) return e.reduce((e, n) => e + dm(n, t), 0);
+	if (Array.isArray(e)) return e.reduce((e, n) => e + _m(n, t), 0);
 	let n = Q(e);
-	return n ? Object.values(n).reduce((e, n) => e + dm(n, t), 0) : 0;
+	return n ? Object.values(n).reduce((e, n) => e + _m(n, t), 0) : 0;
 }
-function fm(e) {
+function vm(e) {
 	if (typeof e == "string") return /(?:Scene|Region|Token)\./.test(e);
-	if (Array.isArray(e)) return e.some(fm);
+	if (Array.isArray(e)) return e.some(vm);
 	let t = Q(e);
-	return t ? Object.entries(t).some(([e, t]) => /^(?:destination|region|scene|token|uuid)/i.test(e) ? !0 : fm(t)) : !1;
+	return t ? Object.entries(t).some(([e, t]) => /^(?:destination|region|scene|token|uuid)/i.test(e) ? !0 : vm(t)) : !1;
 }
 //#endregion
 //#region src/module/runtime/asset-validation.ts
-var pm = 64, mm = 4e3, hm = /* @__PURE__ */ new Map();
-async function gm(e, t) {
+var ym = 64, bm = 4e3, xm = /* @__PURE__ */ new Map();
+async function Sm(e, t) {
 	return (await Promise.all(e.map(async (e) => {
-		let n = [], r = _m(e, t), i = r.slice(0, pm), a = await Promise.all(i.map(ym)), o = a.filter((e) => e === "missing").length, s = a.filter((e) => e === "unverified").length + Math.max(0, r.length - i.length);
-		return o > 0 && n.push(xm("assets.unavailable", e.id, o)), s > 0 && n.push(xm("assets.unverified", e.id, s)), n;
+		let n = [], r = Cm(e, t), i = r.slice(0, ym), a = await Promise.all(i.map(Tm)), o = a.filter((e) => e === "missing").length, s = a.filter((e) => e === "unverified").length + Math.max(0, r.length - i.length);
+		return o > 0 && n.push(Dm("assets.unavailable", e.id, o)), s > 0 && n.push(Dm("assets.unverified", e.id, s)), n;
 	}))).flat();
 }
-function _m(e, t) {
+function Cm(e, t) {
 	let n = /* @__PURE__ */ new Set();
-	if (t.backgrounds) for (let t of e.documents.Level ?? []) vm(n, Q(t.background)), vm(n, Q(t.foreground));
-	if (t.tiles) for (let t of e.documents.Tile ?? []) vm(n, Q(t.texture));
+	if (t.backgrounds) for (let t of e.documents.Level ?? []) wm(n, Q(t.background)), wm(n, Q(t.foreground));
+	if (t.tiles) for (let t of e.documents.Tile ?? []) wm(n, Q(t.texture));
 	return [...n];
 }
-function vm(e, t) {
+function wm(e, t) {
 	let n = t?.src;
 	typeof n == "string" && n.trim().length > 0 && e.add(n);
 }
-function ym(e) {
-	let t = hm.get(e);
+function Tm(e) {
+	let t = xm.get(e);
 	if (t) return t;
-	let n = bm(e);
-	return hm.set(e, n), n;
+	let n = Em(e);
+	return xm.set(e, n), n;
 }
-async function bm(e) {
+async function Em(e) {
 	if (/^(?:data|blob):/i.test(e)) return "available";
-	let t = new AbortController(), n = globalThis.setTimeout(() => t.abort(), mm);
+	let t = new AbortController(), n = globalThis.setTimeout(() => t.abort(), bm);
 	try {
 		let n = await fetch(e, {
 			credentials: "same-origin",
@@ -5983,7 +6052,7 @@ async function bm(e) {
 		globalThis.clearTimeout(n);
 	}
 }
-function xm(e, t, n) {
+function Dm(e, t, n) {
 	return {
 		code: e,
 		details: { count: n },
@@ -5994,15 +6063,15 @@ function xm(e, t, n) {
 }
 //#endregion
 //#region src/module/runtime/validation-service.ts
-async function Sm(e) {
-	return (await Cm(e)).report;
+async function Om(e) {
+	return (await km(e)).report;
 }
-async function Cm(e) {
-	let t = Jf(), n = e.sourceSceneIds.filter((e) => !t.scenes.get(e)), r = im(e.sourceSceneIds.filter((e) => t.scenes.get(e))), i = fs(e.placements).placements, a = new Map(i.map((e) => [e.sceneId, e])), o = Tc(r, i, e.options), s = await Promise.all(r.map((t) => gm([t], cs(a.get(t.id), e.options.content)))), c = [
+async function km(e) {
+	let t = Jf(), n = e.sourceSceneIds.filter((e) => !t.scenes.get(e)), r = um(e.sourceSceneIds.filter((e) => t.scenes.get(e))), i = fs(e.placements).placements, a = new Map(i.map((e) => [e.sceneId, e])), o = Tc(r, i, e.options), s = await Promise.all(r.map((t) => Sm([t], cs(a.get(t.id), e.options.content)))), c = [
 		...o.blocking,
 		...o.warnings,
 		...s.flat(),
-		...n.map((e) => Em(e))
+		...n.map((e) => Mm(e))
 	], l = e.options.destination.folderId, u = l ? t.folders.get(l) : void 0;
 	l && (!u || u.type !== "Scene") && c.push({
 		code: "destination.folderUnavailable",
@@ -6021,21 +6090,21 @@ async function Cm(e) {
 			severity: "warning"
 		});
 	}
-	(!t.user.isGM || !Scene.implementation.canUserCreate(t.user)) && c.push(Em("destination"));
+	(!t.user.isGM || !Scene.implementation.canUserCreate(t.user)) && c.push(Mm("destination"));
 	for (let t of mp()) t.validate && c.push(...t.validate(r, e));
 	return {
 		report: wc(c),
 		scenes: r
 	};
 }
-function wm(e, t) {
+function Am(e, t) {
 	let n = new Set(e.acknowledgedWarnings);
-	return t.warnings.filter((e) => e.severity === "warning" && !n.has(e.code) && !n.has(Tm(e)));
+	return t.warnings.filter((e) => e.severity === "warning" && !n.has(e.code) && !n.has(jm(e)));
 }
-function Tm(e) {
+function jm(e) {
 	return `${e.code}:${[...e.sceneIds].sort().join(",")}`;
 }
-function Em(e) {
+function Mm(e) {
 	return {
 		code: "selection.unavailable",
 		details: {},
@@ -6046,11 +6115,11 @@ function Em(e) {
 }
 //#endregion
 //#region src/module/runtime/scene-merger-service.ts
-var Dm;
-async function Om(e, t) {
-	if (Dm) throw Error("Another Scene merge is already in progress on this client.");
+var Nm;
+async function Pm(e, t) {
+	if (Nm) throw Error("Another Scene merge is already in progress on this client.");
 	let n = new cp();
-	Dm = n;
+	Nm = n;
 	try {
 		t?.({
 			completed: 0,
@@ -6058,7 +6127,7 @@ async function Om(e, t) {
 			stage: "validating",
 			total: 1
 		});
-		let r = await Cm(e);
+		let r = await km(e);
 		if (qf.debug("Scene merge request validated", {
 			acknowledgedWarnings: e.acknowledgedWarnings.length,
 			blocking: r.report.blocking.map((e) => e.code),
@@ -6067,7 +6136,7 @@ async function Om(e, t) {
 			sourceCount: r.scenes.length,
 			warnings: r.report.warnings.map((e) => e.code)
 		}), r.report.blocking.length > 0) throw Error(`Scene merge is blocked: ${r.report.blocking.map((e) => ip(e.code)).join(", ")}.`);
-		let i = wm(e, r.report);
+		let i = Am(e, r.report);
 		if (i.length > 0) throw Error(`Review and acknowledge ${i.length} merge warning(s) before continuing.`);
 		t?.({
 			completed: 1,
@@ -6075,34 +6144,34 @@ async function Om(e, t) {
 			stage: "validating",
 			total: 1
 		}), n.throwIfCancelled();
-		let a = await Zp(e, r.scenes, {
+		let a = await rm(e, r.scenes, {
 			cancellation: n,
 			cleanupPartial: ap(),
 			...t ? { onProgress: t } : {},
 			runtime: dp,
-			validationWarnings: r.report.warnings.map(Tm)
+			validationWarnings: r.report.warnings.map(jm)
 		});
 		return qf.info("Scene merge completed", a), dp.notifyInfo(`Created Scene “${a.destinationSceneName}”.`), a;
 	} catch (e) {
 		throw qf.error("Scene merge failed", e), dp.notifyError(e instanceof Error ? e.message : String(e)), e;
 	} finally {
-		Dm = void 0;
+		Nm = void 0;
 	}
 }
-var km = {
+var Fm = {
 	cancelActiveMerge() {
-		Dm?.cancel();
+		Nm?.cancel();
 	},
-	listSceneFolders: rm,
-	listScenes: nm,
-	merge: Om,
+	listSceneFolders: lm,
+	listScenes: cm,
+	merge: Pm,
 	async openScene(e) {
 		await Yf(e).view();
 	},
 	validate(e) {
-		return Sm(e);
+		return Om(e);
 	}
-}, Am = class extends foundry.applications.api.ApplicationV2 {
+}, Im = class extends foundry.applications.api.ApplicationV2 {
 	#e;
 	getVueProps() {}
 	async _renderHTML(e, t) {
@@ -6118,7 +6187,7 @@ var km = {
 	unmountVue() {
 		this.#e?.unmount(), this.#e = void 0;
 	}
-}, jm = class e extends Am {
+}, Lm = class e extends Im {
 	static DEFAULT_OPTIONS = {
 		id: `${X}-application`,
 		position: {
@@ -6149,7 +6218,7 @@ var km = {
 	}
 	getVueProps() {
 		return {
-			services: km,
+			services: Fm,
 			t: (e, t) => {
 				let n = Jf().i18n;
 				return t ? n.format(e, t) : n.localize(e);
@@ -6157,37 +6226,37 @@ var km = {
 		};
 	}
 };
-async function Mm() {
-	await jm.open();
+async function Rm() {
+	await Lm.open();
 }
 //#endregion
 //#region src/module/api/create-module-api.ts
-function Nm() {
+function zm() {
 	return {
-		cancelActiveMerge: km.cancelActiveMerge,
-		listSceneFolders: km.listSceneFolders,
-		listScenes: km.listScenes,
-		merge: km.merge,
-		open: Mm,
-		openScene: km.openScene,
+		cancelActiveMerge: Fm.cancelActiveMerge,
+		listSceneFolders: Fm.listSceneFolders,
+		listScenes: Fm.listScenes,
+		merge: Fm.merge,
+		open: Rm,
+		openScene: Fm.openScene,
 		registerDocumentTransformer: hp,
 		registerExtension: pp,
 		registerReferenceRewriter: _p,
 		registerValidator: gp,
-		validate: km.validate
+		validate: Fm.validate
 	};
 }
 //#endregion
 //#region src/module/api/register-module-api.ts
-function Pm() {
+function Bm() {
 	if (!game) throw Error("Foundry game global is unavailable during module API registration.");
 	let e = game.modules.get(X);
 	if (!e) throw Error(`Foundry module registry entry was not found for ${X}.`);
-	e.api = Nm();
+	e.api = zm();
 }
 //#endregion
 //#region src/module/settings/register-settings.ts
-function Fm() {
+function Vm() {
 	let e = Jf().settings;
 	e.register(X, "cleanupPartialDestination", {
 		config: !0,
@@ -6208,22 +6277,22 @@ function Fm() {
 		label: `${Gf}.Settings.Open.Label`,
 		name: `${Gf}.Settings.Open.Name`,
 		restricted: !0,
-		type: jm
+		type: Lm
 	});
 }
 //#endregion
 //#region src/module/hooks/register-module-hooks.ts
-function Im() {
+function Hm() {
 	Hooks.once("init", () => {
-		Fm(), Pm();
+		Vm(), Bm();
 	}), Hooks.once("ready", () => {
-		let e = Rm();
+		let e = Wm();
 		Hooks.callAll("fvttSceneMergerRegisterExtensions", e), Hooks.callAll("fvttSceneMergerReady", e);
 	}), Hooks.on("getSceneControlButtons", (...e) => {
-		Lm(e[0]);
+		Um(e[0]);
 	});
 }
-function Lm(e) {
+function Um(e) {
 	if (!Jf().user.isGM) return;
 	let t = e.tiles ?? e.tokens;
 	t && (t.tools[`${X}-open`] = {
@@ -6231,21 +6300,21 @@ function Lm(e) {
 		icon: "fa-solid fa-object-group",
 		name: `${X}-open`,
 		onChange: () => {
-			Mm();
+			Rm();
 		},
 		order: Object.keys(t.tools).length,
 		title: `${Gf}.Controls.Open`,
 		visible: !0
 	});
 }
-function Rm() {
+function Wm() {
 	let e = Jf().modules.get(X)?.api;
 	if (!e) throw Error("Scene Merger API is unavailable after initialization.");
 	return e;
 }
 //#endregion
 //#region src/main.ts
-Im();
+Hm();
 //#endregion
 
 //# sourceMappingURL=fvtt-scene-merger.mjs.map
