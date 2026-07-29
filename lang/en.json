@@ -98,7 +98,7 @@
           "Label": "Drawings"
         },
         "lights": {
-          "Help": "Copy position, configuration, and animation.",
+          "Help": "Copy position, animation, and scale light reach into the output grid.",
           "Label": "Ambient Lights"
         },
         "notes": {
@@ -122,7 +122,7 @@
           "Label": "Tiles"
         },
         "tokens": {
-          "Help": "Keep Actor links; Actors are never duplicated.",
+          "Help": "Keep Actor links and scale core vision and emitted-light ranges; Actors are never duplicated.",
           "Label": "Tokens"
         },
         "walls": {
@@ -130,7 +130,7 @@
           "Label": "Walls"
         }
       },
-      "ContentTitle": "Content to copy",
+      "ContentTitle": "Defaults for new sources",
       "Destination": {
         "activateAfterMerge": {
           "Help": "Make the new Scene active for players after success.",
@@ -151,8 +151,24 @@
       },
       "DestinationTitle": "Destination Scene",
       "Folder": "Folder",
-      "Help": "Choose exactly what will be cloned into the new destination.",
+      "Help": "Set output measurements and choose what each staged source contributes.",
       "Name": "Scene name",
+      "OutputGrid": {
+        "Distance": "Distance per grid space",
+        "Help": "Staged geometry is converted into this grid. Units are an output label; no real-world unit ratio is inferred.",
+        "Size": "Grid size (px)",
+        "Title": "Output grid",
+        "Type": "Grid type",
+        "Types": {
+          "0": "Gridless",
+          "1": "Square",
+          "2": "Hex columns, odd",
+          "3": "Hex columns, even",
+          "4": "Hex rows, odd",
+          "5": "Hex rows, even"
+        },
+        "Units": "Units label"
+      },
       "Title": "Merge options",
       "UnavailableV14": "Unavailable in Foundry v14"
     },
@@ -179,13 +195,23 @@
     },
     "Selection": {
       "AddNamed": "Add {name}",
+      "ContentFromSource": "Content from this source",
       "GridDetails": "Grid type {type} · {size}px · {distance} {units}",
       "Help": "Choose two or more source Scenes. List order controls background stacking.",
+      "MatchGrid": "Match output grid",
       "NoMatches": "No unselected Scenes match this search.",
+      "Presets": {
+        "all": "All",
+        "encounter": "Encounter",
+        "map": "Map setup",
+        "none": "None"
+      },
       "RemoveNamed": "Remove {name}",
       "RootFolder": "Root folder",
+      "Scale": "Uniform scene scale",
       "Search": "Search Scenes or folders…",
       "Selected": "Selected and stacking order",
+      "SourceSettings": "Source settings",
       "Title": "Source Scenes"
     },
     "Settings": {
@@ -235,8 +261,10 @@
         "grid_regionShapeUnsupported": "Grid-shaped Regions on hexagonal or gridless Scenes cannot currently be translated safely.",
         "grid_sizeMismatch": "Source Scenes use different grid sizes and cannot be translated reliably.",
         "grid_typeMismatch": "Source Scenes use incompatible grid types.",
-        "grid_unitsMismatch": "Source Scenes use different measurement units.",
+        "grid_outputInvalid": "The output grid type, pixel size, and distance must be valid positive values.",
+        "grid_unitsMismatch": "This source uses {sourceUnits}; known distances will be expressed numerically in output {outputUnits} using grid proportions.",
         "layout_invalidDimensions": "A Scene has invalid or unusable playable dimensions.",
+        "layout_nonUniformScale": "A Scene is scaled non-uniformly. Width and height must use one proportional scale.",
         "layout_duplicate": "The layout contains more than one placement for the same source Scene.",
         "layout_missing": "One or more selected Scenes are missing a layout placement.",
         "layout_unknown": "The layout contains a placement that does not belong to a selected source Scene.",
