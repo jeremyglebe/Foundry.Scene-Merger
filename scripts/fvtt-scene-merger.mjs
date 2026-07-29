@@ -4777,7 +4777,7 @@ var Mc = es("scene-merger", () => {
 				key: n,
 				class: "tw:grid tw:min-h-14 tw:grid-cols-[minmax(0,1fr)_auto] tw:items-center tw:gap-3 tw:rounded-field tw:bg-base-200 tw:px-3 tw:py-2"
 			}, [U("span", od, [U("span", sd, O(e.t(`FVTT_SCENE_MERGER.Options.Destination.${n}.Label`)), 1), U("span", cd, O(e.t(`FVTT_SCENE_MERGER.Options.Destination.${n}.Help`)), 1)]), U("input", {
-				class: "tw:dui-checkbox tw:dui-checkbox-sm tw:m-0! tw:shrink-0 tw:before:relative! tw:before:block! tw:before:h-full! tw:before:w-full! tw:before:content-['']! tw:after:content-none!",
+				class: "tw:dui-checkbox tw:dui-checkbox-accent tw:dui-checkbox-sm tw:m-0! tw:shrink-0 tw:checked:border-accent! tw:checked:bg-accent! tw:checked:text-accent-content! tw:before:relative! tw:before:block! tw:before:h-full! tw:before:w-full! tw:before:content-['']! tw:after:content-none!",
 				type: "checkbox",
 				checked: F(t).destination[n],
 				disabled: !F(t).setupEditable,
@@ -4854,7 +4854,7 @@ var Mc = es("scene-merger", () => {
 				key: t,
 				class: "tw:dui-label tw:min-w-0 tw:justify-start tw:gap-2 tw:text-xs"
 			}, [U("input", {
-				class: "tw:dui-checkbox tw:dui-checkbox-sm tw:m-0! tw:shrink-0 tw:before:relative! tw:before:block! tw:before:h-full! tw:before:w-full! tw:before:content-['']! tw:after:content-none!",
+				class: "tw:dui-checkbox tw:dui-checkbox-accent tw:dui-checkbox-sm tw:m-0! tw:shrink-0 tw:checked:border-accent! tw:checked:bg-accent! tw:checked:text-accent-content! tw:before:relative! tw:before:block! tw:before:h-full! tw:before:w-full! tw:before:content-['']! tw:after:content-none!",
 				type: "checkbox",
 				checked: a.value?.content?.[t] ?? F(n).content[t],
 				disabled: !F(n).setupEditable || F(Ec)[t] === "unavailable",
@@ -5064,7 +5064,7 @@ var Mc = es("scene-merger", () => {
 				role: "alert",
 				class: "tw:dui-alert tw:dui-alert-warning tw:dui-alert-soft tw:items-start tw:py-2 tw:text-sm"
 			}, [u[1] ||= U("span", { "aria-hidden": "true" }, "!", -1), U("span", null, [U("strong", Df, O(e.t(a(t), t.details)), 1), Object.keys(t.details).length ? (V(), H("small", Of, O(o(t)), 1)) : G("", !0)])]))), 128)), U("label", kf, [U("input", {
-				class: "tw:dui-checkbox tw:dui-checkbox-warning tw:dui-checkbox-sm tw:mt-0.5 tw:shrink-0 tw:before:relative! tw:before:block! tw:before:h-full! tw:before:w-full! tw:before:content-['']! tw:after:content-none!",
+				class: "tw:dui-checkbox tw:dui-checkbox-warning tw:dui-checkbox-sm tw:mt-0.5 tw:shrink-0 tw:checked:border-warning! tw:checked:bg-warning! tw:checked:text-warning-content! tw:before:relative! tw:before:block! tw:before:h-full! tw:before:w-full! tw:before:content-['']! tw:after:content-none!",
 				type: "checkbox",
 				checked: F(t).warningsAcknowledged,
 				disabled: !F(t).setupEditable,
