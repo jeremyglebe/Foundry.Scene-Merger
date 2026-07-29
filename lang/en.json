@@ -206,6 +206,7 @@
         "map": "Map setup",
         "none": "None"
       },
+      "ResizePanel": "Resize the Source Scenes panel",
       "RemoveNamed": "Remove {name}",
       "RootFolder": "Root folder",
       "Scale": "Uniform scene scale",

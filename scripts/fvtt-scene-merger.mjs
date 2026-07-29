@@ -8,27 +8,27 @@ function e(e) {
 var t = {}, n = [], r = () => {}, i = () => !1, a = (e) => e.charCodeAt(0) === 111 && e.charCodeAt(1) === 110 && (e.charCodeAt(2) > 122 || e.charCodeAt(2) < 97), o = (e) => e.startsWith("onUpdate:"), s = Object.assign, c = (e, t) => {
 	let n = e.indexOf(t);
 	n > -1 && e.splice(n, 1);
-}, l = Object.prototype.hasOwnProperty, u = (e, t) => l.call(e, t), d = Array.isArray, f = (e) => x(e) === "[object Map]", p = (e) => x(e) === "[object Set]", m = (e) => x(e) === "[object Date]", h = (e) => typeof e == "function", g = (e) => typeof e == "string", _ = (e) => typeof e == "symbol", v = (e) => typeof e == "object" && !!e, y = (e) => (v(e) || h(e)) && h(e.then) && h(e.catch), b = Object.prototype.toString, x = (e) => b.call(e), ee = (e) => x(e).slice(8, -1), S = (e) => x(e) === "[object Object]", te = (e) => g(e) && e !== "NaN" && e[0] !== "-" && "" + parseInt(e, 10) === e, ne = /* @__PURE__ */ e(",key,ref,ref_for,ref_key,onVnodeBeforeMount,onVnodeMounted,onVnodeBeforeUpdate,onVnodeUpdated,onVnodeBeforeUnmount,onVnodeUnmounted"), re = (e) => {
+}, l = Object.prototype.hasOwnProperty, u = (e, t) => l.call(e, t), d = Array.isArray, f = (e) => x(e) === "[object Map]", p = (e) => x(e) === "[object Set]", m = (e) => x(e) === "[object Date]", h = (e) => typeof e == "function", g = (e) => typeof e == "string", _ = (e) => typeof e == "symbol", v = (e) => typeof e == "object" && !!e, y = (e) => (v(e) || h(e)) && h(e.then) && h(e.catch), b = Object.prototype.toString, x = (e) => b.call(e), ee = (e) => x(e).slice(8, -1), S = (e) => x(e) === "[object Object]", C = (e) => g(e) && e !== "NaN" && e[0] !== "-" && "" + parseInt(e, 10) === e, te = /* @__PURE__ */ e(",key,ref,ref_for,ref_key,onVnodeBeforeMount,onVnodeMounted,onVnodeBeforeUpdate,onVnodeUpdated,onVnodeBeforeUnmount,onVnodeUnmounted"), ne = (e) => {
 	let t = /* @__PURE__ */ Object.create(null);
 	return ((n) => t[n] || (t[n] = e(n)));
-}, ie = /-\w/g, C = re((e) => e.replace(ie, (e) => e.slice(1).toUpperCase())), ae = /\B([A-Z])/g, w = re((e) => e.replace(ae, "-$1").toLowerCase()), oe = re((e) => e.charAt(0).toUpperCase() + e.slice(1)), se = re((e) => e ? `on${oe(e)}` : ""), T = (e, t) => !Object.is(e, t), ce = (e, ...t) => {
+}, re = /-\w/g, w = ne((e) => e.replace(re, (e) => e.slice(1).toUpperCase())), ie = /\B([A-Z])/g, ae = ne((e) => e.replace(ie, "-$1").toLowerCase()), oe = ne((e) => e.charAt(0).toUpperCase() + e.slice(1)), se = ne((e) => e ? `on${oe(e)}` : ""), ce = (e, t) => !Object.is(e, t), le = (e, ...t) => {
 	for (let n = 0; n < e.length; n++) e[n](...t);
-}, E = (e, t, n, r = !1) => {
+}, T = (e, t, n, r = !1) => {
 	Object.defineProperty(e, t, {
 		configurable: !0,
 		enumerable: !1,
 		writable: r,
 		value: n
 	});
-}, le = (e) => {
+}, ue = (e) => {
 	let t = parseFloat(e);
 	return isNaN(t) ? e : t;
-}, ue, de = () => ue ||= typeof globalThis < "u" ? globalThis : typeof self < "u" ? self : typeof window < "u" ? window : typeof global < "u" ? global : {};
-function fe(e) {
+}, de, fe = () => de ||= typeof globalThis < "u" ? globalThis : typeof self < "u" ? self : typeof window < "u" ? window : typeof global < "u" ? global : {};
+function E(e) {
 	if (d(e)) {
 		let t = {};
 		for (let n = 0; n < e.length; n++) {
-			let r = e[n], i = g(r) ? ge(r) : fe(r);
+			let r = e[n], i = g(r) ? ge(r) : E(r);
 			if (i) for (let e in i) t[e] = i[e];
 		}
 		return t;
@@ -256,7 +256,7 @@ function Be(e) {
 	try {
 		Le(e);
 		let n = e.fn(e._value);
-		(t.version === 0 || T(n, e._value)) && (e.flags |= 128, e._value = n, t.version++);
+		(t.version === 0 || ce(n, e._value)) && (e.flags |= 128, e._value = n, t.version++);
 	} catch (e) {
 		throw t.version++, e;
 	} finally {
@@ -356,7 +356,7 @@ function nt(e, t, n, r, i, a) {
 	};
 	if (Fe(), t === "clear") o.forEach(s);
 	else {
-		let i = d(e), a = i && te(n);
+		let i = d(e), a = i && C(n);
 		if (i && n === "length") {
 			let e = Number(r);
 			o.forEach((t, n) => {
@@ -544,7 +544,7 @@ var _t = class {
 		let o = Reflect.get(e, t, /* @__PURE__ */ N(e) ? e : n);
 		if ((_(t) ? ht.has(t) : mt(t)) || (r || j(e, "get", t), i)) return o;
 		if (/* @__PURE__ */ N(o)) {
-			let e = a && te(t) ? o : o.value;
+			let e = a && C(t) ? o : o.value;
 			return r && v(e) ? /* @__PURE__ */ zt(e) : e;
 		}
 		return v(o) ? r ? /* @__PURE__ */ zt(o) : /* @__PURE__ */ Lt(o) : o;
@@ -554,13 +554,13 @@ var _t = class {
 		super(!1, e);
 	}
 	set(e, t, n, r) {
-		let i = e[t], a = d(e) && te(t);
+		let i = e[t], a = d(e) && C(t);
 		if (!this._isShallow) {
 			let e = /* @__PURE__ */ Ht(i);
 			if (!/* @__PURE__ */ Ut(n) && !/* @__PURE__ */ Ht(n) && (i = /* @__PURE__ */ M(i), n = /* @__PURE__ */ M(n)), !a && /* @__PURE__ */ N(i) && !/* @__PURE__ */ N(n)) return e || (i.value = n), !0;
 		}
 		let o = a ? Number(t) < e.length : u(e, t), s = Reflect.set(e, t, n, /* @__PURE__ */ N(e) ? e : r);
-		return e === /* @__PURE__ */ M(r) && (o ? T(n, i) && nt(e, "set", t, n, i) : nt(e, "add", t, n)), s;
+		return e === /* @__PURE__ */ M(r) && (o ? ce(n, i) && nt(e, "set", t, n, i) : nt(e, "add", t, n)), s;
 	}
 	deleteProperty(e, t) {
 		let n = u(e, t), r = e[t], i = Reflect.deleteProperty(e, t);
@@ -608,7 +608,7 @@ function Dt(e, t) {
 	let n = {
 		get(n) {
 			let r = this.__v_raw, i = /* @__PURE__ */ M(r), a = /* @__PURE__ */ M(n);
-			e || (T(n, a) && j(i, "get", n), j(i, "get", a));
+			e || (ce(n, a) && j(i, "get", n), j(i, "get", a));
 			let { has: o } = wt(i), s = t ? Ct : e ? qt : Kt;
 			if (o.call(i, n)) return s(r.get(n));
 			if (o.call(i, a)) return s(r.get(a));
@@ -620,7 +620,7 @@ function Dt(e, t) {
 		},
 		has(t) {
 			let n = this.__v_raw, r = /* @__PURE__ */ M(n), i = /* @__PURE__ */ M(t);
-			return e || (T(t, i) && j(r, "has", t), j(r, "has", i)), t === i ? n.has(t) : n.has(t) || n.has(i);
+			return e || (ce(t, i) && j(r, "has", t), j(r, "has", i)), t === i ? n.has(t) : n.has(t) || n.has(i);
 		},
 		forEach(n, r) {
 			let i = this, a = i.__v_raw, o = /* @__PURE__ */ M(a), s = t ? Ct : e ? qt : Kt;
@@ -635,14 +635,14 @@ function Dt(e, t) {
 	} : {
 		add(e) {
 			let n = /* @__PURE__ */ M(this), r = wt(n), i = /* @__PURE__ */ M(e), a = !t && !/* @__PURE__ */ Ut(e) && !/* @__PURE__ */ Ht(e) ? i : e;
-			return r.has.call(n, a) || T(e, a) && r.has.call(n, e) || T(i, a) && r.has.call(n, i) || (n.add(a), nt(n, "add", a, a)), this;
+			return r.has.call(n, a) || ce(e, a) && r.has.call(n, e) || ce(i, a) && r.has.call(n, i) || (n.add(a), nt(n, "add", a, a)), this;
 		},
 		set(e, n) {
 			!t && !/* @__PURE__ */ Ut(n) && !/* @__PURE__ */ Ht(n) && (n = /* @__PURE__ */ M(n));
 			let r = /* @__PURE__ */ M(this), { has: i, get: a } = wt(r), o = i.call(r, e);
 			o ||= (e = /* @__PURE__ */ M(e), i.call(r, e));
 			let s = a.call(r, e);
-			return r.set(e, n), o ? T(n, s) && nt(r, "set", e, n, s) : nt(r, "add", e, n), this;
+			return r.set(e, n), o ? ce(n, s) && nt(r, "set", e, n, s) : nt(r, "add", e, n), this;
 		},
 		delete(e) {
 			let t = /* @__PURE__ */ M(this), { has: n, get: r } = wt(t), i = n.call(t, e);
@@ -722,7 +722,7 @@ function M(e) {
 	return t ? /* @__PURE__ */ M(t) : e;
 }
 function Gt(e) {
-	return !u(e, "__v_skip") && Object.isExtensible(e) && E(e, "__v_skip", !0), e;
+	return !u(e, "__v_skip") && Object.isExtensible(e) && T(e, "__v_skip", !0), e;
 }
 var Kt = (e) => v(e) ? /* @__PURE__ */ Lt(e) : e, qt = (e) => v(e) ? /* @__PURE__ */ zt(e) : e;
 // @__NO_SIDE_EFFECTS__
@@ -749,7 +749,7 @@ var Xt = class {
 	}
 	set value(e) {
 		let t = this._rawValue, n = this.__v_isShallow || /* @__PURE__ */ Ut(e) || /* @__PURE__ */ Ht(e);
-		e = n ? e : /* @__PURE__ */ M(e), T(e, t) && (this._rawValue = e, this._value = n ? e : Kt(e), this.dep.trigger());
+		e = n ? e : /* @__PURE__ */ M(e), ce(e, t) && (this._rawValue = e, this._value = n ? e : Kt(e), this.dep.trigger());
 	}
 };
 function F(e) {
@@ -775,7 +775,7 @@ var en = class {
 	constructor(e, t, n) {
 		this._object = e, this._defaultValue = n, this.__v_isRef = !0, this._value = void 0, this._key = _(t) ? t : String(t), this._raw = /* @__PURE__ */ M(e);
 		let r = !0, i = e;
-		if (!d(e) || _(this._key) || !te(this._key)) do
+		if (!d(e) || _(this._key) || !C(this._key)) do
 			r = !/* @__PURE__ */ Wt(i) || /* @__PURE__ */ Ut(i);
 		while (r && (i = i.__v_raw));
 		this._shallow = r;
@@ -864,10 +864,10 @@ function ln(e, n, i = t) {
 			return ee(), n;
 		};
 	}
-	let S = b ? Array(e.length).fill(an) : an, te = (e) => {
+	let S = b ? Array(e.length).fill(an) : an, C = (e) => {
 		if (!(!(m.flags & 1) || !m.dirty && !e)) if (n) {
 			let t = m.run();
-			if (e || o || y || (b ? t.some((e, t) => T(e, S[t])) : T(t, S))) {
+			if (e || o || y || (b ? t.some((e, t) => ce(e, S[t])) : ce(t, S))) {
 				_ && _();
 				let e = sn;
 				sn = m;
@@ -884,14 +884,14 @@ function ln(e, n, i = t) {
 			}
 		} else m.run();
 	};
-	return u && u(te), m = new Ae(g), m.scheduler = l ? () => l(te, !1) : te, v = (e) => cn(e, !1, m), _ = m.onStop = () => {
+	return u && u(C), m = new Ae(g), m.scheduler = l ? () => l(C, !1) : C, v = (e) => cn(e, !1, m), _ = m.onStop = () => {
 		let e = on.get(m);
 		if (e) {
 			if (f) f(e, 4);
 			else for (let t of e) t();
 			on.delete(m);
 		}
-	}, n ? a ? te(!0) : S = m.run() : l ? l(te.bind(null, !0), !0) : m.run(), ee.pause = m.pause.bind(m), ee.resume = m.resume.bind(m), ee.stop = ee, ee;
+	}, n ? a ? C(!0) : S = m.run() : l ? l(C.bind(null, !0), !0) : m.run(), ee.pause = m.pause.bind(m), ee.resume = m.resume.bind(m), ee.stop = ee, ee;
 }
 function un(e, t = Infinity, n) {
 	if (t <= 0 || !v(e) || e.__v_skip || (n ||= /* @__PURE__ */ new Map(), (n.get(e) || 0) >= t)) return e;
@@ -1194,7 +1194,7 @@ function er(e) {
 	let t = Qn.get(e);
 	t && (t.flags |= 8, Qn.delete(e));
 }
-de().requestIdleCallback, de().cancelIdleCallback;
+fe().requestIdleCallback, fe().cancelIdleCallback;
 var tr = (e) => !!e.type.__asyncLoader, nr = (e) => e.type.__isKeepAlive;
 function rr(e, t) {
 	ar(e, "a", t);
@@ -1321,7 +1321,7 @@ var Tr = !0;
 function Er(e) {
 	let t = Ar(e), n = e.proxy, i = e.ctx;
 	Tr = !1, t.beforeCreate && Or(t.beforeCreate, e, "bc");
-	let { data: a, computed: o, methods: s, watch: c, provide: l, inject: u, created: f, beforeMount: p, mounted: m, beforeUpdate: g, updated: _, activated: y, deactivated: b, beforeDestroy: x, beforeUnmount: ee, destroyed: S, unmounted: te, render: ne, renderTracked: re, renderTriggered: ie, errorCaptured: C, serverPrefetch: ae, expose: w, inheritAttrs: oe, components: se, directives: T, filters: ce } = t;
+	let { data: a, computed: o, methods: s, watch: c, provide: l, inject: u, created: f, beforeMount: p, mounted: m, beforeUpdate: g, updated: _, activated: y, deactivated: b, beforeDestroy: x, beforeUnmount: ee, destroyed: S, unmounted: C, render: te, renderTracked: ne, renderTriggered: re, errorCaptured: w, serverPrefetch: ie, expose: ae, inheritAttrs: oe, components: se, directives: ce, filters: le } = t;
 	if (u && Dr(u, i, null), s) for (let e in s) {
 		let t = s[e];
 		h(t) && (i[e] = t.bind(n));
@@ -1350,12 +1350,12 @@ function Er(e) {
 		});
 	}
 	f && Or(f, e, "c");
-	function E(e, t) {
+	function T(e, t) {
 		d(t) ? t.forEach((t) => e(t.bind(n))) : t && e(t.bind(n));
 	}
-	if (E(lr, p), E(ur, m), E(dr, g), E(fr, _), E(rr, y), E(ir, b), E(vr, C), E(_r, re), E(gr, ie), E(pr, ee), E(mr, te), E(hr, ae), d(w)) if (w.length) {
+	if (T(lr, p), T(ur, m), T(dr, g), T(fr, _), T(rr, y), T(ir, b), T(vr, w), T(_r, ne), T(gr, re), T(pr, ee), T(mr, C), T(hr, ie), d(ae)) if (ae.length) {
 		let t = e.exposed ||= {};
-		w.forEach((e) => {
+		ae.forEach((e) => {
 			Object.defineProperty(t, e, {
 				get: () => n[e],
 				set: (t) => n[e] = t,
@@ -1363,7 +1363,7 @@ function Er(e) {
 			});
 		});
 	} else e.exposed ||= {};
-	ne && e.render === r && (e.render = ne), oe != null && (e.inheritAttrs = oe), se && (e.components = se), T && (e.directives = T), ae && Xn(e);
+	te && e.render === r && (e.render = te), oe != null && (e.inheritAttrs = oe), se && (e.components = se), ce && (e.directives = ce), ie && Xn(e);
 }
 function Dr(e, t, n = r) {
 	d(e) && (e = Fr(e));
@@ -1540,13 +1540,13 @@ function Vr(e, t) {
 		return l;
 	};
 }
-var Hr = null, Ur = (e, t) => t === "modelValue" || t === "model-value" ? e.modelModifiers : e[`${t}Modifiers`] || e[`${C(t)}Modifiers`] || e[`${w(t)}Modifiers`];
+var Hr = null, Ur = (e, t) => t === "modelValue" || t === "model-value" ? e.modelModifiers : e[`${t}Modifiers`] || e[`${w(t)}Modifiers`] || e[`${ae(t)}Modifiers`];
 function Wr(e, n, ...r) {
 	if (e.isUnmounted) return;
 	let i = e.vnode.props || t, a = r, o = n.startsWith("update:"), s = o && Ur(i, n.slice(7));
-	s && (s.trim && (a = r.map((e) => g(e) ? e.trim() : e)), s.number && (a = r.map(le)));
-	let c, l = i[c = se(n)] || i[c = se(C(n))];
-	!l && o && (l = i[c = se(w(n))]), l && fn(l, e, 6, a);
+	s && (s.trim && (a = r.map((e) => g(e) ? e.trim() : e)), s.number && (a = r.map(ue)));
+	let c, l = i[c = se(n)] || i[c = se(w(n))];
+	!l && o && (l = i[c = se(ae(n))]), l && fn(l, e, 6, a);
 	let u = i[c + "Once"];
 	if (u) {
 		if (!e.emitted) e.emitted = {};
@@ -1569,7 +1569,7 @@ function Kr(e, t, n = !1) {
 	return !a && !c ? (v(e) && r.set(e, null), null) : (d(a) ? a.forEach((e) => o[e] = null) : s(o, a), v(e) && r.set(e, o), o);
 }
 function qr(e, t) {
-	return !e || !a(t) ? !1 : (t = t.slice(2).replace(/Once$/, ""), u(e, t[0].toLowerCase() + t.slice(1)) || u(e, w(t)) || u(e, t));
+	return !e || !a(t) ? !1 : (t = t.slice(2).replace(/Once$/, ""), u(e, t[0].toLowerCase() + t.slice(1)) || u(e, ae(t)) || u(e, t));
 }
 function Jr(e) {
 	let { type: t, vnode: n, proxy: r, withProxy: i, propsOptions: [a], slots: s, attrs: c, emit: l, render: u, renderCache: d, props: f, data: p, setupState: m, ctx: h, inheritAttrs: g } = e, _ = Mn(e), v, y;
@@ -1659,7 +1659,7 @@ function ai(e, t, n, r) {
 				let d = t[o];
 				if (c) if (u(a, o)) d !== a[o] && (a[o] = d, l = !0);
 				else {
-					let t = C(o);
+					let t = w(o);
 					i[t] = si(c, s, t, d, e, !1);
 				}
 				else d !== a[o] && (a[o] = d, l = !0);
@@ -1668,7 +1668,7 @@ function ai(e, t, n, r) {
 	} else {
 		oi(e, t, i, a) && (l = !0);
 		let r;
-		for (let a in s) (!t || !u(t, a) && ((r = w(a)) === a || !u(t, r))) && (c ? n && (n[a] !== void 0 || n[r] !== void 0) && (i[a] = si(c, s, a, void 0, e, !0)) : delete i[a]);
+		for (let a in s) (!t || !u(t, a) && ((r = ae(a)) === a || !u(t, r))) && (c ? n && (n[a] !== void 0 || n[r] !== void 0) && (i[a] = si(c, s, a, void 0, e, !0)) : delete i[a]);
 		if (a !== s) for (let e in a) (!t || !u(t, e)) && (delete a[e], l = !0);
 	}
 	l && nt(e.attrs, "set", "");
@@ -1676,9 +1676,9 @@ function ai(e, t, n, r) {
 function oi(e, n, r, i) {
 	let [a, o] = e.propsOptions, s = !1, c;
 	if (n) for (let t in n) {
-		if (ne(t)) continue;
+		if (te(t)) continue;
 		let l = n[t], d;
-		a && u(a, d = C(t)) ? !o || !o.includes(d) ? r[d] = l : (c ||= {})[d] = l : qr(e.emitsOptions, t) || (!(t in i) || l !== i[t]) && (i[t] = l, s = !0);
+		a && u(a, d = w(t)) ? !o || !o.includes(d) ? r[d] = l : (c ||= {})[d] = l : qr(e.emitsOptions, t) || (!(t in i) || l !== i[t]) && (i[t] = l, s = !0);
 	}
 	if (o) {
 		let n = /* @__PURE__ */ M(r), i = c || t;
@@ -1705,7 +1705,7 @@ function si(e, t, n, r, i, a) {
 			} else r = e;
 			i.ce && i.ce._setProp(n, r);
 		}
-		o[0] && (a && !e ? r = !1 : o[1] && (r === "" || r === w(n)) && (r = !0));
+		o[0] && (a && !e ? r = !1 : o[1] && (r === "" || r === ae(n)) && (r = !0));
 	}
 	return r;
 }
@@ -1724,11 +1724,11 @@ function li(e, r, i = !1) {
 	}
 	if (!c && !p) return v(e) && a.set(e, n), n;
 	if (d(c)) for (let e = 0; e < c.length; e++) {
-		let n = C(c[e]);
+		let n = w(c[e]);
 		di(n) && (l[n] = t);
 	}
 	else if (c) for (let e in c) {
-		let t = C(e);
+		let t = w(e);
 		if (di(t)) {
 			let n = c[e], r = l[t] = d(n) || h(n) ? { type: n } : s({}, n), i = r.type, a = !1, o = !0;
 			if (d(i)) for (let e = 0; e < i.length; ++e) {
@@ -1746,7 +1746,7 @@ function li(e, r, i = !1) {
 	return v(e) && a.set(e, m), m;
 }
 function di(e) {
-	return e[0] !== "$" && !ne(e);
+	return e[0] !== "$" && !te(e);
 }
 var fi = (e) => e === "_" || e === "_ctx" || e === "$stable", pi = (e) => d(e) ? e.map(Xi) : [Xi(e)], mi = (e, t, n) => {
 	if (t._n) return t;
@@ -1772,7 +1772,7 @@ var fi = (e) => e === "_" || e === "_ctx" || e === "$stable", pi = (e) => d(e) ?
 	let r = e.slots = ni();
 	if (e.vnode.shapeFlag & 32) {
 		let e = t._;
-		e ? (_i(r, t, n), n && E(r, "_", e, !0)) : hi(t, r);
+		e ? (_i(r, t, n), n && T(r, "_", e, !0)) : hi(t, r);
 	} else t && gi(e, t);
 }, yi = (e, n, r) => {
 	let { vnode: i, slots: a } = e, o = !0, s = t;
@@ -1786,7 +1786,7 @@ function bi(e) {
 	return xi(e);
 }
 function xi(e, i) {
-	let a = de();
+	let a = fe();
 	a.__VUE__ = !0;
 	let { insert: o, remove: s, patchProp: c, createElement: l, createText: u, createComment: d, setText: f, setElementText: p, parentNode: m, nextSibling: h, setScopeId: g = r, insertStaticContent: _ } = e, v = (e, t, n, r = null, i = null, a = null, o = void 0, s = null, c = !!t.dynamicChildren) => {
 		if (e === t) return;
@@ -1805,7 +1805,7 @@ function xi(e, i) {
 			case B:
 				se(e, t, n, r, i, a, o, s, c);
 				break;
-			default: d & 1 ? te(e, t, n, r, i, a, o, s, c) : d & 6 ? T(e, t, n, r, i, a, o, s, c) : (d & 64 || d & 128) && l.process(e, t, n, r, i, a, o, s, c, Ce);
+			default: d & 1 ? C(e, t, n, r, i, a, o, s, c) : d & 6 ? ce(e, t, n, r, i, a, o, s, c) : (d & 64 || d & 128) && l.process(e, t, n, r, i, a, o, s, c, Ce);
 		}
 		u != null && i ? $n(u, e && e.ref, a, t || e, !t) : u == null && e && e.ref != null && $n(e.ref, null, a, e, !0);
 	}, y = (e, t, n, r) => {
@@ -1826,20 +1826,20 @@ function xi(e, i) {
 		let n;
 		for (; e && e !== t;) n = h(e), s(e), e = n;
 		s(t);
-	}, te = (e, t, n, r, i, a, o, s, c) => {
-		if (t.type === "svg" ? o = "svg" : t.type === "math" && (o = "mathml"), e == null) re(t, n, r, i, a, o, s, c);
+	}, C = (e, t, n, r, i, a, o, s, c) => {
+		if (t.type === "svg" ? o = "svg" : t.type === "math" && (o = "mathml"), e == null) ne(t, n, r, i, a, o, s, c);
 		else {
 			let n = e.el && e.el._isVueCE ? e.el : null;
 			try {
-				n && n._beginPatch(), ae(e, t, i, a, o, s, c);
+				n && n._beginPatch(), ie(e, t, i, a, o, s, c);
 			} finally {
 				n && n._endPatch();
 			}
 		}
-	}, re = (e, t, n, r, i, a, s, u) => {
+	}, ne = (e, t, n, r, i, a, s, u) => {
 		let d, f, { props: m, shapeFlag: h, transition: g, dirs: _ } = e;
-		if (d = e.el = l(e.type, a, m && m.is, m), h & 8 ? p(d, e.children) : h & 16 && C(e.children, d, null, r, i, Si(e, a), s, u), _ && Fn(e, null, r, "created"), ie(d, e, e.scopeId, s, r), m) {
-			for (let e in m) e !== "value" && !ne(e) && c(d, e, null, m[e], a, r);
+		if (d = e.el = l(e.type, a, m && m.is, m), h & 8 ? p(d, e.children) : h & 16 && w(e.children, d, null, r, i, Si(e, a), s, u), _ && Fn(e, null, r, "created"), re(d, e, e.scopeId, s, r), m) {
+			for (let e in m) e !== "value" && !te(e) && c(d, e, null, m[e], a, r);
 			"value" in m && c(d, "value", null, m.value, a), (f = m.onVnodeBeforeMount) && ea(f, r, e);
 		}
 		_ && Fn(e, null, r, "beforeMount");
@@ -1849,22 +1849,22 @@ function xi(e, i) {
 				f && ea(f, r, e), v && g.enter(d), _ && Fn(e, null, r, "mounted");
 			} finally {}
 		}, i);
-	}, ie = (e, t, n, r, i) => {
+	}, re = (e, t, n, r, i) => {
 		if (n && g(e, n), r) for (let t = 0; t < r.length; t++) g(e, r[t]);
 		if (i) {
 			let n = i.subTree;
 			if (t === n || Ai(n.type) && (n.ssContent === t || n.ssFallback === t)) {
 				let t = i.vnode;
-				ie(e, t, t.scopeId, t.slotScopeIds, i.parent);
+				re(e, t, t.scopeId, t.slotScopeIds, i.parent);
 			}
 		}
-	}, C = (e, t, n, r, i, a, o, s, c = 0) => {
+	}, w = (e, t, n, r, i, a, o, s, c = 0) => {
 		for (let l = c; l < e.length; l++) v(null, e[l] = s ? Zi(e[l]) : Xi(e[l]), t, n, r, i, a, o, s);
-	}, ae = (e, n, r, i, a, o, s) => {
+	}, ie = (e, n, r, i, a, o, s) => {
 		let l = n.el = e.el, { patchFlag: u, dynamicChildren: d, dirs: f } = n;
 		u |= e.patchFlag & 16;
 		let m = e.props || t, h = n.props || t, g;
-		if (r && Ci(r, !1), (g = h.onVnodeBeforeUpdate) && ea(g, r, n, e), f && Fn(n, e, r, "beforeUpdate"), r && Ci(r, !0), (m.innerHTML && h.innerHTML == null || m.textContent && h.textContent == null) && p(l, ""), d ? w(e.dynamicChildren, d, l, r, i, Si(n, a), o) : s || pe(e, n, l, null, r, i, Si(n, a), o, !1), u > 0) {
+		if (r && Ci(r, !1), (g = h.onVnodeBeforeUpdate) && ea(g, r, n, e), f && Fn(n, e, r, "beforeUpdate"), r && Ci(r, !0), (m.innerHTML && h.innerHTML == null || m.textContent && h.textContent == null) && p(l, ""), d ? ae(e.dynamicChildren, d, l, r, i, Si(n, a), o) : s || pe(e, n, l, null, r, i, Si(n, a), o, !1), u > 0) {
 			if (u & 16) oe(l, m, h, r, a);
 			else if (u & 2 && m.class !== h.class && c(l, "class", null, h.class, a), u & 4 && c(l, "style", m.style, h.style, a), u & 8) {
 				let e = n.dynamicProps;
@@ -1878,16 +1878,16 @@ function xi(e, i) {
 		((g = h.onVnodeUpdated) || f) && z(() => {
 			g && ea(g, r, n, e), f && Fn(n, e, r, "updated");
 		}, i);
-	}, w = (e, t, n, r, i, a, o) => {
+	}, ae = (e, t, n, r, i, a, o) => {
 		for (let s = 0; s < t.length; s++) {
 			let c = e[s], l = t[s];
 			v(c, l, c.el && (c.type === B || !Ui(c, l) || c.shapeFlag & 198) ? m(c.el) : n, null, r, i, a, o, !0);
 		}
 	}, oe = (e, n, r, i, a) => {
 		if (n !== r) {
-			if (n !== t) for (let t in n) !ne(t) && !(t in r) && c(e, t, n[t], null, a, i);
+			if (n !== t) for (let t in n) !te(t) && !(t in r) && c(e, t, n[t], null, a, i);
 			for (let t in r) {
-				if (ne(t)) continue;
+				if (te(t)) continue;
 				let o = r[t], s = n[t];
 				o !== s && t !== "value" && c(e, t, s, o, a, i);
 			}
@@ -1895,32 +1895,32 @@ function xi(e, i) {
 		}
 	}, se = (e, t, n, r, i, a, s, c, l) => {
 		let d = t.el = e ? e.el : u(""), f = t.anchor = e ? e.anchor : u(""), { patchFlag: p, dynamicChildren: m, slotScopeIds: h } = t;
-		h && (c = c ? c.concat(h) : h), e == null ? (o(d, n, r), o(f, n, r), C(t.children || [], n, f, i, a, s, c, l)) : p > 0 && p & 64 && m && e.dynamicChildren && e.dynamicChildren.length === m.length ? (w(e.dynamicChildren, m, n, i, a, s, c), (t.key != null || i && t === i.subTree) && Ti(e, t, !0)) : pe(e, t, n, f, i, a, s, c, l);
-	}, T = (e, t, n, r, i, a, o, s, c) => {
-		t.slotScopeIds = s, e == null ? t.shapeFlag & 512 ? i.ctx.activate(t, n, r, o, c) : E(t, n, r, i, a, o, c) : le(e, t, c);
-	}, E = (e, t, n, r, i, a, o) => {
+		h && (c = c ? c.concat(h) : h), e == null ? (o(d, n, r), o(f, n, r), w(t.children || [], n, f, i, a, s, c, l)) : p > 0 && p & 64 && m && e.dynamicChildren && e.dynamicChildren.length === m.length ? (ae(e.dynamicChildren, m, n, i, a, s, c), (t.key != null || i && t === i.subTree) && Ti(e, t, !0)) : pe(e, t, n, f, i, a, s, c, l);
+	}, ce = (e, t, n, r, i, a, o, s, c) => {
+		t.slotScopeIds = s, e == null ? t.shapeFlag & 512 ? i.ctx.activate(t, n, r, o, c) : T(t, n, r, i, a, o, c) : ue(e, t, c);
+	}, T = (e, t, n, r, i, a, o) => {
 		let s = e.component = ra(e, r, i);
 		if (nr(e) && (s.ctx.renderer = Ce), da(s, !1, o), s.asyncDep) {
-			if (i && i.registerDep(s, ue, o), !e.el) {
+			if (i && i.registerDep(s, de, o), !e.el) {
 				let r = s.subTree = W(Ni);
 				b(null, r, t, n), e.placeholder = r.el;
 			}
-		} else ue(s, e, t, n, i, a, o);
-	}, le = (e, t, n) => {
+		} else de(s, e, t, n, i, a, o);
+	}, ue = (e, t, n) => {
 		let r = t.component = e.component;
 		if (Zr(e, t, n)) if (r.asyncDep && !r.asyncResolved) {
-			fe(r, t, n);
+			E(r, t, n);
 			return;
 		} else r.next = t, r.update();
 		else t.el = e.el, r.vnode = t;
-	}, ue = (e, t, n, r, i, a, o) => {
+	}, de = (e, t, n, r, i, a, o) => {
 		let s = () => {
 			if (e.isMounted) {
 				let { next: t, bu: n, u: r, parent: s, vnode: c } = e;
 				{
 					let n = Di(e);
 					if (n) {
-						t && (t.el = c.el, fe(e, t, o)), n.asyncDep.then(() => {
+						t && (t.el = c.el, E(e, t, o)), n.asyncDep.then(() => {
 							z(() => {
 								e.isUnmounted || l();
 							}, i);
@@ -1929,12 +1929,12 @@ function xi(e, i) {
 					}
 				}
 				let u = t, d;
-				Ci(e, !1), t ? (t.el = c.el, fe(e, t, o)) : t = c, n && ce(n), (d = t.props && t.props.onVnodeBeforeUpdate) && ea(d, s, t, c), Ci(e, !0);
+				Ci(e, !1), t ? (t.el = c.el, E(e, t, o)) : t = c, n && le(n), (d = t.props && t.props.onVnodeBeforeUpdate) && ea(d, s, t, c), Ci(e, !0);
 				let f = Jr(e), p = e.subTree;
 				e.subTree = f, v(p, f, m(p.el), xe(p), e, i, a), t.el = f.el, u === null && ei(e, f.el), r && z(r, i), (d = t.props && t.props.onVnodeUpdated) && z(() => ea(d, s, t, c), i);
 			} else {
 				let o, { el: s, props: c } = t, { bm: l, m: u, parent: d, root: f, type: p } = e, m = tr(t);
-				if (Ci(e, !1), l && ce(l), !m && (o = c && c.onVnodeBeforeMount) && ea(o, d, t), Ci(e, !0), s && k) {
+				if (Ci(e, !1), l && le(l), !m && (o = c && c.onVnodeBeforeMount) && ea(o, d, t), Ci(e, !0), s && k) {
 					let t = () => {
 						e.subTree = Jr(e), k(s, e.subTree, e, i, null);
 					};
@@ -1956,7 +1956,7 @@ function xi(e, i) {
 		e.scope.off();
 		let l = e.update = c.run.bind(c), u = e.job = c.runIfDirty.bind(c);
 		u.i = e, u.id = e.uid, c.scheduler = () => Cn(u), Ci(e, !0), l();
-	}, fe = (e, t, n) => {
+	}, E = (e, t, n) => {
 		t.component = e;
 		let r = e.vnode.props;
 		e.vnode = t, e.next = null, ai(e, t.props, r, n), yi(e, t.children, n), Ge(), En(e), Ke();
@@ -1971,7 +1971,7 @@ function xi(e, i) {
 				return;
 			}
 		}
-		m & 8 ? (u & 16 && be(l, i, a), d !== l && p(n, d)) : u & 16 ? m & 16 ? he(l, d, n, r, i, a, o, s, c) : be(l, i, a, !0) : (u & 8 && p(n, ""), m & 16 && C(d, n, r, i, a, o, s, c));
+		m & 8 ? (u & 16 && be(l, i, a), d !== l && p(n, d)) : u & 16 ? m & 16 ? he(l, d, n, r, i, a, o, s, c) : be(l, i, a, !0) : (u & 8 && p(n, ""), m & 16 && w(d, n, r, i, a, o, s, c));
 	}, me = (e, t, r, i, a, o, s, c, l) => {
 		e ||= n, t ||= n;
 		let u = e.length, d = t.length, f = Math.min(u, d), p;
@@ -1979,7 +1979,7 @@ function xi(e, i) {
 			let n = t[p] = l ? Zi(t[p]) : Xi(t[p]);
 			v(e[p], n, r, null, a, o, s, c, l);
 		}
-		u > d ? be(e, a, o, !0, !1, f) : C(t, r, i, a, o, s, c, l, f);
+		u > d ? be(e, a, o, !0, !1, f) : w(t, r, i, a, o, s, c, l, f);
 	}, he = (e, t, r, i, a, o, s, c, l) => {
 		let u = 0, d = t.length, f = e.length - 1, p = d - 1;
 		for (; u <= f && u <= p;) {
@@ -2022,10 +2022,10 @@ function xi(e, i) {
 				}
 				i === void 0 ? D(n, a, o, !0) : (S[i - h] = u + 1, i >= ee ? ee = i : x = !0, v(n, t[i], r, null, a, o, s, c, l), y++);
 			}
-			let te = x ? Ei(S) : n;
-			for (_ = te.length - 1, u = b - 1; u >= 0; u--) {
+			let C = x ? Ei(S) : n;
+			for (_ = C.length - 1, u = b - 1; u >= 0; u--) {
 				let e = h + u, n = t[e], f = t[e + 1], p = e + 1 < d ? f.el || ki(f) : i;
-				S[u] === 0 ? v(null, n, r, p, a, o, s, c, l) : x && (_ < 0 || u !== te[_] ? ge(n, r, p, 2) : _--);
+				S[u] === 0 ? v(null, n, r, p, a, o, s, c, l) : x && (_ < 0 || u !== C[_] ? ge(n, r, p, 2) : _--);
 			}
 		}
 	}, ge = (e, t, n, r, i = null) => {
@@ -2107,7 +2107,7 @@ function xi(e, i) {
 		s(t);
 	}, ye = (e, t, n) => {
 		let { bum: r, scope: i, job: a, subTree: o, um: s, m: c, a: l } = e;
-		Oi(c), Oi(l), r && ce(r), i.stop(), a && (a.flags |= 8, D(o, e, t, n)), s && z(s, t), z(() => {
+		Oi(c), Oi(l), r && le(r), i.stop(), a && (a.flags |= 8, D(o, e, t, n)), s && z(s, t), z(() => {
 			e.isUnmounted = !0;
 		}, t);
 	}, be = (e, t, n, r = !1, i = !1, a = 0) => {
@@ -2125,10 +2125,10 @@ function xi(e, i) {
 		um: D,
 		m: ge,
 		r: _e,
-		mt: E,
-		mc: C,
+		mt: T,
+		mc: w,
 		pc: pe,
-		pbc: w,
+		pbc: ae,
 		n: xe,
 		o: e
 	}, we, k;
@@ -2259,7 +2259,7 @@ function Ki(e, t = null, n = null, r = 0, i = null, a = !1) {
 	if (ba(e) && (e = e.__vccOpts), t) {
 		t = qi(t);
 		let { class: e, style: n } = t;
-		e && !g(e) && (t.class = D(e)), v(n) && (/* @__PURE__ */ Wt(n) && !d(n) && (n = s({}, n)), t.style = fe(n));
+		e && !g(e) && (t.class = D(e)), v(n) && (/* @__PURE__ */ Wt(n) && !d(n) && (n = s({}, n)), t.style = E(n));
 	}
 	let o = g(e) ? 1 : Ai(e) ? 128 : Kn(e) ? 64 : v(e) ? 4 : h(e) ? 2 : 0;
 	return U(e, t, n, r, i, o, a, !0);
@@ -2337,7 +2337,7 @@ function $i(...e) {
 	for (let n = 0; n < e.length; n++) {
 		let r = e[n];
 		for (let e in r) if (e === "class") t.class !== r.class && (t.class = D([t.class, r.class]));
-		else if (e === "style") t.style = fe([t.style, r.style]);
+		else if (e === "style") t.style = E([t.style, r.style]);
 		else if (a(e)) {
 			let n = t[e], i = r[e];
 			i && n !== i && !(d(n) && n.includes(i)) ? t[e] = n ? [].concat(n, i) : i : i == null && n == null && !o(e) && (t[e] = i);
@@ -2418,7 +2418,7 @@ function ra(e, n, r) {
 }
 var K = null, ia = () => K || An, aa, oa;
 {
-	let e = de(), t = (t, n) => {
+	let e = fe(), t = (t, n) => {
 		let r;
 		return (r = e[t]) || (r = e[t] = []), r.push(n), (e) => {
 			r.length > 1 ? r.forEach((t) => t(e)) : r[0](e);
@@ -2596,7 +2596,7 @@ function Ra(e, t, n) {
 	else if (n ??= "", t.startsWith("--")) e.setProperty(t, n);
 	else {
 		let r = Va(e, t);
-		La.test(n) ? e.setProperty(w(r), n.replace(La, ""), "important") : e[r] = n;
+		La.test(n) ? e.setProperty(ae(r), n.replace(La, ""), "important") : e[r] = n;
 	}
 }
 var za = [
@@ -2607,7 +2607,7 @@ var za = [
 function Va(e, t) {
 	let n = Ba[t];
 	if (n) return n;
-	let r = C(t);
+	let r = w(t);
 	if (r !== "filter" && r in e) return Ba[t] = r;
 	r = oe(r);
 	for (let n = 0; n < za.length; n++) {
@@ -2667,7 +2667,7 @@ function Za(e) {
 		let n;
 		for (; n = e.match(Xa);) e = e.slice(0, e.length - n[0].length), t[n[0].toLowerCase()] = !0;
 	}
-	return [e[2] === ":" ? e.slice(3) : w(e.slice(2)), t];
+	return [e[2] === ":" ? e.slice(3) : ae(e.slice(2)), t];
 }
 var Qa = 0, $a = /* @__PURE__ */ Promise.resolve(), eo = () => Qa ||= ($a.then(() => Qa = 0), Date.now());
 function to(e, t) {
@@ -2691,7 +2691,7 @@ function to(e, t) {
 }
 var no = (e) => e.charCodeAt(0) === 111 && e.charCodeAt(1) === 110 && e.charCodeAt(2) > 96 && e.charCodeAt(2) < 123, ro = (e, t, n, r, i, s) => {
 	let c = i === "svg";
-	t === "class" ? ja(e, r, c) : t === "style" ? Ia(e, n, r) : a(t) ? o(t) || Ya(e, t, n, r, s) : (t[0] === "." ? (t = t.slice(1), !0) : t[0] === "^" ? (t = t.slice(1), !1) : io(e, t, r, c)) ? (Ga(e, t, r), !e.tagName.includes("-") && (t === "value" || t === "checked" || t === "selected") && Wa(e, t, r, c, s, t !== "value")) : e._isVueCE && (ao(e, t) || e._def.__asyncLoader && (/[A-Z]/.test(t) || !g(r))) ? Ga(e, C(t), r, s, t) : (t === "true-value" ? e._trueValue = r : t === "false-value" && (e._falseValue = r), Wa(e, t, r, c));
+	t === "class" ? ja(e, r, c) : t === "style" ? Ia(e, n, r) : a(t) ? o(t) || Ya(e, t, n, r, s) : (t[0] === "." ? (t = t.slice(1), !0) : t[0] === "^" ? (t = t.slice(1), !1) : io(e, t, r, c)) ? (Ga(e, t, r), !e.tagName.includes("-") && (t === "value" || t === "checked" || t === "selected") && Wa(e, t, r, c, s, t !== "value")) : e._isVueCE && (ao(e, t) || e._def.__asyncLoader && (/[A-Z]/.test(t) || !g(r))) ? Ga(e, w(t), r, s, t) : (t === "true-value" ? e._trueValue = r : t === "false-value" && (e._falseValue = r), Wa(e, t, r, c));
 };
 function io(e, t, n, r) {
 	if (r) return !!(t === "innerHTML" || t === "textContent" || t in e && no(t) && h(n));
@@ -2705,12 +2705,12 @@ function io(e, t, n, r) {
 function ao(e, t) {
 	let n = e._def.props;
 	if (!n) return !1;
-	let r = C(t);
-	return Array.isArray(n) ? n.some((e) => C(e) === r) : Object.keys(n).some((e) => C(e) === r);
+	let r = w(t);
+	return Array.isArray(n) ? n.some((e) => w(e) === r) : Object.keys(n).some((e) => w(e) === r);
 }
 var oo = (e) => {
 	let t = e.props["onUpdate:modelValue"] || !1;
-	return d(t) ? (e) => ce(t, e) : t;
+	return d(t) ? (e) => le(t, e) : t;
 };
 function so(e) {
 	e.target.composing = !0;
@@ -2721,7 +2721,7 @@ function co(e) {
 }
 var lo = /* @__PURE__ */ Symbol("_assign");
 function uo(e, t, n) {
-	return t && (e = e.trim()), n && (e = le(e)), e;
+	return t && (e = e.trim()), n && (e = ue(e)), e;
 }
 var fo = {
 	created(e, { modifiers: { lazy: t, trim: n, number: r } }, i) {
@@ -2738,7 +2738,7 @@ var fo = {
 	},
 	beforeUpdate(e, { value: t, oldValue: n, modifiers: { lazy: r, trim: i, number: a } }, o) {
 		if (e[lo] = oo(o), e.composing) return;
-		let s = (a || e.type === "number") && !/^0\d/.test(e.value) ? le(e.value) : e.value, c = t ?? "";
+		let s = (a || e.type === "number") && !/^0\d/.test(e.value) ? ue(e.value) : e.value, c = t ?? "";
 		if (s === c) return;
 		let l = e.getRootNode();
 		(l instanceof Document || l instanceof ShadowRoot) && l.activeElement === e && e.type !== "range" && (r && t === n || i && e.value.trim() === c) || (e.value = c);
@@ -4062,7 +4062,7 @@ function jc(e, t, n = () => !0) {
 //#endregion
 //#region src/state/scene-merger/store.ts
 var Mc = es("scene-merger", () => {
-	let e = ns("Merged Scene"), t = /* @__PURE__ */ Jt(null), n = /* @__PURE__ */ P([]), r = /* @__PURE__ */ P([]), i = /* @__PURE__ */ Lt({ ...e.content }), a = /* @__PURE__ */ Lt({ ...e.destination }), o = /* @__PURE__ */ P("loading"), s = /* @__PURE__ */ P(null), c = /* @__PURE__ */ P(!1), l = /* @__PURE__ */ P(!1), u = /* @__PURE__ */ P(null), d = /* @__PURE__ */ P(null), f = /* @__PURE__ */ P(""), p = /* @__PURE__ */ P("beforeDestination"), m = /* @__PURE__ */ P(!1), h = 0, g = q(() => o.value === "ready"), { addScene: _, clearScenes: v, matchSceneGrid: y, outputGrid: b, placements: x, removeScene: ee, reorderScene: S, setOutputGrid: te, setSceneContent: ne, setSceneContentPreset: re, setSceneScale: ie } = Ac({
+	let e = ns("Merged Scene"), t = /* @__PURE__ */ Jt(null), n = /* @__PURE__ */ P([]), r = /* @__PURE__ */ P([]), i = /* @__PURE__ */ Lt({ ...e.content }), a = /* @__PURE__ */ Lt({ ...e.destination }), o = /* @__PURE__ */ P("loading"), s = /* @__PURE__ */ P(null), c = /* @__PURE__ */ P(!1), l = /* @__PURE__ */ P(!1), u = /* @__PURE__ */ P(null), d = /* @__PURE__ */ P(null), f = /* @__PURE__ */ P(""), p = /* @__PURE__ */ P("beforeDestination"), m = /* @__PURE__ */ P(!1), h = 0, g = q(() => o.value === "ready"), { addScene: _, clearScenes: v, matchSceneGrid: y, outputGrid: b, placements: x, removeScene: ee, reorderScene: S, setOutputGrid: C, setSceneContent: te, setSceneContentPreset: ne, setSceneScale: re } = Ac({
 		availableScenes: n,
 		canMutate: () => g.value,
 		changed: () => {
@@ -4070,7 +4070,7 @@ var Mc = es("scene-merger", () => {
 		},
 		defaultContent: i,
 		defaultGrid: e.outputGrid
-	}), { arrangementBounds: C, currentRequest: ae, folderChoices: w, overlaps: oe, selectedSceneIds: se, selectedScenes: T } = Dc({
+	}), { arrangementBounds: w, currentRequest: ie, folderChoices: ae, overlaps: oe, selectedSceneIds: se, selectedScenes: ce } = Dc({
 		availableScenes: n,
 		content: i,
 		destination: a,
@@ -4079,7 +4079,7 @@ var Mc = es("scene-merger", () => {
 		sceneFolders: r,
 		validation: s,
 		warningsAcknowledged: l
-	}), { fitView: ce, locateScene: E, resetView: le, setSnap: ue, setView: de, snap: fe, view: pe, zoomAt: me } = jc(x, C, () => g.value), he = q(() => g.value && !c.value && !!s.value?.canMerge && (!s.value?.warnings.some(({ severity: e }) => e === "warning") || l.value)), ge = q(() => o.value === "merging" && !m.value && !!t.value?.cancelActiveMerge && (!u.value || u.value.stage === "validating" || u.value.stage === "calculatingBounds"));
+	}), { fitView: le, locateScene: T, resetView: ue, setSnap: de, setView: fe, snap: E, view: pe, zoomAt: me } = jc(x, w, () => g.value), he = q(() => g.value && !c.value && !!s.value?.canMerge && (!s.value?.warnings.some(({ severity: e }) => e === "warning") || l.value)), ge = q(() => o.value === "merging" && !m.value && !!t.value?.cancelActiveMerge && (!u.value || u.value.stage === "validating" || u.value.stage === "calculatingBounds"));
 	async function D(e, i) {
 		t.value = e, a.name = i, o.value = "loading";
 		try {
@@ -4089,10 +4089,10 @@ var Mc = es("scene-merger", () => {
 		}
 	}
 	function _e(e) {
-		_(e), fe.gridSize = b.size;
+		_(e), E.gridSize = b.size;
 	}
 	function ve(e, t) {
-		te(e, t), e === "size" && (fe.gridSize = b.size);
+		C(e, t), e === "size" && (E.gridSize = b.size);
 	}
 	function ye(e, t, n, r = !0) {
 		if (!g.value) return;
@@ -4102,7 +4102,7 @@ var Mc = es("scene-merger", () => {
 			...i,
 			x: Math.round(t),
 			y: Math.round(n)
-		}, o = r ? ys(a, fe, x.value.filter((t) => t.sceneId !== e), pe.value.zoom) : a;
+		}, o = r ? ys(a, E, x.value.filter((t) => t.sceneId !== e), pe.value.zoom) : a;
 		x.value = x.value.map((t) => t.sceneId === e ? o : t), Ee();
 	}
 	function be(e, t) {
@@ -4116,7 +4116,7 @@ var Mc = es("scene-merger", () => {
 		let e = ++h;
 		c.value = !0;
 		try {
-			let n = await t.value.validate(ae.value);
+			let n = await t.value.validate(ie.value);
 			e === h && (s.value = n);
 		} catch (t) {
 			e === h && De(t, "beforeDestination");
@@ -4128,7 +4128,7 @@ var Mc = es("scene-merger", () => {
 		if (!(!t.value || !g.value) && (await Se(), he.value)) {
 			o.value = "merging", u.value = null, m.value = !1;
 			try {
-				d.value = await t.value.merge(ae.value, (e) => {
+				d.value = await t.value.merge(ie.value, (e) => {
 					u.value = e;
 				}), o.value = "success";
 			} catch (e) {
@@ -4155,7 +4155,7 @@ var Mc = es("scene-merger", () => {
 		f.value = e instanceof Error ? e.message : String(e), p.value = t, o.value = "failure";
 	}
 	return {
-		arrangementBounds: C,
+		arrangementBounds: w,
 		availableScenes: n,
 		canCancel: ge,
 		canMerge: he,
@@ -4166,10 +4166,10 @@ var Mc = es("scene-merger", () => {
 		destination: a,
 		failureMessage: f,
 		failureStage: p,
-		fitView: ce,
-		folderChoices: w,
+		fitView: le,
+		folderChoices: ae,
 		initialize: D,
-		locateScene: E,
+		locateScene: T,
 		merge: O,
 		moveScene: ye,
 		openDestination: we,
@@ -4179,21 +4179,21 @@ var Mc = es("scene-merger", () => {
 		progress: u,
 		removeScene: ee,
 		reorderScene: S,
-		resetView: le,
+		resetView: ue,
 		returnToEditing: Te,
 		selectedSceneIds: se,
-		selectedScenes: T,
+		selectedScenes: ce,
 		setContent: be,
 		setDestination: xe,
 		setOutputGrid: ve,
-		setSceneContent: ne,
-		setSceneContentPreset: re,
-		setSceneScale: ie,
-		setSnap: ue,
-		setView: de,
+		setSceneContent: te,
+		setSceneContentPreset: ne,
+		setSceneScale: re,
+		setSnap: de,
+		setView: fe,
 		setWarningsAcknowledged: k,
 		setupEditable: g,
-		snap: fe,
+		snap: E,
 		status: o,
 		summary: d,
 		validateNow: Se,
@@ -4205,24 +4205,24 @@ var Mc = es("scene-merger", () => {
 		addScene: _e,
 		matchSceneGrid: y
 	};
-}), Nc = { class: "dui-card dui-card-border tw:bg-base-200" }, Pc = {
+}), Nc = { class: "tw:dui-card tw:dui-card-border tw:bg-base-200" }, Pc = {
 	key: 0,
-	class: "dui-card-body tw:flex-row tw:flex-wrap tw:items-center tw:justify-between tw:gap-3 tw:p-3"
-}, Fc = { class: "dui-card-title tw:text-base" }, Ic = { class: "tw:m-0 tw:text-xs tw:opacity-65" }, Lc = { class: "tw:flex tw:items-center tw:gap-2" }, Rc = {
+	class: "tw:dui-card-body tw:flex-row tw:flex-wrap tw:items-center tw:justify-between tw:gap-3 tw:p-3"
+}, Fc = { class: "tw:dui-card-title tw:text-base" }, Ic = { class: "tw:m-0 tw:text-xs tw:opacity-65" }, Lc = { class: "tw:flex tw:items-center tw:gap-2" }, Rc = {
 	key: 0,
 	class: "tw:max-w-72 tw:text-right tw:text-xs tw:opacity-65"
 }, zc = ["disabled"], Bc = {
 	key: 1,
-	class: "dui-card-body tw:gap-3 tw:p-3"
-}, Vc = { class: "tw:flex tw:flex-wrap tw:items-center tw:justify-between tw:gap-2" }, Hc = { class: "dui-card-title tw:text-base" }, Uc = { class: "tw:m-0 tw:text-xs tw:opacity-70" }, Wc = { key: 0 }, Gc = {
+	class: "tw:dui-card-body tw:gap-3 tw:p-3"
+}, Vc = { class: "tw:flex tw:flex-wrap tw:items-center tw:justify-between tw:gap-2" }, Hc = { class: "tw:dui-card-title tw:text-base" }, Uc = { class: "tw:m-0 tw:text-xs tw:opacity-70" }, Wc = { key: 0 }, Gc = {
 	key: 1,
-	class: "dui-badge dui-badge-ghost dui-badge-sm"
+	class: "tw:dui-badge tw:dui-badge-ghost tw:dui-badge-sm"
 }, Kc = ["value"], qc = { class: "tw:flex tw:justify-between tw:text-[0.68rem] tw:opacity-65" }, Jc = {
 	key: 2,
-	class: "dui-card-body tw:gap-3 tw:p-3"
+	class: "tw:dui-card-body tw:gap-3 tw:p-3"
 }, Yc = {
 	role: "alert",
-	class: "dui-alert dui-alert-success dui-alert-soft"
+	class: "tw:dui-alert tw:dui-alert-success tw:dui-alert-soft"
 }, Xc = { class: "tw:min-w-0 tw:flex-1" }, Zc = { class: "tw:m-0 tw:font-semibold" }, Qc = { class: "tw:m-0 tw:text-sm" }, $c = { class: "tw:grid tw:gap-3 tw:md:grid-cols-2 tw:xl:grid-cols-4" }, el = { class: "tw:rounded-box tw:bg-base-300/50 tw:p-3" }, tl = { class: "tw:mt-0 tw:mb-2 tw:text-sm tw:font-semibold" }, nl = { class: "tw:m-0 tw:grid tw:list-none tw:gap-1 tw:p-0 tw:text-xs" }, rl = {
 	key: 0,
 	class: "tw:opacity-60"
@@ -4232,12 +4232,12 @@ var Mc = es("scene-merger", () => {
 }, cl = { class: "tw:rounded-box tw:bg-base-300/50 tw:p-3" }, ll = { class: "tw:mt-0 tw:mb-2 tw:text-sm tw:font-semibold" }, ul = { class: "tw:m-0 tw:grid tw:grid-cols-[1fr_auto] tw:gap-x-3 tw:gap-y-1 tw:text-xs" }, dl = { class: "tw:m-0 tw:font-semibold" }, fl = { class: "tw:m-0 tw:font-semibold" }, pl = { class: "tw:m-0 tw:font-semibold" }, ml = { class: "tw:rounded-box tw:bg-base-300/50 tw:p-3" }, hl = { class: "tw:mt-0 tw:mb-2 tw:text-sm tw:font-semibold" }, gl = { class: "tw:m-0 tw:max-h-24 tw:overflow-auto tw:pl-4 tw:text-xs" }, _l = {
 	key: 0,
 	class: "tw:list-none tw:opacity-60"
-}, vl = { class: "dui-card-actions tw:justify-end" }, yl = {
+}, vl = { class: "tw:dui-card-actions tw:justify-end" }, yl = {
 	key: 3,
-	class: "dui-card-body tw:gap-3 tw:p-3"
+	class: "tw:dui-card-body tw:gap-3 tw:p-3"
 }, bl = {
 	role: "alert",
-	class: "dui-alert dui-alert-error dui-alert-soft"
+	class: "tw:dui-alert tw:dui-alert-error tw:dui-alert-soft"
 }, xl = { class: "tw:min-w-0 tw:flex-1" }, Sl = { class: "tw:m-0 tw:font-semibold" }, Cl = { class: "tw:m-0 tw:text-sm" }, wl = { class: "tw:mt-1 tw:block tw:break-words tw:text-xs" }, Tl = { class: "tw:mt-2 tw:mb-0 tw:text-xs" }, El = /* @__PURE__ */ Yn({
 	__name: "ExecutionPanel",
 	props: { t: { type: Function } },
@@ -4258,19 +4258,19 @@ var Mc = es("scene-merger", () => {
 			width: Math.round(F(n).arrangementBounds.width),
 			height: Math.round(F(n).arrangementBounds.height)
 		})), 1)]), U("div", Lc, [F(n).canMerge ? G("", !0) : (V(), H("span", Rc, O(e.t("FVTT_SCENE_MERGER.Execution.ResolveIssues")), 1)), U("button", {
-			class: "dui-btn dui-btn-primary",
+			class: "tw:dui-btn tw:dui-btn-primary",
 			type: "button",
 			disabled: !F(n).canMerge,
 			onClick: o[0] ||= (e) => F(n).merge()
 		}, O(e.t("FVTT_SCENE_MERGER.Actions.Merge")), 9, zc)])])) : F(n).status === "merging" ? (V(), H("div", Bc, [
 			U("div", Vc, [U("div", null, [U("h2", Hc, O(e.t("FVTT_SCENE_MERGER.Execution.Merging")), 1), U("p", Uc, [Yi(O(F(n).progress ? e.t(`FVTT_SCENE_MERGER.MergeStage.${F(n).progress.stage}`) : e.t("FVTT_SCENE_MERGER.MergeStage.validating")) + " ", 1), F(n).progress?.detail ? (V(), H("span", Wc, " · " + O(F(n).progress.detail), 1)) : G("", !0)])]), F(n).canCancel ? (V(), H("button", {
 				key: 0,
-				class: "dui-btn dui-btn-warning dui-btn-outline dui-btn-sm",
+				class: "tw:dui-btn tw:dui-btn-warning tw:dui-btn-outline tw:dui-btn-sm",
 				type: "button",
 				onClick: o[1] ||= (e) => F(n).cancelMerge()
 			}, O(F(n).cancelRequested ? e.t("FVTT_SCENE_MERGER.Actions.Cancelling") : e.t("FVTT_SCENE_MERGER.Actions.Cancel")), 1)) : (V(), H("span", Gc, O(e.t("FVTT_SCENE_MERGER.Execution.CancellationClosed")), 1))]),
 			U("progress", {
-				class: "dui-progress tw:w-full",
+				class: "tw:dui-progress tw:w-full",
 				value: r.value,
 				max: "100"
 			}, null, 8, Kc),
@@ -4284,7 +4284,7 @@ var Mc = es("scene-merger", () => {
 					count: F(n).summary.sourceCount
 				})), 1)]),
 				U("button", {
-					class: "dui-btn dui-btn-sm",
+					class: "tw:dui-btn tw:dui-btn-sm",
 					type: "button",
 					onClick: o[2] ||= (e) => F(n).openDestination()
 				}, O(e.t("FVTT_SCENE_MERGER.Actions.OpenScene")), 1)
@@ -4313,7 +4313,7 @@ var Mc = es("scene-merger", () => {
 				])])
 			]),
 			U("div", vl, [U("button", {
-				class: "dui-btn dui-btn-ghost dui-btn-sm",
+				class: "tw:dui-btn tw:dui-btn-ghost tw:dui-btn-sm",
 				type: "button",
 				onClick: o[3] ||= (e) => F(n).returnToEditing()
 			}, O(e.t("FVTT_SCENE_MERGER.Actions.MergeAnother")), 1)])
@@ -4326,19 +4326,25 @@ var Mc = es("scene-merger", () => {
 				U("p", Tl, O(e.t("FVTT_SCENE_MERGER.Results.FailureSafety")), 1)
 			]),
 			U("button", {
-				class: "dui-btn dui-btn-sm",
+				class: "tw:dui-btn tw:dui-btn-sm",
 				type: "button",
 				onClick: o[4] ||= (e) => F(n).returnToEditing()
 			}, O(e.t("FVTT_SCENE_MERGER.Actions.BackToSetup")), 1)
 		])])) : G("", !0)]));
 	}
-}), Dl = { class: "tw:flex tw:flex-wrap tw:items-end tw:justify-between tw:gap-2" }, Ol = { class: "tw:flex tw:flex-wrap tw:items-end tw:gap-2" }, kl = { class: "dui-fieldset tw:p-0" }, Al = { class: "dui-fieldset-legend tw:py-0 tw:text-[0.68rem]" }, jl = ["value", "disabled"], Ml = { value: "none" }, Nl = { value: "pixel" }, Pl = { value: "grid" }, Fl = { value: "edge" }, Il = {
+}), Dl = { class: "tw:flex tw:flex-wrap tw:items-end tw:justify-between tw:gap-2" }, Ol = { class: "tw:flex tw:flex-wrap tw:items-end tw:gap-2" }, kl = { class: "tw:dui-fieldset tw:m-0! tw:border-0! tw:p-0!" }, Al = {
+	class: "tw:dui-fieldset-legend tw:py-0 tw:text-[0.68rem]",
+	for: "scene-merger-snap-mode"
+}, jl = ["value", "disabled"], Ml = { value: "none" }, Nl = { value: "pixel" }, Pl = { value: "grid" }, Fl = { value: "edge" }, Il = {
 	key: 0,
-	class: "dui-fieldset tw:w-24 tw:p-0"
-}, Ll = { class: "dui-fieldset-legend tw:py-0 tw:text-[0.68rem]" }, Rl = ["value", "disabled"], zl = {
+	class: "tw:dui-fieldset tw:m-0! tw:w-24 tw:border-0! tw:p-0!"
+}, Ll = {
+	class: "tw:dui-fieldset-legend tw:py-0 tw:text-[0.68rem]",
+	for: "scene-merger-snap-interval"
+}, Rl = ["value", "disabled"], zl = {
 	key: 1,
-	class: "dui-badge dui-badge-outline dui-badge-sm tw:mb-1.5"
-}, Bl = { class: "tw:flex tw:items-center tw:gap-1" }, Vl = ["disabled", "aria-label"], Hl = { class: "dui-badge dui-badge-ghost tw:min-w-16 tw:justify-center" }, Ul = ["disabled", "aria-label"], Wl = ["disabled"], Gl = ["disabled"], Kl = /* @__PURE__ */ Yn({
+	class: "tw:dui-badge tw:dui-badge-outline tw:dui-badge-sm tw:mb-1.5"
+}, Bl = { class: "tw:flex tw:items-center tw:gap-1" }, Vl = ["disabled", "aria-label"], Hl = { class: "tw:dui-badge tw:dui-badge-ghost tw:min-w-16 tw:justify-center" }, Ul = ["disabled", "aria-label"], Wl = ["disabled"], Gl = ["disabled"], Kl = /* @__PURE__ */ Yn({
 	__name: "LayoutToolbar",
 	props: { t: { type: Function } },
 	emits: [
@@ -4355,8 +4361,9 @@ var Mc = es("scene-merger", () => {
 			r.setSnap(r.snap.mode, Number(e.currentTarget.value));
 		}
 		return (t, o) => (V(), H("div", Dl, [U("div", Ol, [
-			U("fieldset", kl, [U("legend", Al, O(e.t("FVTT_SCENE_MERGER.Layout.SnapMode")), 1), U("select", {
-				class: "dui-select dui-select-sm",
+			U("fieldset", kl, [U("label", Al, O(e.t("FVTT_SCENE_MERGER.Layout.SnapMode")), 1), U("select", {
+				id: "scene-merger-snap-mode",
+				class: "tw:dui-select tw:dui-select-sm",
 				value: F(r).snap.mode,
 				disabled: !F(r).setupEditable,
 				onChange: i
@@ -4366,8 +4373,9 @@ var Mc = es("scene-merger", () => {
 				U("option", Pl, O(e.t("FVTT_SCENE_MERGER.Layout.Snap.grid")), 1),
 				U("option", Fl, O(e.t("FVTT_SCENE_MERGER.Layout.Snap.edge")), 1)
 			], 40, jl)]),
-			F(r).snap.mode === "pixel" ? (V(), H("fieldset", Il, [U("legend", Ll, O(e.t("FVTT_SCENE_MERGER.Layout.Interval")), 1), U("input", {
-				class: "dui-input dui-input-sm tw:w-full",
+			F(r).snap.mode === "pixel" ? (V(), H("fieldset", Il, [U("label", Ll, O(e.t("FVTT_SCENE_MERGER.Layout.Interval")), 1), U("input", {
+				id: "scene-merger-snap-interval",
+				class: "tw:dui-input tw:dui-input-sm tw:w-full",
 				type: "number",
 				min: "1",
 				step: "1",
@@ -4378,7 +4386,7 @@ var Mc = es("scene-merger", () => {
 			F(r).snap.mode === "grid" ? (V(), H("span", zl, O(e.t("FVTT_SCENE_MERGER.Layout.GridSize", { size: F(r).snap.gridSize })), 1)) : G("", !0)
 		]), U("div", Bl, [
 			U("button", {
-				class: "dui-btn dui-btn-sm dui-btn-square",
+				class: "tw:dui-btn tw:dui-btn-sm tw:dui-btn-square",
 				type: "button",
 				disabled: !F(r).setupEditable,
 				"aria-label": e.t("FVTT_SCENE_MERGER.Layout.ZoomOut"),
@@ -4386,20 +4394,20 @@ var Mc = es("scene-merger", () => {
 			}, " − ", 8, Vl),
 			U("span", Hl, O(Math.round(F(r).view.zoom * 100)) + "%", 1),
 			U("button", {
-				class: "dui-btn dui-btn-sm dui-btn-square",
+				class: "tw:dui-btn tw:dui-btn-sm tw:dui-btn-square",
 				type: "button",
 				disabled: !F(r).setupEditable,
 				"aria-label": e.t("FVTT_SCENE_MERGER.Layout.ZoomIn"),
 				onClick: o[1] ||= (e) => n("zoom", 1.25)
 			}, " + ", 8, Ul),
 			U("button", {
-				class: "dui-btn dui-btn-sm",
+				class: "tw:dui-btn tw:dui-btn-sm",
 				type: "button",
 				disabled: !F(r).setupEditable,
 				onClick: o[2] ||= (e) => n("fit")
 			}, O(e.t("FVTT_SCENE_MERGER.Layout.ZoomFit")), 9, Wl),
 			U("button", {
-				class: "dui-btn dui-btn-ghost dui-btn-sm",
+				class: "tw:dui-btn tw:dui-btn-ghost tw:dui-btn-sm",
 				type: "button",
 				disabled: !F(r).setupEditable,
 				onClick: o[3] ||= (e) => n("reset")
@@ -4533,7 +4541,7 @@ var Mc = es("scene-merger", () => {
 			ref: r,
 			class: D(["layout-workspace tw:relative tw:min-h-[440px] tw:touch-none tw:overflow-hidden tw:rounded-box tw:border tw:border-base-300 tw:bg-base-100 tw:select-none", { "tw:pointer-events-none tw:opacity-70": !F(n).setupEditable }]),
 			"aria-disabled": !F(n).setupEditable,
-			style: fe(d.value),
+			style: E(d.value),
 			onPointerdown: p,
 			onPointermove: h,
 			onPointerup: g,
@@ -4543,7 +4551,7 @@ var Mc = es("scene-merger", () => {
 			F(n).placements.length ? (V(), H("div", {
 				key: 0,
 				class: "layout-total-bounds tw:pointer-events-none tw:absolute tw:border tw:border-dashed tw:border-accent/70",
-				style: fe(u.value)
+				style: E(u.value)
 			}, [U("span", Jl, O(e.t("FVTT_SCENE_MERGER.Layout.TotalBounds")), 1)], 4)) : G("", !0),
 			(V(!0), H(B, null, L(F(n).placements, (t) => (V(), H("button", {
 				key: t.sceneId,
@@ -4551,7 +4559,7 @@ var Mc = es("scene-merger", () => {
 					"layout-scene-overlap": o.value.has(t.sceneId),
 					"tw:outline-2 tw:outline-offset-2 tw:outline-success": s.value.has(t.sceneId)
 				}]),
-				style: fe(l(t)),
+				style: E(l(t)),
 				type: "button",
 				disabled: !F(n).setupEditable,
 				"aria-describedby": s.value.has(t.sceneId) ? `scene-alignment-${t.sceneId}` : void 0,
@@ -4572,17 +4580,17 @@ var Mc = es("scene-merger", () => {
 				s.value.has(t.sceneId) ? (V(), H("span", {
 					key: 1,
 					id: `scene-alignment-${t.sceneId}`,
-					class: "dui-badge dui-badge-success dui-badge-xs tw:pointer-events-none tw:absolute tw:bottom-1 tw:left-1.5"
+					class: "tw:dui-badge tw:dui-badge-success tw:dui-badge-xs tw:pointer-events-none tw:absolute tw:bottom-1 tw:left-1.5"
 				}, O(e.t("FVTT_SCENE_MERGER.Layout.EdgesAligned")), 9, tu)) : G("", !0)
 			], 46, Yl))), 128)),
 			F(n).placements.length === 0 ? (V(), H("div", nu, O(e.t("FVTT_SCENE_MERGER.Layout.Empty")), 1)) : G("", !0),
 			U("div", ru, O(e.t("FVTT_SCENE_MERGER.Layout.PanZoomHint")), 1)
 		], 46, ql));
 	}
-}), au = { class: "dui-card dui-card-border tw:min-w-0 tw:bg-base-200" }, ou = { class: "dui-card-body tw:gap-3 tw:p-3" }, su = { class: "tw:flex tw:flex-wrap tw:items-start tw:justify-between tw:gap-2" }, cu = { class: "dui-card-title tw:text-base" }, lu = { class: "tw:m-0 tw:text-xs tw:opacity-65" }, uu = { class: "tw:flex tw:flex-wrap tw:gap-1" }, du = { class: "dui-badge dui-badge-outline dui-badge-sm" }, fu = { class: "dui-badge dui-badge-outline dui-badge-sm" }, pu = { class: "dui-badge dui-badge-secondary dui-badge-sm" }, mu = {
+}), au = { class: "tw:dui-card tw:dui-card-border tw:min-w-0 tw:bg-base-200" }, ou = { class: "tw:dui-card-body tw:gap-3 tw:p-3" }, su = { class: "tw:flex tw:flex-wrap tw:items-start tw:justify-between tw:gap-2" }, cu = { class: "tw:dui-card-title tw:text-base" }, lu = { class: "tw:m-0 tw:text-xs tw:opacity-65" }, uu = { class: "tw:flex tw:flex-wrap tw:gap-1" }, du = { class: "tw:dui-badge tw:dui-badge-outline tw:dui-badge-sm" }, fu = { class: "tw:dui-badge tw:dui-badge-outline tw:dui-badge-sm" }, pu = { class: "tw:dui-badge tw:dui-badge-secondary tw:dui-badge-sm" }, mu = {
 	key: 0,
 	role: "alert",
-	class: "dui-alert dui-alert-warning dui-alert-soft tw:py-2 tw:text-sm"
+	class: "tw:dui-alert tw:dui-alert-warning tw:dui-alert-soft tw:py-2 tw:text-sm"
 }, hu = /* @__PURE__ */ Yn({
 	__name: "LayoutPanel",
 	props: { t: { type: Function } },
@@ -4614,36 +4622,36 @@ var Mc = es("scene-merger", () => {
 			F(n).overlaps.length ? (V(), H("div", mu, [i[3] ||= U("span", { "aria-hidden": "true" }, "△", -1), U("span", null, O(e.t("FVTT_SCENE_MERGER.Layout.OverlapWarning", { count: F(n).overlaps.length })), 1)])) : G("", !0)
 		])]));
 	}
-}), gu = { class: "dui-card dui-card-border tw:bg-base-200" }, _u = { class: "dui-card-body tw:gap-4 tw:p-3" }, vu = { class: "dui-card-title tw:text-base" }, yu = { class: "tw:m-0 tw:text-xs tw:opacity-65" }, bu = { class: "tw:grid tw:gap-4 tw:lg:grid-cols-2 tw:2xl:grid-cols-3" }, xu = { class: "dui-fieldset tw:min-w-0 tw:rounded-box tw:bg-base-300/50 tw:p-3" }, Su = { class: "dui-fieldset-legend" }, Cu = { class: "tw:grid tw:gap-x-4 tw:gap-y-2 tw:sm:grid-cols-2" }, wu = { class: "tw:min-w-0" }, Tu = { class: "tw:block tw:text-sm tw:font-medium" }, Eu = { class: "tw:block tw:text-[0.68rem] tw:opacity-60" }, Du = {
+}), gu = { class: "tw:dui-card tw:dui-card-border tw:bg-base-200" }, _u = { class: "tw:dui-card-body tw:@container tw:gap-4 tw:p-3" }, vu = { class: "tw:dui-card-title tw:text-base" }, yu = { class: "tw:m-0 tw:text-xs tw:opacity-65" }, bu = { class: "tw:grid tw:gap-4" }, xu = { class: "tw:dui-fieldset tw:min-w-0 tw:rounded-box tw:border tw:border-base-300 tw:bg-base-300/50 tw:p-3" }, Su = { class: "tw:dui-fieldset-legend" }, Cu = { class: "tw:grid tw:gap-2 tw:@4xl:grid-cols-2" }, wu = { class: "tw:min-w-0" }, Tu = { class: "tw:block tw:text-sm tw:font-medium" }, Eu = { class: "tw:block tw:text-[0.68rem] tw:opacity-60" }, Du = {
 	key: 0,
-	class: "dui-badge dui-badge-warning dui-badge-soft dui-badge-xs tw:mt-1"
+	class: "tw:dui-badge tw:dui-badge-warning tw:dui-badge-soft tw:dui-badge-xs tw:mt-1"
 }, Ou = [
 	"checked",
 	"disabled",
 	"onChange"
-], ku = { class: "dui-fieldset tw:min-w-0 tw:rounded-box tw:bg-base-300/50 tw:p-3" }, Au = { class: "dui-fieldset-legend" }, ju = { class: "tw:mt-0 tw:mb-2 tw:text-[0.68rem] tw:opacity-65" }, Mu = {
-	class: "dui-label tw:pb-0 tw:text-xs",
+], ku = { class: "tw:grid tw:items-start tw:gap-4 tw:@4xl:grid-cols-2" }, Au = { class: "tw:dui-fieldset tw:min-w-0 tw:rounded-box tw:border tw:border-base-300 tw:bg-base-300/50 tw:p-3" }, ju = { class: "tw:dui-fieldset-legend" }, Mu = { class: "tw:mt-0 tw:mb-2 tw:text-[0.68rem] tw:opacity-65" }, Nu = { class: "tw:grid tw:gap-3" }, Pu = { class: "tw:grid tw:min-w-0 tw:gap-1" }, Fu = {
+	class: "tw:dui-label tw:text-xs",
 	for: "scene-merger-grid-type"
-}, Nu = ["value", "disabled"], Pu = ["value"], Fu = { class: "tw:grid tw:grid-cols-2 tw:gap-2" }, Iu = { class: "dui-fieldset tw:min-w-0" }, Lu = {
-	class: "dui-label tw:pb-0 tw:text-xs",
+}, Iu = ["value", "disabled"], Lu = ["value"], Ru = { class: "tw:grid tw:gap-3 tw:@xl:grid-cols-2" }, zu = { class: "tw:grid tw:min-w-0 tw:gap-1" }, Bu = {
+	class: "tw:dui-label tw:text-xs",
 	for: "scene-merger-grid-size"
-}, Ru = ["value", "disabled"], zu = { class: "dui-fieldset tw:min-w-0" }, Bu = {
-	class: "dui-label tw:pb-0 tw:text-xs",
+}, Vu = ["value", "disabled"], Hu = { class: "tw:grid tw:min-w-0 tw:gap-1" }, Uu = {
+	class: "tw:dui-label tw:text-xs",
 	for: "scene-merger-grid-distance"
-}, Vu = ["value", "disabled"], Hu = {
-	class: "dui-label tw:pb-0 tw:text-xs",
+}, Wu = ["value", "disabled"], Gu = { class: "tw:grid tw:min-w-0 tw:gap-1" }, Ku = {
+	class: "tw:dui-label tw:text-xs",
 	for: "scene-merger-grid-units"
-}, Uu = ["value", "disabled"], Wu = { class: "dui-fieldset tw:min-w-0 tw:rounded-box tw:bg-base-300/50 tw:p-3" }, Gu = { class: "dui-fieldset-legend" }, Ku = {
-	class: "dui-label tw:pb-0 tw:text-xs",
+}, qu = ["value", "disabled"], Ju = { class: "tw:dui-fieldset tw:min-w-0 tw:rounded-box tw:border tw:border-base-300 tw:bg-base-300/50 tw:p-3" }, Yu = { class: "tw:dui-fieldset-legend" }, Xu = { class: "tw:grid tw:gap-3 tw:@xl:grid-cols-2" }, Zu = { class: "tw:grid tw:min-w-0 tw:gap-1" }, Qu = {
+	class: "tw:dui-label tw:text-xs",
 	for: "scene-merger-name"
-}, qu = ["value", "disabled"], Ju = {
-	class: "dui-label tw:pb-0 tw:text-xs",
+}, $u = ["value", "disabled"], ed = { class: "tw:grid tw:min-w-0 tw:gap-1" }, td = {
+	class: "tw:dui-label tw:text-xs",
 	for: "scene-merger-folder"
-}, Yu = ["value", "disabled"], Xu = { value: "" }, Zu = ["value"], Qu = { class: "tw:mt-2 tw:grid tw:gap-2" }, $u = { class: "tw:block" }, ed = { class: "tw:block tw:text-[0.68rem] tw:opacity-60" }, td = [
+}, nd = ["value", "disabled"], rd = { value: "" }, id = ["value"], ad = { class: "tw:mt-3 tw:grid tw:gap-2" }, od = { class: "tw:min-w-0" }, sd = { class: "tw:block tw:text-sm" }, cd = { class: "tw:block tw:text-[0.68rem] tw:opacity-60" }, ld = [
 	"checked",
 	"disabled",
 	"onChange"
-], nd = /* @__PURE__ */ Yn({
+], ud = /* @__PURE__ */ Yn({
 	__name: "MergeOptionsPanel",
 	props: { t: { type: Function } },
 	setup(e) {
@@ -4686,113 +4694,106 @@ var Mc = es("scene-merger", () => {
 			let n = e.currentTarget;
 			t.setOutputGrid("units", n.value.trim()), n.value = t.outputGrid.units;
 		}
-		return (u, d) => (V(), H("section", gu, [U("div", _u, [U("div", null, [U("h2", vu, O(e.t("FVTT_SCENE_MERGER.Options.Title")), 1), U("p", yu, O(e.t("FVTT_SCENE_MERGER.Options.Help")), 1)]), U("div", bu, [
-			U("fieldset", xu, [U("legend", Su, O(e.t("FVTT_SCENE_MERGER.Options.ContentTitle")), 1), U("div", Cu, [(V(), H(B, null, L(n, (n) => U("label", {
-				key: n,
-				class: "tw:flex tw:min-w-0 tw:items-start tw:justify-between tw:gap-2 tw:rounded-field tw:bg-base-200 tw:p-2"
-			}, [U("span", wu, [
-				U("span", Tu, O(e.t(`FVTT_SCENE_MERGER.Options.Content.${n}.Label`)), 1),
-				U("span", Eu, O(e.t(`FVTT_SCENE_MERGER.Options.Content.${n}.Help`)), 1),
-				F(Ec)[n] === "unavailable" ? (V(), H("span", Du, O(e.t("FVTT_SCENE_MERGER.Options.UnavailableV14")), 1)) : G("", !0)
-			]), U("input", {
-				class: "dui-toggle dui-toggle-sm tw:before:relative! tw:before:h-full! tw:before:w-full! tw:before:rounded-selector! tw:before:text-inherit! tw:before:content-['']! tw:after:content-none! tw:focus-visible:before:outline-none!",
-				type: "checkbox",
-				checked: F(t).content[n],
-				disabled: F(Ec)[n] === "unavailable" || !F(t).setupEditable,
-				onChange: (e) => i(n, e)
-			}, null, 40, Ou)])), 64))])]),
-			U("fieldset", ku, [
-				U("legend", Au, O(e.t("FVTT_SCENE_MERGER.Options.OutputGrid.Title")), 1),
-				U("p", ju, O(e.t("FVTT_SCENE_MERGER.Options.OutputGrid.Help")), 1),
-				U("label", Mu, O(e.t("FVTT_SCENE_MERGER.Options.OutputGrid.Type")), 1),
-				U("select", {
+		return (u, d) => (V(), H("section", gu, [U("div", _u, [U("div", null, [U("h2", vu, O(e.t("FVTT_SCENE_MERGER.Options.Title")), 1), U("p", yu, O(e.t("FVTT_SCENE_MERGER.Options.Help")), 1)]), U("div", bu, [U("fieldset", xu, [U("legend", Su, O(e.t("FVTT_SCENE_MERGER.Options.ContentTitle")), 1), U("div", Cu, [(V(), H(B, null, L(n, (n) => U("label", {
+			key: n,
+			class: "tw:grid tw:min-h-16 tw:min-w-0 tw:grid-cols-[minmax(0,1fr)_auto] tw:items-center tw:gap-3 tw:rounded-field tw:bg-base-200 tw:px-3 tw:py-2"
+		}, [U("span", wu, [
+			U("span", Tu, O(e.t(`FVTT_SCENE_MERGER.Options.Content.${n}.Label`)), 1),
+			U("span", Eu, O(e.t(`FVTT_SCENE_MERGER.Options.Content.${n}.Help`)), 1),
+			F(Ec)[n] === "unavailable" ? (V(), H("span", Du, O(e.t("FVTT_SCENE_MERGER.Options.UnavailableV14")), 1)) : G("", !0)
+		]), U("input", {
+			class: "tw:dui-toggle tw:dui-toggle-sm tw:m-0! tw:shrink-0 tw:before:relative! tw:before:h-full! tw:before:w-full! tw:before:rounded-selector! tw:before:text-inherit! tw:before:content-['']! tw:after:content-none! tw:focus-visible:before:outline-none!",
+			type: "checkbox",
+			checked: F(t).content[n],
+			disabled: F(Ec)[n] === "unavailable" || !F(t).setupEditable,
+			onChange: (e) => i(n, e)
+		}, null, 40, Ou)])), 64))])]), U("div", ku, [U("fieldset", Au, [
+			U("legend", ju, O(e.t("FVTT_SCENE_MERGER.Options.OutputGrid.Title")), 1),
+			U("p", Mu, O(e.t("FVTT_SCENE_MERGER.Options.OutputGrid.Help")), 1),
+			U("div", Nu, [
+				U("div", Pu, [U("label", Fu, O(e.t("FVTT_SCENE_MERGER.Options.OutputGrid.Type")), 1), U("select", {
 					id: "scene-merger-grid-type",
-					class: "dui-select dui-select-sm tw:w-full",
+					class: "tw:dui-select tw:dui-select-sm tw:w-full",
 					value: F(t).outputGrid.type,
 					disabled: !F(t).setupEditable,
 					onChange: d[0] ||= (e) => c("type", e)
 				}, [(V(), H(B, null, L(r, (t) => U("option", {
 					key: t,
 					value: t
-				}, O(e.t(`FVTT_SCENE_MERGER.Options.OutputGrid.Types.${t}`)), 9, Pu)), 64))], 40, Nu),
-				U("div", Fu, [U("fieldset", Iu, [U("label", Lu, O(e.t("FVTT_SCENE_MERGER.Options.OutputGrid.Size")), 1), U("input", {
+				}, O(e.t(`FVTT_SCENE_MERGER.Options.OutputGrid.Types.${t}`)), 9, Lu)), 64))], 40, Iu)]),
+				U("div", Ru, [U("div", zu, [U("label", Bu, O(e.t("FVTT_SCENE_MERGER.Options.OutputGrid.Size")), 1), U("input", {
 					id: "scene-merger-grid-size",
-					class: "dui-input dui-input-sm tw:w-full",
+					class: "tw:dui-input tw:dui-input-sm tw:w-full",
 					type: "number",
 					min: "1",
 					step: "1",
 					value: F(t).outputGrid.size,
 					disabled: !F(t).setupEditable,
 					onChange: d[1] ||= (e) => c("size", e)
-				}, null, 40, Ru)]), U("fieldset", zu, [U("label", Bu, O(e.t("FVTT_SCENE_MERGER.Options.OutputGrid.Distance")), 1), U("input", {
+				}, null, 40, Vu)]), U("div", Hu, [U("label", Uu, O(e.t("FVTT_SCENE_MERGER.Options.OutputGrid.Distance")), 1), U("input", {
 					id: "scene-merger-grid-distance",
-					class: "dui-input dui-input-sm tw:w-full",
+					class: "tw:dui-input tw:dui-input-sm tw:w-full",
 					type: "number",
 					min: "0.01",
 					step: "any",
 					value: F(t).outputGrid.distance,
 					disabled: !F(t).setupEditable,
 					onChange: d[2] ||= (e) => c("distance", e)
-				}, null, 40, Vu)])]),
-				U("label", Hu, O(e.t("FVTT_SCENE_MERGER.Options.OutputGrid.Units")), 1),
-				U("input", {
+				}, null, 40, Wu)])]),
+				U("div", Gu, [U("label", Ku, O(e.t("FVTT_SCENE_MERGER.Options.OutputGrid.Units")), 1), U("input", {
 					id: "scene-merger-grid-units",
-					class: "dui-input dui-input-sm tw:w-full",
+					class: "tw:dui-input tw:dui-input-sm tw:w-full",
 					type: "text",
 					value: F(t).outputGrid.units,
 					disabled: !F(t).setupEditable,
 					onChange: l
-				}, null, 40, Uu)
-			]),
-			U("fieldset", Wu, [
-				U("legend", Gu, O(e.t("FVTT_SCENE_MERGER.Options.DestinationTitle")), 1),
-				U("label", Ku, O(e.t("FVTT_SCENE_MERGER.Options.Name")), 1),
-				U("input", {
-					id: "scene-merger-name",
-					class: "dui-input dui-input-sm tw:w-full",
-					type: "text",
-					value: F(t).destination.name,
-					disabled: !F(t).setupEditable,
-					onChange: a
-				}, null, 40, qu),
-				U("label", Ju, O(e.t("FVTT_SCENE_MERGER.Options.Folder")), 1),
-				U("select", {
-					id: "scene-merger-folder",
-					class: "dui-select dui-select-sm tw:w-full",
-					value: F(t).destination.folderId ?? "",
-					disabled: !F(t).setupEditable,
-					onChange: o
-				}, [U("option", Xu, O(e.t("FVTT_SCENE_MERGER.Selection.RootFolder")), 1), (V(!0), H(B, null, L(F(t).folderChoices, (e) => (V(), H("option", {
-					key: e.id,
-					value: e.id
-				}, O(e.name), 9, Zu))), 128))], 40, Yu),
-				U("div", Qu, [(V(), H(B, null, L([
-					"navigation",
-					"openAfterMerge",
-					"activateAfterMerge",
-					"lockBackgroundTiles"
-				], (n) => U("label", {
-					key: n,
-					class: "tw:flex tw:items-center tw:justify-between tw:gap-3 tw:text-sm"
-				}, [U("span", null, [U("span", $u, O(e.t(`FVTT_SCENE_MERGER.Options.Destination.${n}.Label`)), 1), U("span", ed, O(e.t(`FVTT_SCENE_MERGER.Options.Destination.${n}.Help`)), 1)]), U("input", {
-					class: "dui-checkbox dui-checkbox-sm tw:shrink-0 tw:before:content-none! tw:after:content-none!",
-					type: "checkbox",
-					checked: F(t).destination[n],
-					disabled: !F(t).setupEditable,
-					onChange: (e) => s(n, e)
-				}, null, 40, td)])), 64))])
+				}, null, 40, qu)])
 			])
-		])])]));
+		]), U("fieldset", Ju, [
+			U("legend", Yu, O(e.t("FVTT_SCENE_MERGER.Options.DestinationTitle")), 1),
+			U("div", Xu, [U("div", Zu, [U("label", Qu, O(e.t("FVTT_SCENE_MERGER.Options.Name")), 1), U("input", {
+				id: "scene-merger-name",
+				class: "tw:dui-input tw:dui-input-sm tw:w-full",
+				type: "text",
+				value: F(t).destination.name,
+				disabled: !F(t).setupEditable,
+				onChange: a
+			}, null, 40, $u)]), U("div", ed, [U("label", td, O(e.t("FVTT_SCENE_MERGER.Options.Folder")), 1), U("select", {
+				id: "scene-merger-folder",
+				class: "tw:dui-select tw:dui-select-sm tw:w-full",
+				value: F(t).destination.folderId ?? "",
+				disabled: !F(t).setupEditable,
+				onChange: o
+			}, [U("option", rd, O(e.t("FVTT_SCENE_MERGER.Selection.RootFolder")), 1), (V(!0), H(B, null, L(F(t).folderChoices, (e) => (V(), H("option", {
+				key: e.id,
+				value: e.id
+			}, O(e.name), 9, id))), 128))], 40, nd)])]),
+			U("div", ad, [(V(), H(B, null, L([
+				"navigation",
+				"openAfterMerge",
+				"activateAfterMerge",
+				"lockBackgroundTiles"
+			], (n) => U("label", {
+				key: n,
+				class: "tw:grid tw:min-h-14 tw:grid-cols-[minmax(0,1fr)_auto] tw:items-center tw:gap-3 tw:rounded-field tw:bg-base-200 tw:px-3 tw:py-2"
+			}, [U("span", od, [U("span", sd, O(e.t(`FVTT_SCENE_MERGER.Options.Destination.${n}.Label`)), 1), U("span", cd, O(e.t(`FVTT_SCENE_MERGER.Options.Destination.${n}.Help`)), 1)]), U("input", {
+				class: "tw:dui-checkbox tw:dui-checkbox-sm tw:m-0! tw:shrink-0 tw:before:relative! tw:before:block! tw:before:h-full! tw:before:w-full! tw:before:content-['']! tw:after:content-none!",
+				type: "checkbox",
+				checked: F(t).destination[n],
+				disabled: !F(t).setupEditable,
+				onChange: (e) => s(n, e)
+			}, null, 40, ld)])), 64))])
+		])])])])]));
 	}
-}), rd = { class: "dui-collapse dui-collapse-arrow tw:mt-1 tw:border tw:border-base-300" }, id = { class: "dui-collapse-title tw:min-h-0 tw:px-2 tw:py-1 tw:text-[0.7rem] tw:font-medium" }, ad = { class: "dui-collapse-content tw:grid tw:gap-2 tw:px-2 tw:pb-2" }, od = { class: "tw:flex tw:flex-wrap tw:gap-1" }, sd = ["disabled", "onClick"], cd = { class: "dui-fieldset tw:min-w-0" }, ld = ["for"], ud = { class: "tw:flex tw:min-w-0 tw:gap-1" }, dd = { class: "dui-input dui-input-xs tw:min-w-0 tw:flex-1" }, fd = [
+}), dd = { class: "tw:dui-collapse tw:dui-collapse-arrow tw:mt-1 tw:border tw:border-base-300" }, fd = { class: "tw:dui-collapse-title tw:min-h-0 tw:px-2 tw:py-1 tw:text-[0.7rem] tw:font-medium" }, pd = { class: "tw:dui-collapse-content tw:grid tw:gap-2 tw:px-2 tw:pb-2" }, md = { class: "tw:flex tw:flex-wrap tw:gap-1" }, hd = ["disabled", "onClick"], gd = { class: "tw:dui-fieldset tw:m-0! tw:min-w-0 tw:border-0! tw:p-0!" }, _d = ["for"], vd = { class: "tw:flex tw:min-w-0 tw:gap-1" }, yd = { class: "tw:dui-input tw:dui-input-xs tw:min-w-0 tw:flex-1" }, bd = [
 	"id",
 	"value",
 	"disabled"
-], pd = ["disabled"], md = { class: "dui-fieldset" }, hd = { class: "dui-fieldset-legend tw:text-[0.68rem]" }, gd = { class: "tw:grid tw:grid-cols-2 tw:gap-x-3 tw:gap-y-2" }, _d = [
+], xd = ["disabled"], Sd = { class: "tw:dui-fieldset tw:m-0! tw:min-w-0 tw:border-0! tw:p-0!" }, Cd = { class: "tw:dui-fieldset-legend tw:text-[0.68rem]" }, wd = { class: "tw:grid tw:grid-cols-2 tw:gap-x-3 tw:gap-y-2" }, Td = [
 	"checked",
 	"disabled",
 	"onChange"
-], vd = { class: "tw:min-w-0 tw:break-words" }, yd = /* @__PURE__ */ Yn({
+], Ed = { class: "tw:min-w-0 tw:break-words" }, Dd = /* @__PURE__ */ Yn({
 	__name: "StagedSceneControls",
 	props: {
 		scene: {},
@@ -4823,18 +4824,18 @@ var Mc = es("scene-merger", () => {
 		function c(e, r) {
 			n.setSceneContent(t.scene.id, e, r.currentTarget.checked);
 		}
-		return (t, l) => (V(), H("details", rd, [U("summary", id, O(e.t("FVTT_SCENE_MERGER.Selection.SourceSettings")) + " · " + O(o.value) + "% ", 1), U("div", ad, [
-			U("div", od, [(V(), H(B, null, L(i, (t) => U("button", {
+		return (t, l) => (V(), H("details", dd, [U("summary", fd, O(e.t("FVTT_SCENE_MERGER.Selection.SourceSettings")) + " · " + O(o.value) + "% ", 1), U("div", pd, [
+			U("div", md, [(V(), H(B, null, L(i, (t) => U("button", {
 				key: t,
-				class: "dui-btn dui-btn-xs",
+				class: "tw:dui-btn tw:dui-btn-xs",
 				type: "button",
 				disabled: !F(n).setupEditable,
 				onClick: (r) => F(n).setSceneContentPreset(e.scene.id, t)
-			}, O(e.t(`FVTT_SCENE_MERGER.Selection.Presets.${t}`)), 9, sd)), 64))]),
-			U("fieldset", cd, [U("label", {
-				class: "dui-label tw:pb-0 tw:text-[0.68rem]",
+			}, O(e.t(`FVTT_SCENE_MERGER.Selection.Presets.${t}`)), 9, hd)), 64))]),
+			U("fieldset", gd, [U("label", {
+				class: "tw:dui-label tw:pb-0 tw:text-[0.68rem]",
 				for: `scene-merger-scale-${e.scene.id}`
-			}, O(e.t("FVTT_SCENE_MERGER.Selection.Scale")), 9, ld), U("div", ud, [U("label", dd, [U("input", {
+			}, O(e.t("FVTT_SCENE_MERGER.Selection.Scale")), 9, _d), U("div", vd, [U("label", yd, [U("input", {
 				id: `scene-merger-scale-${e.scene.id}`,
 				class: "tw:min-w-0",
 				type: "number",
@@ -4843,55 +4844,55 @@ var Mc = es("scene-merger", () => {
 				value: o.value,
 				disabled: !F(n).setupEditable,
 				onChange: s
-			}, null, 40, fd), l[1] ||= U("span", { "aria-hidden": "true" }, "%", -1)]), U("button", {
-				class: "dui-btn dui-btn-xs",
+			}, null, 40, bd), l[1] ||= U("span", { "aria-hidden": "true" }, "%", -1)]), U("button", {
+				class: "tw:dui-btn tw:dui-btn-xs",
 				type: "button",
 				disabled: !F(n).setupEditable,
 				onClick: l[0] ||= (t) => F(n).matchSceneGrid(e.scene.id)
-			}, O(e.t("FVTT_SCENE_MERGER.Selection.MatchGrid")), 9, pd)])]),
-			U("fieldset", md, [U("legend", hd, O(e.t("FVTT_SCENE_MERGER.Selection.ContentFromSource")), 1), U("div", gd, [(V(), H(B, null, L(r, (t) => U("label", {
+			}, O(e.t("FVTT_SCENE_MERGER.Selection.MatchGrid")), 9, xd)])]),
+			U("fieldset", Sd, [U("legend", Cd, O(e.t("FVTT_SCENE_MERGER.Selection.ContentFromSource")), 1), U("div", wd, [(V(), H(B, null, L(r, (t) => U("label", {
 				key: t,
-				class: "dui-label tw:min-w-0 tw:justify-start tw:gap-2 tw:text-xs"
+				class: "tw:dui-label tw:min-w-0 tw:justify-start tw:gap-2 tw:text-xs"
 			}, [U("input", {
-				class: "dui-checkbox dui-checkbox-sm tw:shrink-0 tw:before:content-none! tw:after:content-none!",
+				class: "tw:dui-checkbox tw:dui-checkbox-sm tw:m-0! tw:shrink-0 tw:before:relative! tw:before:block! tw:before:h-full! tw:before:w-full! tw:before:content-['']! tw:after:content-none!",
 				type: "checkbox",
 				checked: a.value?.content?.[t] ?? F(n).content[t],
 				disabled: !F(n).setupEditable || F(Ec)[t] === "unavailable",
 				onChange: (e) => c(t, e)
-			}, null, 40, _d), U("span", vd, O(e.t(`FVTT_SCENE_MERGER.Options.Content.${t}.Label`)), 1)])), 64))])])
+			}, null, 40, Td), U("span", Ed, O(e.t(`FVTT_SCENE_MERGER.Options.Content.${t}.Label`)), 1)])), 64))])])
 		])]));
 	}
-}), bd = { class: "dui-card dui-card-border tw:min-h-0 tw:bg-base-200" }, xd = { class: "dui-card-body tw:min-h-0 tw:gap-3 tw:p-3" }, Sd = { class: "tw:flex tw:items-center tw:justify-between tw:gap-2" }, Cd = { class: "dui-card-title tw:text-base" }, wd = { class: "tw:m-0 tw:text-xs tw:opacity-65" }, Td = { class: "dui-badge dui-badge-neutral dui-badge-sm" }, Ed = { class: "dui-input dui-input-sm tw:flex tw:w-full tw:items-center tw:gap-2" }, Dd = ["disabled", "placeholder"], Od = { class: "scene-list-scroll tw:min-h-32 tw:flex-1 tw:overflow-auto tw:rounded-box tw:bg-base-300/60 tw:p-1" }, kd = {
+}), Od = { class: "tw:dui-card tw:dui-card-border tw:min-h-0 tw:bg-base-200" }, kd = { class: "tw:dui-card-body tw:min-h-0 tw:gap-3 tw:p-3" }, Ad = { class: "tw:flex tw:items-center tw:justify-between tw:gap-2" }, jd = { class: "tw:dui-card-title tw:text-base" }, Md = { class: "tw:m-0 tw:text-xs tw:opacity-65" }, Nd = { class: "tw:dui-badge tw:dui-badge-neutral tw:dui-badge-sm" }, Pd = { class: "tw:dui-input tw:dui-input-sm tw:flex tw:w-full tw:items-center tw:gap-2" }, Fd = ["disabled", "placeholder"], Id = { class: "scene-list-scroll tw:min-h-32 tw:flex-1 tw:overflow-auto tw:rounded-box tw:bg-base-300/60 tw:p-1" }, Ld = {
 	key: 0,
-	class: "dui-list tw:m-0 tw:gap-1 tw:p-0"
-}, Ad = { class: "tw:h-10 tw:w-12 tw:overflow-hidden tw:rounded-field tw:bg-neutral" }, jd = ["src"], Md = {
+	class: "tw:m-0 tw:flex tw:[list-style:none] tw:flex-col tw:gap-1 tw:p-0"
+}, Rd = { class: "tw:h-10 tw:w-12 tw:overflow-hidden tw:rounded-field tw:bg-neutral" }, zd = ["src"], Bd = {
 	key: 1,
 	class: "tw:flex tw:h-full tw:items-center tw:justify-center tw:text-xs tw:opacity-50",
 	"aria-hidden": "true"
-}, Nd = { class: "tw:min-w-0" }, Pd = { class: "tw:truncate tw:text-sm tw:font-semibold" }, Fd = { class: "tw:truncate tw:text-[0.7rem] tw:opacity-65" }, Id = { class: "tw:text-[0.7rem] tw:opacity-65" }, Ld = { class: "tw:text-[0.68rem] tw:opacity-60" }, Rd = [
+}, Vd = { class: "tw:min-w-0" }, Hd = { class: "tw:truncate tw:text-sm tw:font-semibold" }, Ud = { class: "tw:truncate tw:text-[0.7rem] tw:opacity-65" }, Wd = { class: "tw:text-[0.7rem] tw:opacity-65" }, Gd = { class: "tw:text-[0.68rem] tw:opacity-60" }, Kd = [
 	"disabled",
 	"aria-label",
 	"onClick"
-], zd = {
+], qd = {
 	key: 1,
 	class: "tw:m-3 tw:text-center tw:text-sm tw:opacity-60"
-}, Bd = { class: "tw:flex tw:items-center tw:justify-between tw:gap-2" }, Vd = { class: "tw:m-0 tw:text-sm tw:font-semibold" }, Hd = ["disabled"], Ud = { class: "dui-list tw:m-0 tw:max-h-96 tw:overflow-auto tw:p-0" }, Wd = { class: "dui-badge dui-badge-ghost dui-badge-xs" }, Gd = { class: "tw:min-w-0" }, Kd = { class: "tw:truncate tw:text-sm tw:font-medium" }, qd = { class: "tw:text-[0.68rem] tw:opacity-60" }, Jd = { class: "tw:flex tw:gap-0.5" }, Yd = [
+}, Jd = { class: "tw:flex tw:items-center tw:justify-between tw:gap-2" }, Yd = { class: "tw:m-0 tw:text-sm tw:font-semibold" }, Xd = ["disabled"], Zd = { class: "tw:m-0 tw:flex tw:max-h-96 tw:[list-style:none] tw:flex-col tw:overflow-auto tw:p-0" }, Qd = { class: "tw:dui-badge tw:dui-badge-ghost tw:dui-badge-xs" }, $d = { class: "tw:min-w-0" }, ef = { class: "tw:truncate tw:text-sm tw:font-medium" }, tf = { class: "tw:text-[0.68rem] tw:opacity-60" }, nf = { class: "tw:flex tw:gap-0.5" }, rf = [
 	"disabled",
 	"aria-label",
 	"onClick"
-], Xd = [
+], af = [
 	"disabled",
 	"aria-label",
 	"onClick"
-], Zd = [
+], of = [
 	"disabled",
 	"aria-label",
 	"onClick"
-], Qd = [
+], sf = [
 	"disabled",
 	"aria-label",
 	"onClick"
-], $d = /* @__PURE__ */ Yn({
+], cf = /* @__PURE__ */ Yn({
 	__name: "SceneSelectionPanel",
 	props: { t: { type: Function } },
 	emits: ["locate"],
@@ -4903,32 +4904,32 @@ var Mc = es("scene-merger", () => {
 		function o(e, t) {
 			return `${e.toLocaleString()} × ${t.toLocaleString()}`;
 		}
-		return (t, s) => (V(), H("aside", bd, [U("div", xd, [
-			U("div", Sd, [U("div", null, [U("h2", Cd, O(e.t("FVTT_SCENE_MERGER.Selection.Title")), 1), U("p", wd, O(e.t("FVTT_SCENE_MERGER.Selection.Help")), 1)]), U("span", Td, O(F(r).selectedScenes.length), 1)]),
-			U("label", Ed, [s[2] ||= U("span", { "aria-hidden": "true" }, "⌕", -1), Pn(U("input", {
+		return (t, s) => (V(), H("aside", Od, [U("div", kd, [
+			U("div", Ad, [U("div", null, [U("h2", jd, O(e.t("FVTT_SCENE_MERGER.Selection.Title")), 1), U("p", Md, O(e.t("FVTT_SCENE_MERGER.Selection.Help")), 1)]), U("span", Nd, O(F(r).selectedScenes.length), 1)]),
+			U("label", Pd, [s[2] ||= U("span", { "aria-hidden": "true" }, "⌕", -1), Pn(U("input", {
 				"onUpdate:modelValue": s[0] ||= (e) => i.value = e,
 				class: "tw:min-w-0 tw:flex-1",
 				type: "search",
 				disabled: !F(r).setupEditable,
 				placeholder: e.t("FVTT_SCENE_MERGER.Selection.Search")
-			}, null, 8, Dd), [[fo, i.value]])]),
-			U("div", Od, [a.value.length ? (V(), H("ul", kd, [(V(!0), H(B, null, L(a.value, (t) => (V(), H("li", {
+			}, null, 8, Fd), [[fo, i.value]])]),
+			U("div", Id, [a.value.length ? (V(), H("ul", Ld, [(V(!0), H(B, null, L(a.value, (t) => (V(), H("li", {
 				key: t.id,
-				class: "dui-list-row tw:grid-cols-[3rem_minmax(0,1fr)_auto] tw:items-center tw:gap-2 tw:bg-base-200 tw:p-2"
+				class: "tw:grid tw:grid-cols-[3rem_minmax(0,1fr)_auto] tw:items-center tw:gap-2 tw:border-b tw:border-base-300 tw:bg-base-200 tw:p-2"
 			}, [
-				U("div", Ad, [t.thumbnail ? (V(), H("img", {
+				U("div", Rd, [t.thumbnail ? (V(), H("img", {
 					key: 0,
 					class: "tw:h-full tw:w-full tw:object-cover",
 					src: t.thumbnail,
 					alt: "",
 					decoding: "async",
 					loading: "lazy"
-				}, null, 8, jd)) : (V(), H("span", Md, "▧"))]),
-				U("div", Nd, [
-					U("div", Pd, O(t.name), 1),
-					U("div", Fd, O(t.folderName ?? e.t("FVTT_SCENE_MERGER.Selection.RootFolder")), 1),
-					U("div", Id, O(o(t.dimensions.sceneWidth, t.dimensions.sceneHeight)), 1),
-					U("div", Ld, O(e.t("FVTT_SCENE_MERGER.Selection.GridDetails", {
+				}, null, 8, zd)) : (V(), H("span", Bd, "▧"))]),
+				U("div", Vd, [
+					U("div", Hd, O(t.name), 1),
+					U("div", Ud, O(t.folderName ?? e.t("FVTT_SCENE_MERGER.Selection.RootFolder")), 1),
+					U("div", Wd, O(o(t.dimensions.sceneWidth, t.dimensions.sceneHeight)), 1),
+					U("div", Gd, O(e.t("FVTT_SCENE_MERGER.Selection.GridDetails", {
 						type: t.grid.type,
 						size: t.grid.size,
 						distance: t.grid.distance,
@@ -4936,56 +4937,56 @@ var Mc = es("scene-merger", () => {
 					})), 1)
 				]),
 				U("button", {
-					class: "dui-btn dui-btn-sm dui-btn-square",
+					class: "tw:dui-btn tw:dui-btn-sm tw:dui-btn-square",
 					type: "button",
 					disabled: !F(r).setupEditable || !t.canMerge,
 					"aria-label": e.t("FVTT_SCENE_MERGER.Selection.AddNamed", { name: t.name }),
 					onClick: (e) => F(r).addScene(t.id)
-				}, " + ", 8, Rd)
-			]))), 128))])) : (V(), H("p", zd, O(e.t("FVTT_SCENE_MERGER.Selection.NoMatches")), 1))]),
-			U("div", Bd, [U("h3", Vd, O(e.t("FVTT_SCENE_MERGER.Selection.Selected")), 1), U("button", {
-				class: "dui-btn dui-btn-ghost dui-btn-xs",
+				}, " + ", 8, Kd)
+			]))), 128))])) : (V(), H("p", qd, O(e.t("FVTT_SCENE_MERGER.Selection.NoMatches")), 1))]),
+			U("div", Jd, [U("h3", Yd, O(e.t("FVTT_SCENE_MERGER.Selection.Selected")), 1), U("button", {
+				class: "tw:dui-btn tw:dui-btn-ghost tw:dui-btn-xs",
 				type: "button",
 				disabled: !F(r).setupEditable || F(r).selectedScenes.length === 0,
 				onClick: s[1] ||= (e) => F(r).clearScenes()
-			}, O(e.t("FVTT_SCENE_MERGER.Actions.Clear")), 9, Hd)]),
-			U("ol", Ud, [(V(!0), H(B, null, L(F(r).selectedScenes, (t, i) => (V(), H("li", {
+			}, O(e.t("FVTT_SCENE_MERGER.Actions.Clear")), 9, Xd)]),
+			U("ol", Zd, [(V(!0), H(B, null, L(F(r).selectedScenes, (t, i) => (V(), H("li", {
 				key: t.id,
-				class: "dui-list-row tw:grid-cols-[1.5rem_minmax(0,1fr)_auto] tw:items-start tw:gap-1 tw:px-2 tw:py-1.5"
+				class: "tw:grid tw:grid-cols-[1.5rem_minmax(0,1fr)_auto] tw:items-start tw:gap-1 tw:border-b tw:border-base-300 tw:px-2 tw:py-1.5"
 			}, [
-				U("span", Wd, O(i + 1), 1),
-				U("div", Gd, [U("div", Kd, O(t.name), 1), U("div", qd, O(o(t.dimensions.sceneWidth, t.dimensions.sceneHeight)), 1)]),
-				U("div", Jd, [
+				U("span", Qd, O(i + 1), 1),
+				U("div", $d, [U("div", ef, O(t.name), 1), U("div", tf, O(o(t.dimensions.sceneWidth, t.dimensions.sceneHeight)), 1)]),
+				U("div", nf, [
 					U("button", {
-						class: "dui-btn dui-btn-ghost dui-btn-xs dui-btn-square",
+						class: "tw:dui-btn tw:dui-btn-ghost tw:dui-btn-xs tw:dui-btn-square",
 						type: "button",
 						disabled: !F(r).setupEditable || i === 0,
 						"aria-label": e.t("FVTT_SCENE_MERGER.Actions.MoveUp"),
 						onClick: (e) => F(r).reorderScene(t.id, -1)
-					}, " ↑ ", 8, Yd),
+					}, " ↑ ", 8, rf),
 					U("button", {
-						class: "dui-btn dui-btn-ghost dui-btn-xs dui-btn-square",
+						class: "tw:dui-btn tw:dui-btn-ghost tw:dui-btn-xs tw:dui-btn-square",
 						type: "button",
 						disabled: !F(r).setupEditable || i === F(r).selectedScenes.length - 1,
 						"aria-label": e.t("FVTT_SCENE_MERGER.Actions.MoveDown"),
 						onClick: (e) => F(r).reorderScene(t.id, 1)
-					}, " ↓ ", 8, Xd),
+					}, " ↓ ", 8, af),
 					U("button", {
-						class: "dui-btn dui-btn-ghost dui-btn-xs dui-btn-square",
+						class: "tw:dui-btn tw:dui-btn-ghost tw:dui-btn-xs tw:dui-btn-square",
 						type: "button",
 						disabled: !F(r).setupEditable,
 						"aria-label": e.t("FVTT_SCENE_MERGER.Actions.Locate"),
 						onClick: (e) => n("locate", t.id)
-					}, " ◎ ", 8, Zd),
+					}, " ◎ ", 8, of),
 					U("button", {
-						class: "dui-btn dui-btn-ghost dui-btn-xs dui-btn-square",
+						class: "tw:dui-btn tw:dui-btn-ghost tw:dui-btn-xs tw:dui-btn-square",
 						type: "button",
 						disabled: !F(r).setupEditable,
 						"aria-label": e.t("FVTT_SCENE_MERGER.Selection.RemoveNamed", { name: t.name }),
 						onClick: (e) => F(r).removeScene(t.id)
-					}, " × ", 8, Qd)
+					}, " × ", 8, sf)
 				]),
-				W(yd, {
+				W(Dd, {
 					class: "tw:col-span-3",
 					scene: t,
 					t: e.t
@@ -4993,41 +4994,41 @@ var Mc = es("scene-merger", () => {
 			]))), 128))])
 		])]));
 	}
-}), ef = { class: "dui-card dui-card-border tw:bg-base-200" }, tf = { class: "dui-card-body tw:gap-3 tw:p-3" }, nf = { class: "tw:flex tw:items-start tw:justify-between tw:gap-2" }, rf = { class: "dui-card-title tw:text-base" }, af = { class: "tw:m-0 tw:text-xs tw:opacity-65" }, of = {
+}), lf = { class: "tw:dui-card tw:dui-card-border tw:bg-base-200" }, uf = { class: "tw:dui-card-body tw:gap-3 tw:p-3" }, df = { class: "tw:flex tw:items-start tw:justify-between tw:gap-2" }, ff = { class: "tw:dui-card-title tw:text-base" }, pf = { class: "tw:m-0 tw:text-xs tw:opacity-65" }, mf = {
 	key: 0,
-	class: "dui-loading dui-loading-spinner dui-loading-sm"
-}, sf = {
-	key: 1,
-	class: "dui-badge dui-badge-success dui-badge-soft"
-}, cf = {
-	key: 2,
-	class: "dui-badge dui-badge-error dui-badge-soft"
-}, lf = { class: "tw:flex tw:flex-wrap tw:gap-1" }, uf = { class: "dui-badge dui-badge-outline dui-badge-sm" }, df = { class: "dui-badge dui-badge-outline dui-badge-sm" }, ff = { class: "dui-badge dui-badge-outline dui-badge-sm" }, pf = { class: "dui-badge dui-badge-outline dui-badge-sm" }, mf = {
-	key: 0,
-	class: "dui-badge dui-badge-warning dui-badge-soft dui-badge-sm"
+	class: "tw:dui-loading tw:dui-loading-spinner tw:dui-loading-sm"
 }, hf = {
+	key: 1,
+	class: "tw:dui-badge tw:dui-badge-success tw:dui-badge-soft"
+}, gf = {
+	key: 2,
+	class: "tw:dui-badge tw:dui-badge-error tw:dui-badge-soft"
+}, _f = { class: "tw:flex tw:flex-wrap tw:gap-1" }, vf = { class: "tw:dui-badge tw:dui-badge-outline tw:dui-badge-sm" }, yf = { class: "tw:dui-badge tw:dui-badge-outline tw:dui-badge-sm" }, bf = { class: "tw:dui-badge tw:dui-badge-outline tw:dui-badge-sm" }, xf = { class: "tw:dui-badge tw:dui-badge-outline tw:dui-badge-sm" }, Sf = {
+	key: 0,
+	class: "tw:dui-badge tw:dui-badge-warning tw:dui-badge-soft tw:dui-badge-sm"
+}, Cf = {
 	key: 0,
 	class: "tw:grid tw:gap-2"
-}, gf = { class: "tw:block" }, _f = {
+}, wf = { class: "tw:block" }, Tf = {
 	key: 0,
 	class: "tw:opacity-70"
-}, vf = {
+}, Ef = {
 	key: 1,
 	class: "tw:grid tw:gap-2"
-}, yf = { class: "tw:block" }, bf = {
+}, Df = { class: "tw:block" }, Of = {
 	key: 0,
 	class: "tw:opacity-70"
-}, xf = { class: "tw:flex tw:items-start tw:gap-2 tw:rounded-box tw:bg-warning/10 tw:p-2 tw:text-sm" }, Sf = ["checked", "disabled"], Cf = { class: "tw:block" }, wf = { class: "tw:opacity-70" }, Tf = {
+}, kf = { class: "tw:flex tw:items-start tw:gap-2 tw:rounded-box tw:bg-warning/10 tw:p-2 tw:text-sm" }, Af = ["checked", "disabled"], jf = { class: "tw:block" }, Mf = { class: "tw:opacity-70" }, Nf = {
 	key: 2,
 	class: "tw:grid tw:gap-2"
-}, Ef = { class: "tw:block" }, Df = {
+}, Pf = { class: "tw:block" }, Ff = {
 	key: 0,
 	class: "tw:opacity-70"
-}, Of = {
+}, If = {
 	key: 3,
 	role: "alert",
-	class: "dui-alert dui-alert-success dui-alert-soft tw:py-2 tw:text-sm"
-}, kf = /* @__PURE__ */ Yn({
+	class: "tw:dui-alert tw:dui-alert-success tw:dui-alert-soft tw:py-2 tw:text-sm"
+}, Lf = /* @__PURE__ */ Yn({
 	__name: "ValidationPanel",
 	props: { t: { type: Function } },
 	setup(e) {
@@ -5044,123 +5045,186 @@ var Mc = es("scene-merger", () => {
 		function c(e) {
 			t.setWarningsAcknowledged(e.currentTarget.checked);
 		}
-		return (l, u) => (V(), H("section", ef, [U("div", tf, [
-			U("div", nf, [U("div", null, [U("h2", rf, O(e.t("FVTT_SCENE_MERGER.Validation.Title")), 1), U("p", af, O(e.t("FVTT_SCENE_MERGER.Validation.Help")), 1)]), F(t).validating ? (V(), H("span", of)) : F(t).validation?.canMerge ? (V(), H("span", sf, O(e.t("FVTT_SCENE_MERGER.Validation.Ready")), 1)) : (V(), H("span", cf, O(e.t("FVTT_SCENE_MERGER.Validation.Blocked")), 1))]),
-			U("div", lf, [
-				U("span", uf, O(e.t("FVTT_SCENE_MERGER.Validation.Estimate.Area", { value: s(F(t).arrangementBounds.width * F(t).arrangementBounds.height) })), 1),
-				U("span", df, O(e.t("FVTT_SCENE_MERGER.Validation.Estimate.Textures", { value: s(n.value.texturePixels) })), 1),
-				U("span", ff, O(e.t("FVTT_SCENE_MERGER.Validation.Estimate.Walls", { value: n.value.documents.Wall ?? 0 })), 1),
-				U("span", pf, O(e.t("FVTT_SCENE_MERGER.Validation.Estimate.Tokens", { value: n.value.documents.Token ?? 0 })), 1),
-				n.value.animatedAssets ? (V(), H("span", mf, O(e.t("FVTT_SCENE_MERGER.Validation.Estimate.Animated", { value: n.value.animatedAssets })), 1)) : G("", !0)
+		return (l, u) => (V(), H("section", lf, [U("div", uf, [
+			U("div", df, [U("div", null, [U("h2", ff, O(e.t("FVTT_SCENE_MERGER.Validation.Title")), 1), U("p", pf, O(e.t("FVTT_SCENE_MERGER.Validation.Help")), 1)]), F(t).validating ? (V(), H("span", mf)) : F(t).validation?.canMerge ? (V(), H("span", hf, O(e.t("FVTT_SCENE_MERGER.Validation.Ready")), 1)) : (V(), H("span", gf, O(e.t("FVTT_SCENE_MERGER.Validation.Blocked")), 1))]),
+			U("div", _f, [
+				U("span", vf, O(e.t("FVTT_SCENE_MERGER.Validation.Estimate.Area", { value: s(F(t).arrangementBounds.width * F(t).arrangementBounds.height) })), 1),
+				U("span", yf, O(e.t("FVTT_SCENE_MERGER.Validation.Estimate.Textures", { value: s(n.value.texturePixels) })), 1),
+				U("span", bf, O(e.t("FVTT_SCENE_MERGER.Validation.Estimate.Walls", { value: n.value.documents.Wall ?? 0 })), 1),
+				U("span", xf, O(e.t("FVTT_SCENE_MERGER.Validation.Estimate.Tokens", { value: n.value.documents.Token ?? 0 })), 1),
+				n.value.animatedAssets ? (V(), H("span", Sf, O(e.t("FVTT_SCENE_MERGER.Validation.Estimate.Animated", { value: n.value.animatedAssets })), 1)) : G("", !0)
 			]),
-			F(t).validation?.blocking.length ? (V(), H("div", hf, [(V(!0), H(B, null, L(F(t).validation.blocking, (t, n) => (V(), H("div", {
+			F(t).validation?.blocking.length ? (V(), H("div", Cf, [(V(!0), H(B, null, L(F(t).validation.blocking, (t, n) => (V(), H("div", {
 				key: `${t.code}-${n}`,
 				role: "alert",
-				class: "dui-alert dui-alert-error dui-alert-soft tw:items-start tw:py-2 tw:text-sm"
-			}, [u[0] ||= U("span", { "aria-hidden": "true" }, "×", -1), U("span", null, [U("strong", gf, O(e.t(a(t), t.details)), 1), Object.keys(t.details).length ? (V(), H("small", _f, O(o(t)), 1)) : G("", !0)])]))), 128))])) : G("", !0),
-			r.value.length ? (V(), H("div", vf, [(V(!0), H(B, null, L(r.value, (t, n) => (V(), H("div", {
+				class: "tw:dui-alert tw:dui-alert-error tw:dui-alert-soft tw:items-start tw:py-2 tw:text-sm"
+			}, [u[0] ||= U("span", { "aria-hidden": "true" }, "×", -1), U("span", null, [U("strong", wf, O(e.t(a(t), t.details)), 1), Object.keys(t.details).length ? (V(), H("small", Tf, O(o(t)), 1)) : G("", !0)])]))), 128))])) : G("", !0),
+			r.value.length ? (V(), H("div", Ef, [(V(!0), H(B, null, L(r.value, (t, n) => (V(), H("div", {
 				key: `${t.code}-${n}`,
 				role: "alert",
-				class: "dui-alert dui-alert-warning dui-alert-soft tw:items-start tw:py-2 tw:text-sm"
-			}, [u[1] ||= U("span", { "aria-hidden": "true" }, "!", -1), U("span", null, [U("strong", yf, O(e.t(a(t), t.details)), 1), Object.keys(t.details).length ? (V(), H("small", bf, O(o(t)), 1)) : G("", !0)])]))), 128)), U("label", xf, [U("input", {
-				class: "dui-checkbox dui-checkbox-warning dui-checkbox-sm tw:mt-0.5 tw:shrink-0 tw:before:content-none! tw:after:content-none!",
+				class: "tw:dui-alert tw:dui-alert-warning tw:dui-alert-soft tw:items-start tw:py-2 tw:text-sm"
+			}, [u[1] ||= U("span", { "aria-hidden": "true" }, "!", -1), U("span", null, [U("strong", Df, O(e.t(a(t), t.details)), 1), Object.keys(t.details).length ? (V(), H("small", Of, O(o(t)), 1)) : G("", !0)])]))), 128)), U("label", kf, [U("input", {
+				class: "tw:dui-checkbox tw:dui-checkbox-warning tw:dui-checkbox-sm tw:mt-0.5 tw:shrink-0 tw:before:relative! tw:before:block! tw:before:h-full! tw:before:w-full! tw:before:content-['']! tw:after:content-none!",
 				type: "checkbox",
 				checked: F(t).warningsAcknowledged,
 				disabled: !F(t).setupEditable,
 				onChange: c
-			}, null, 40, Sf), U("span", null, [U("strong", Cf, O(e.t("FVTT_SCENE_MERGER.Validation.Acknowledge")), 1), U("small", wf, O(e.t("FVTT_SCENE_MERGER.Validation.AcknowledgeHelp")), 1)])])])) : G("", !0),
-			i.value.length ? (V(), H("div", Tf, [(V(!0), H(B, null, L(i.value, (t, n) => (V(), H("div", {
+			}, null, 40, Af), U("span", null, [U("strong", jf, O(e.t("FVTT_SCENE_MERGER.Validation.Acknowledge")), 1), U("small", Mf, O(e.t("FVTT_SCENE_MERGER.Validation.AcknowledgeHelp")), 1)])])])) : G("", !0),
+			i.value.length ? (V(), H("div", Nf, [(V(!0), H(B, null, L(i.value, (t, n) => (V(), H("div", {
 				key: `${t.code}-${n}`,
 				role: "status",
-				class: "dui-alert dui-alert-info dui-alert-soft tw:items-start tw:py-2 tw:text-sm"
-			}, [u[2] ||= U("span", { "aria-hidden": "true" }, "i", -1), U("span", null, [U("strong", Ef, O(e.t(a(t), t.details)), 1), Object.keys(t.details).length ? (V(), H("small", Df, O(o(t)), 1)) : G("", !0)])]))), 128))])) : G("", !0),
-			F(t).validation && !F(t).validation.blocking.length && !F(t).validation.warnings.length ? (V(), H("div", Of, [u[3] ||= U("span", { "aria-hidden": "true" }, "✓", -1), U("span", null, O(e.t("FVTT_SCENE_MERGER.Validation.NoIssues")), 1)])) : G("", !0)
+				class: "tw:dui-alert tw:dui-alert-info tw:dui-alert-soft tw:items-start tw:py-2 tw:text-sm"
+			}, [u[2] ||= U("span", { "aria-hidden": "true" }, "i", -1), U("span", null, [U("strong", Pf, O(e.t(a(t), t.details)), 1), Object.keys(t.details).length ? (V(), H("small", Ff, O(o(t)), 1)) : G("", !0)])]))), 128))])) : G("", !0),
+			F(t).validation && !F(t).validation.blocking.length && !F(t).validation.warnings.length ? (V(), H("div", If, [u[3] ||= U("span", { "aria-hidden": "true" }, "✓", -1), U("span", null, O(e.t("FVTT_SCENE_MERGER.Validation.NoIssues")), 1)])) : G("", !0)
 		])]));
 	}
-}), Af = { class: "scene-merger-shell tw:flex tw:min-h-[720px] tw:flex-col tw:gap-3 tw:p-3 tw:text-base-content" }, jf = { class: "tw:flex tw:flex-wrap tw:items-start tw:justify-between tw:gap-3" }, Mf = { class: "tw:flex tw:items-center tw:gap-2" }, Nf = { class: "dui-badge dui-badge-neutral dui-badge-sm" }, Pf = { class: "tw:m-0 tw:text-xl tw:font-semibold" }, Ff = { class: "tw:mt-1 tw:mb-0 tw:text-sm tw:opacity-70" }, If = { class: "dui-badge dui-badge-outline tw:gap-2" }, Lf = {
+}), Rf = { class: "scene-merger-shell tw:@container tw:flex tw:min-h-[720px] tw:flex-col tw:gap-3 tw:p-3 tw:text-base-content" }, zf = { class: "tw:flex tw:flex-wrap tw:items-start tw:justify-between tw:gap-3" }, Bf = { class: "tw:flex tw:items-center tw:gap-2" }, Vf = { class: "tw:dui-badge tw:dui-badge-neutral tw:dui-badge-sm" }, Hf = { class: "tw:m-0 tw:text-xl tw:font-semibold" }, Uf = { class: "tw:mt-1 tw:mb-0 tw:text-sm tw:opacity-70" }, Wf = { class: "tw:dui-badge tw:dui-badge-outline tw:gap-2" }, Gf = {
 	key: 0,
-	class: "dui-loading dui-loading-spinner dui-loading-xs"
-}, Rf = {
+	class: "tw:dui-loading tw:dui-loading-spinner tw:dui-loading-xs"
+}, Kf = {
 	key: 0,
-	class: "dui-card dui-card-border tw:flex-1 tw:bg-base-200"
-}, zf = { class: "dui-card-body tw:items-center tw:justify-center tw:text-center" }, Bf = { class: "dui-card-title" }, Vf = { class: "tw:grid tw:min-h-0 tw:flex-1 tw:gap-3 tw:xl:grid-cols-[21rem_minmax(0,1fr)]" }, Hf = { class: "tw:grid tw:gap-3 tw:xl:grid-cols-[minmax(0,1fr)_minmax(22rem,0.72fr)]" }, Uf = /* @__PURE__ */ Yn({
+	class: "tw:dui-card tw:dui-card-border tw:flex-1 tw:bg-base-200"
+}, qf = { class: "tw:dui-card-body tw:items-center tw:justify-center tw:text-center" }, Jf = { class: "tw:dui-card-title" }, Yf = [
+	"aria-label",
+	"aria-valuemax",
+	"aria-valuenow",
+	"title"
+], Xf = { class: "tw:grid tw:gap-3 tw:xl:grid-cols-[minmax(0,1fr)_minmax(22rem,0.72fr)]" }, Zf = 448, Qf = 384, $f = 512, ep = 12, tp = /* @__PURE__ */ Yn({
 	__name: "SceneMergerApp",
 	props: {
 		services: {},
 		t: { type: Function }
 	},
 	setup(e) {
-		let t = e, n = Mc(), r = /* @__PURE__ */ P(null);
+		let t = e, n = Mc(), r = /* @__PURE__ */ P(null), i = /* @__PURE__ */ P(null), a = /* @__PURE__ */ P(448), o = /* @__PURE__ */ P(null), s = q(() => ({ "--scene-merger-source-width": `${a.value}px` })), c = q(() => u());
 		ur(() => {
 			n.initialize(t.services, t.t("FVTT_SCENE_MERGER.Defaults.DestinationName"));
-		});
-		function i(e) {
+		}), pr(h);
+		function l(e) {
 			r.value?.locateScene(e);
 		}
-		return (t, a) => (V(), H("main", Af, [U("header", jf, [U("div", null, [U("div", Mf, [U("span", Nf, O(e.t("FVTT_SCENE_MERGER.App.GmBadge")), 1), U("h1", Pf, O(e.t("FVTT_SCENE_MERGER.App.Title")), 1)]), U("p", Ff, O(e.t("FVTT_SCENE_MERGER.App.Subtitle")), 1)]), U("span", If, [F(n).status === "loading" ? (V(), H("span", Lf)) : G("", !0), Yi(" " + O(e.t(`FVTT_SCENE_MERGER.Status.${F(n).status}`)), 1)])]), F(n).status === "loading" ? (V(), H("div", Rf, [U("div", zf, [
-			a[0] ||= U("span", { class: "dui-loading dui-loading-ring dui-loading-lg" }, null, -1),
-			U("h2", Bf, O(e.t("FVTT_SCENE_MERGER.Loading.Title")), 1),
+		function u() {
+			let e = i.value?.clientWidth ?? 0;
+			return Math.max(Qf, e - $f - ep);
+		}
+		function d(e) {
+			return Math.min(u(), Math.max(Qf, Math.round(e)));
+		}
+		function f(e) {
+			e.button === 0 && (e.preventDefault(), h(), o.value = { pointerId: e.pointerId }, window.addEventListener("pointermove", p), window.addEventListener("pointerup", m), window.addEventListener("pointercancel", m));
+		}
+		function p(e) {
+			if (o.value?.pointerId !== e.pointerId || !i.value) return;
+			let t = i.value.getBoundingClientRect();
+			a.value = d(e.clientX - t.left);
+		}
+		function m(e) {
+			o.value?.pointerId === e.pointerId && h();
+		}
+		function h() {
+			o.value = null, window.removeEventListener("pointermove", p), window.removeEventListener("pointerup", m), window.removeEventListener("pointercancel", m);
+		}
+		function g(e) {
+			let t = e.shiftKey ? 48 : 24, n = {
+				ArrowLeft: a.value - t,
+				ArrowRight: a.value + t,
+				End: u(),
+				Home: Qf
+			}[e.key];
+			n !== void 0 && (e.preventDefault(), a.value = d(n));
+		}
+		function _() {
+			a.value = d(Zf);
+		}
+		return (t, o) => (V(), H("main", Rf, [U("header", zf, [U("div", null, [U("div", Bf, [U("span", Vf, O(e.t("FVTT_SCENE_MERGER.App.GmBadge")), 1), U("h1", Hf, O(e.t("FVTT_SCENE_MERGER.App.Title")), 1)]), U("p", Uf, O(e.t("FVTT_SCENE_MERGER.App.Subtitle")), 1)]), U("span", Wf, [F(n).status === "loading" ? (V(), H("span", Gf)) : G("", !0), Yi(" " + O(e.t(`FVTT_SCENE_MERGER.Status.${F(n).status}`)), 1)])]), F(n).status === "loading" ? (V(), H("div", Kf, [U("div", qf, [
+			o[0] ||= U("span", { class: "tw:dui-loading tw:dui-loading-ring tw:dui-loading-lg" }, null, -1),
+			U("h2", Jf, O(e.t("FVTT_SCENE_MERGER.Loading.Title")), 1),
 			U("p", null, O(e.t("FVTT_SCENE_MERGER.Loading.Body")), 1)
 		])])) : (V(), H(B, { key: 1 }, [
-			U("section", Vf, [W($d, {
-				t: e.t,
-				onLocate: i
-			}, null, 8, ["t"]), W(hu, {
-				ref_key: "layoutPanel",
-				ref: r,
-				t: e.t
-			}, null, 8, ["t"])]),
-			U("section", Hf, [W(nd, { t: e.t }, null, 8, ["t"]), W(kf, { t: e.t }, null, 8, ["t"])]),
+			U("section", {
+				ref_key: "sourceLayout",
+				ref: i,
+				class: "tw:grid tw:min-h-0 tw:flex-1 tw:grid-cols-1 tw:gap-3 tw:@5xl:grid-cols-[var(--scene-merger-source-width)_0.75rem_minmax(0,1fr)] tw:@5xl:gap-0",
+				style: E(s.value)
+			}, [
+				W(cf, {
+					t: e.t,
+					onLocate: l
+				}, null, 8, ["t"]),
+				U("div", {
+					class: "tw:group tw:hidden tw:touch-none tw:cursor-col-resize tw:items-stretch tw:justify-center tw:[user-select:none] tw:focus-visible:outline-2 tw:focus-visible:outline-offset-2 tw:focus-visible:outline-accent tw:@5xl:flex",
+					role: "separator",
+					tabindex: "0",
+					"aria-orientation": "vertical",
+					"aria-label": e.t("FVTT_SCENE_MERGER.Selection.ResizePanel"),
+					"aria-valuemin": Qf,
+					"aria-valuemax": c.value,
+					"aria-valuenow": a.value,
+					title: e.t("FVTT_SCENE_MERGER.Selection.ResizePanel"),
+					onDblclick: _,
+					onKeydown: g,
+					onPointerdown: f
+				}, [...o[1] ||= [U("span", {
+					class: "tw:my-3 tw:w-1 tw:rounded-field tw:bg-base-300 tw:group-hover:bg-accent",
+					"aria-hidden": "true"
+				}, null, -1)]], 40, Yf),
+				W(hu, {
+					ref_key: "layoutPanel",
+					ref: r,
+					t: e.t
+				}, null, 8, ["t"])
+			], 4),
+			U("section", Xf, [W(ud, { t: e.t }, null, 8, ["t"]), W(Lf, { t: e.t }, null, 8, ["t"])]),
 			W(El, { t: e.t }, null, 8, ["t"])
 		], 64))]));
 	}
-}), X = "fvtt-scene-merger", Wf = "Foundry VTT Scene Merger", Gf = "FVTT_SCENE_MERGER";
+}), X = "fvtt-scene-merger", np = "Foundry VTT Scene Merger", rp = "FVTT_SCENE_MERGER";
 //#endregion
 //#region src/module/logging/logger.ts
-function Kf() {
+function ip() {
 	try {
 		return game?.settings.get(X, "debugLogging") === !0;
 	} catch {
 		return !1;
 	}
 }
-var qf = {
+var ap = {
 	debug(e, t) {
-		Kf() && console.debug(`${Wf} | ${e}`, t ?? "");
+		ip() && console.debug(`${np} | ${e}`, t ?? "");
 	},
 	error(e, t) {
-		console.error(`${Wf} | ${e}`, t ?? "");
+		console.error(`${np} | ${e}`, t ?? "");
 	},
 	info(e, t) {
-		console.info(`${Wf} | ${e}`, t ?? "");
+		console.info(`${np} | ${e}`, t ?? "");
 	},
 	warn(e, t) {
-		console.warn(`${Wf} | ${e}`, t ?? "");
+		console.warn(`${np} | ${e}`, t ?? "");
 	}
 };
 //#endregion
 //#region src/module/runtime/runtime-utils.ts
-function Jf() {
+function op() {
 	if (!game) throw Error("Foundry game data is not available yet.");
 	return game;
 }
-function Yf(e) {
-	let t = Jf().scenes.get(e);
+function sp(e) {
+	let t = op().scenes.get(e);
 	if (!t) throw Error(`Source Scene ${e} is unavailable.`);
 	return t;
 }
 function Z(e) {
-	return Zf(e);
+	return lp(e);
 }
-function Xf(e) {
+function cp(e) {
 	return Z(e.toObject(!0));
 }
-function Zf(e) {
-	if (Array.isArray(e)) return e.map(Zf);
-	if (e instanceof Set) return [...e].map(Zf);
+function lp(e) {
+	if (Array.isArray(e)) return e.map(lp);
+	if (e instanceof Set) return [...e].map(lp);
 	if (e && typeof e == "object") {
 		let t = {};
-		for (let [n, r] of Object.entries(e)) t[n] = Zf(r);
+		for (let [n, r] of Object.entries(e)) t[n] = lp(r);
 		return t;
 	}
 	return e;
@@ -5168,62 +5232,62 @@ function Zf(e) {
 function Q(e) {
 	if (!(!e || typeof e != "object" || Array.isArray(e))) return e;
 }
-function Qf(e) {
+function up(e) {
 	return Array.isArray(e) ? e.map(Q).filter((e) => !!e) : [];
 }
 function $(e, t = 0) {
 	return typeof e == "number" && Number.isFinite(e) ? e : t;
 }
-function $f(e, t = "") {
+function dp(e, t = "") {
 	return typeof e == "string" ? e : t;
 }
-function ep(e) {
+function fp(e) {
 	let t = e._id;
 	return typeof t == "string" && t.length > 0 ? t : void 0;
 }
-function tp(e) {
+function pp(e) {
 	return e instanceof Error ? e.message : String(e);
 }
-function np(e) {
+function mp(e) {
 	return typeof e == "string" && /\.(?:m4v|mp4|ogg|ogv|webm)(?:[?#].*)?$/i.test(e);
 }
-async function rp() {
+async function hp() {
 	await new Promise((e) => {
 		setTimeout(e, 0);
 	});
 }
-function ip(e) {
+function gp(e) {
 	return e.replace(/([a-z])([A-Z])/g, "$1 $2").replaceAll(".", ": ").replace(/^./, (e) => e.toUpperCase());
 }
 //#endregion
 //#region src/module/settings/settings-values.ts
-function ap() {
-	return Jf().settings.get(X, "cleanupPartialDestination") !== !1;
+function _p() {
+	return op().settings.get(X, "cleanupPartialDestination") !== !1;
 }
 //#endregion
 //#region src/module/runtime/merge/errors.ts
-var op = class extends Error {
+var vp = class extends Error {
 	constructor() {
 		super("Scene merge cancelled."), this.name = "MergeCancelledError";
 	}
-}, sp = class extends Error {
+}, yp = class extends Error {
 	cleanupError;
 	destinationSceneId;
 	originalError;
 	stage;
 	constructor(e) {
-		let t = e.cleanupError ? ` Cleanup also failed: ${tp(e.cleanupError)}` : "", n = e.destinationSceneId ? ` Partial destination Scene: ${e.destinationSceneId}.` : "";
-		super(`Scene merge failed during ${e.stage}: ${tp(e.error)}.${t}${n}`), this.name = "SceneMergeError", this.cleanupError = e.cleanupError ? tp(e.cleanupError) : null, this.destinationSceneId = e.destinationSceneId ?? null, this.originalError = e.error, this.stage = e.stage;
+		let t = e.cleanupError ? ` Cleanup also failed: ${pp(e.cleanupError)}` : "", n = e.destinationSceneId ? ` Partial destination Scene: ${e.destinationSceneId}.` : "";
+		super(`Scene merge failed during ${e.stage}: ${pp(e.error)}.${t}${n}`), this.name = "SceneMergeError", this.cleanupError = e.cleanupError ? pp(e.cleanupError) : null, this.destinationSceneId = e.destinationSceneId ?? null, this.originalError = e.error, this.stage = e.stage;
 	}
-}, cp = class {
+}, bp = class {
 	#e = !1;
 	cancel() {
 		this.#e = !0;
 	}
 	throwIfCancelled() {
-		if (this.#e) throw new op();
+		if (this.#e) throw new vp();
 	}
-}, lp = class {
+}, xp = class {
 	#e;
 	constructor(e) {
 		let t = e.id, n = e.levels.contents[0]?.id;
@@ -5257,77 +5321,77 @@ var op = class extends Error {
 		});
 	}
 };
-async function up(e, t = (e) => Scene.implementation.create(e)) {
+async function Sp(e, t = (e) => Scene.implementation.create(e)) {
 	let n = await t(e);
 	if (!n) throw Error("Foundry did not return a destination Scene after creation.");
 	try {
-		return new lp(n);
+		return new xp(n);
 	} catch (e) {
 		try {
 			await n.delete();
 		} catch (t) {
-			throw Error(`${tp(e)} Cleanup of the invalid Scene${n.id ? ` ${n.id}` : ""} also failed: ${tp(t)}`, { cause: t });
+			throw Error(`${pp(e)} Cleanup of the invalid Scene${n.id ? ` ${n.id}` : ""} also failed: ${pp(t)}`, { cause: t });
 		}
 		throw e;
 	}
 }
-var dp = {
+var Cp = {
 	callHook(e, ...t) {
 		Hooks.callAll(e, ...t);
 	},
-	createDestination: up,
+	createDestination: Sp,
 	notifyError(e) {
 		ui?.notifications?.error(e);
 	},
 	notifyInfo(e) {
 		ui?.notifications?.info(e);
 	}
-}, fp = /* @__PURE__ */ new Map();
-function pp(e) {
+}, wp = /* @__PURE__ */ new Map();
+function Tp(e) {
 	if (!e.id.trim()) throw Error("A Scene Merger extension must have a non-empty id.");
-	if (fp.has(e.id)) throw Error(`A Scene Merger extension with id ${e.id} is already registered.`);
-	return fp.set(e.id, e), () => fp.delete(e.id);
+	if (wp.has(e.id)) throw Error(`A Scene Merger extension with id ${e.id} is already registered.`);
+	return wp.set(e.id, e), () => wp.delete(e.id);
 }
-function mp() {
-	return [...fp.values()];
+function Ep() {
+	return [...wp.values()];
 }
-function hp(e, t, n) {
-	return pp({
+function Dp(e, t, n) {
+	return Tp({
 		documentTransformers: { [t]: n },
 		id: e
 	});
 }
-function gp(e, t) {
-	return pp({
+function Op(e, t) {
+	return Tp({
 		id: e,
 		validate: t
 	});
 }
-function _p(e, t) {
-	return pp({
+function kp(e, t) {
+	return Tp({
 		id: e,
 		referenceRewriter: t
 	});
 }
-async function vp(e) {
-	for (let t of mp()) await t.preMerge?.(e);
+async function Ap(e) {
+	for (let t of Ep()) await t.preMerge?.(e);
 }
-async function yp(e) {
-	for (let t of mp()) await t.postMerge?.(e);
+async function jp(e) {
+	for (let t of Ep()) await t.postMerge?.(e);
 }
 //#endregion
 //#region src/module/runtime/background-tiles.ts
-function bp(e, t, n, r) {
-	let i = new Map(t.map((e) => [e.sceneId, e])), a = new Map([...t].sort((e, t) => e.order - t.order).map((e, t) => [e.sceneId, t])), o = Math.max(1, ...e.map((e) => e.documents.Tile?.length ?? 0)) + 1, s = Sp(e), c = [];
+function Mp(e, t, n, r) {
+	let i = new Map(t.map((e) => [e.sceneId, e])), a = new Map([...t].sort((e, t) => e.order - t.order).map((e, t) => [e.sceneId, t])), o = Math.max(1, ...e.map((e) => e.documents.Tile?.length ?? 0)) + 1, s = Pp(e), c = [];
 	for (let l of e) {
 		let e = i.get(l.id), u = a.get(l.id) ?? 0, d = l.documents.Level?.[0];
 		if (!e || !d) continue;
 		let f = Q(d.textures) ?? {};
-		xp(c, "background", Q(d.background), f, l, e, n, r, s.background, -(t.length * 2) + u), xp(c, "foreground", Q(d.foreground), f, l, e, n, r, s.foreground, (t.length + 1) * o + u);
+		Np(c, "background", Q(d.background), f, l, e, n, r, s.background, -(t.length * 2) + u), Np(c, "foreground", Q(d.foreground), f, l, e, n, r, s.foreground, (t.length + 1) * o + u);
 	}
 	return c;
 }
-function xp(e, t, n, r, i, a, o, s, c, l) {
+function Np(e, t, n, r, i, a, o, s, c, l) {
 	if (typeof n?.src != "string" || n.src.length === 0) return;
 	let u = {
 		...Z(r),
@@ -5354,7 +5418,7 @@ function xp(e, t, n, r, i, a, o, s, c, l) {
 		y: o.sceneY + a.y + a.height * f
 	});
 }
-function Sp(e) {
+function Pp(e) {
 	let t = 0, n = 0, r = (e) => {
 		typeof e != "number" || !Number.isFinite(e) || (t = Math.min(t, e), n = Math.max(n, e));
 	};
@@ -5369,10 +5433,10 @@ function Sp(e) {
 }
 //#endregion
 //#region src/module/runtime/provenance.ts
-var Cp = "_temporaryProvenance";
-function wp(e, t) {
-	let n = Z(e), r = Z(Q(n.flags) ?? {}), i = Z(Q(r["fvtt-scene-merger"]) ?? {}), a = Object.hasOwn(i, Cp), o = i[Cp];
-	return i[Cp] = {
+var Fp = "_temporaryProvenance";
+function Ip(e, t) {
+	let n = Z(e), r = Z(Q(n.flags) ?? {}), i = Z(Q(r["fvtt-scene-merger"]) ?? {}), a = Object.hasOwn(i, Fp), o = i[Fp];
+	return i[Fp] = {
 		documentId: t.documentId,
 		documentType: t.documentType,
 		parentIds: [...t.parentIds ?? []],
@@ -5382,15 +5446,15 @@ function wp(e, t) {
 		previousValue: o
 	}, r[X] = i, n.flags = r, n;
 }
-function Tp(e) {
-	let t = Z(e), n = Q(t.flags), r = Q(n?.[X]), i = Q(r?.[Cp]);
-	return n && r && i && (i.hadPrevious === !0 ? r[Cp] = Ep(i.previousValue) : delete r[Cp], Object.keys(r).length === 0 && delete n[X], t.flags = n), delete t._stats, Array.isArray(t.behaviors) && (t.behaviors = Qf(t.behaviors).map(Tp)), t;
+function Lp(e) {
+	let t = Z(e), n = Q(t.flags), r = Q(n?.[X]), i = Q(r?.[Fp]);
+	return n && r && i && (i.hadPrevious === !0 ? r[Fp] = Rp(i.previousValue) : delete r[Fp], Object.keys(r).length === 0 && delete n[X], t.flags = n), delete t._stats, Array.isArray(t.behaviors) && (t.behaviors = up(t.behaviors).map(Lp)), t;
 }
-function Ep(e) {
+function Rp(e) {
 	return e && typeof e == "object" ? Z(e) : e;
 }
-function Dp(e) {
-	let t = Q(Q(Q(e.flags)?.[X])?.[Cp]);
+function zp(e) {
+	let t = Q(Q(Q(e.flags)?.[X])?.[Fp]);
 	if (!t) return;
 	let n = t?.documentId, r = t?.documentType, i = t?.sceneId;
 	if (!(typeof n != "string" || typeof r != "string" || typeof i != "string")) return {
@@ -5400,17 +5464,17 @@ function Dp(e) {
 		sceneId: i
 	};
 }
-function Op(e, t) {
+function Bp(e, t) {
 	let n = [];
 	for (let r of e) {
-		let e = Xf(r);
-		kp(e, t, n);
-		for (let r of Qf(e.behaviors)) kp(r, t, n);
+		let e = cp(r);
+		Vp(e, t, n);
+		for (let r of up(e.behaviors)) Vp(r, t, n);
 	}
 	return n;
 }
-function kp(e, t, n) {
-	let r = Dp(e), i = ep(e);
+function Vp(e, t, n) {
+	let r = zp(e), i = fp(e);
 	if (!r || !i) {
 		n.push("A created document could not be associated with its source provenance.");
 		return;
@@ -5419,28 +5483,28 @@ function kp(e, t, n) {
 }
 //#endregion
 //#region src/module/runtime/merge/batches.ts
-async function Ap(e, t, n, r, i, a, o) {
-	await Ip(n, o, a, async (a, o) => {
+async function Hp(e, t, n, r, i, a, o) {
+	await Jp(n, o, a, async (a, o) => {
 		let s = await e.createDocuments(t, a);
 		if (s.length !== a.length) throw Error(`Foundry created ${s.length} of ${a.length} requested ${t} documents.`);
-		Fp(i, r, o, n.length, `Created ${t} documents`);
+		qp(i, r, o, n.length, `Created ${t} documents`);
 	});
 }
-async function jp(e, t, n, r, i, a, o, s, c) {
+async function Up(e, t, n, r, i, a, o, s, c) {
 	let l = 0;
-	return await Ip(n, c, s, async (s, c) => {
+	return await Jp(n, c, s, async (s, c) => {
 		let u = await e.createDocuments(t, s);
 		if (u.length !== s.length) throw Error(`Foundry created ${u.length} of ${s.length} requested ${t} documents.`);
 		l += u.length;
-		let d = Op(u, r);
+		let d = Bp(u, r);
 		if (d.length > 0) throw i.push(...d), Error(`Foundry created ${t} documents without the provenance needed for safe ID mapping.`);
-		Fp(o, a, c, n.length, `Created ${t} documents`);
+		qp(o, a, c, n.length, `Created ${t} documents`);
 	}), l;
 }
-async function Mp(e, t, n, r, i, a, o) {
-	await Ip(n, o, a, async (a, o) => {
-		let s = a.map((e) => Np(e, r));
-		qf.debug("Updating embedded document references", {
+async function Wp(e, t, n, r, i, a, o) {
+	await Jp(n, o, a, async (a, o) => {
+		let s = a.map((e) => Gp(e, r));
+		ap.debug("Updating embedded document references", {
 			requested: s,
 			type: t
 		});
@@ -5449,35 +5513,35 @@ async function Mp(e, t, n, r, i, a, o) {
 			let e = c.flatMap((e) => e.id ? [e.id] : []), n = new Set(e), r = s.filter(({ id: e }) => !n.has(e)), i = {
 				missing: r,
 				rejectedUpdates: a.filter((e) => {
-					let t = ep(e);
+					let t = fp(e);
 					return !t || !n.has(t);
 				}),
 				requested: s,
 				returnedIds: e,
 				type: t
 			};
-			throw qf.error("Foundry rejected embedded document reference updates", i), Error(`Foundry accepted ${c.length} of ${a.length} ${t} reference updates. ${Pp(r)} A validation rule or preUpdate${t} hook may have rejected them; see the console for the rejected update patches.`);
+			throw ap.error("Foundry rejected embedded document reference updates", i), Error(`Foundry accepted ${c.length} of ${a.length} ${t} reference updates. ${Kp(r)} A validation rule or preUpdate${t} hook may have rejected them; see the console for the rejected update patches.`);
 		}
-		qf.debug("Embedded document references updated", {
+		ap.debug("Embedded document references updated", {
 			returnedIds: c.flatMap((e) => e.id ? [e.id] : []),
 			type: t
-		}), Fp(i, "rewritingReferences", o, n.length, `Finalized ${t} references`);
+		}), qp(i, "rewritingReferences", o, n.length, `Finalized ${t} references`);
 	});
 }
-function Np(e, t) {
-	let n = ep(e) ?? "(missing ID)";
+function Gp(e, t) {
+	let n = fp(e) ?? "(missing ID)";
 	return {
 		id: n,
-		name: t.get(n) ?? $f(e.name, "(unnamed)")
+		name: t.get(n) ?? dp(e.name, "(unnamed)")
 	};
 }
-function Pp(e) {
+function Kp(e) {
 	if (e.length === 0) return "Foundry did not identify which updates were omitted.";
 	let t = e.slice(0, 10).map(({ id: e, name: t }) => `${t} [${e}]`), n = e.length - t.length;
 	return `Rejected: ${t.join(", ")}${n > 0 ? `, and ${n} more` : ""}.`;
 }
-function Fp(e, t, n, r, i) {
-	qf.debug("Merge progress", {
+function qp(e, t, n, r, i) {
+	ap.debug("Merge progress", {
 		completed: n,
 		detail: i,
 		stage: t,
@@ -5489,16 +5553,16 @@ function Fp(e, t, n, r, i) {
 		total: r
 	});
 }
-async function Ip(e, t, n, r) {
+async function Jp(e, t, n, r) {
 	for (let i = 0; i < e.length; i += t) {
 		n.throwIfCancelled();
 		let a = e.slice(i, i + t);
-		await r(a, Math.min(i + a.length, e.length)), n.throwIfCancelled(), await rp();
+		await r(a, Math.min(i + a.length, e.length)), n.throwIfCancelled(), await hp();
 	}
 }
 //#endregion
 //#region src/module/runtime/merge/workflow-data.ts
-function Lp(e, t, n, r) {
+function Yp(e, t, n, r) {
 	let i = new Map(t.map((e) => [e.sceneId, e]));
 	for (let t of e) {
 		if (t.metrics.gridRegionShapes === 0) continue;
@@ -5511,15 +5575,15 @@ function Lp(e, t, n, r) {
 		if (Math.abs(a.gridScale - 1) > 1e-7 || !Js(o, r.options.outputGrid.size)) throw Error(`Scene ${t.name} has grid Region geometry which is not aligned after destination insets.`);
 	}
 }
-function Rp(e, t, n) {
+function Xp(e, t, n) {
 	let r = { ...n }, i = new Map(t.placements.map((e) => [e.sceneId, e]));
 	for (let [n, a] of Object.entries(is)) if (a) for (let o of e) cs(i.get(o.id), t.options.content)[n] || (r[a] = (r[a] ?? 0) + (o.documents[a]?.length ?? 0));
 	return r;
 }
-function zp(e) {
-	return e.reduce((e, t) => e + Qf(t.behaviors).length, 0);
+function Zp(e) {
+	return e.reduce((e, t) => e + up(t.behaviors).length, 0);
 }
-function Bp(e, t, n, r, i, a, o) {
+function Qp(e, t, n, r, i, a, o) {
 	let s = [...new Set(a)], c = [...o];
 	return s.length > 0 && c.push(`${s.length} reference or provenance entries require manual review.`), {
 		copied: n,
@@ -5536,7 +5600,7 @@ function Bp(e, t, n, r, i, a, o) {
 }
 //#endregion
 //#region src/module/runtime/prepare-documents.ts
-function Vp(e, t, n, r, i) {
+function $p(e, t, n, r, i) {
 	let a = new Map(t.map((e) => [e.sceneId, e])), o = new Map([...t].sort((e, t) => e.order - t.order).map((e, t) => [e.sceneId, t])), s = Math.max(1, ...e.map((e) => e.documents.Tile?.length ?? 0)) + 1, c = /* @__PURE__ */ new Map(), l = {};
 	for (let t of e) {
 		let e = a.get(t.id);
@@ -5548,7 +5612,7 @@ function Vp(e, t, n, r, i) {
 			let a = [...t.documents[e] ?? []];
 			e === "Tile" && a.sort((e, t) => $(e.sort) - $(t.sort));
 			for (let [o, d] of a.entries()) {
-				let a = Hp(Z(d), e, t.id, u, t.grid, r.options.outputGrid, m, p, s, o, n.id, i);
+				let a = em(Z(d), e, t.id, u, t.grid, r.options.outputGrid, m, p, s, o, n.id, i);
 				if (!a) {
 					l[e] = (l[e] ?? 0) + 1;
 					continue;
@@ -5563,8 +5627,8 @@ function Vp(e, t, n, r, i) {
 		skipped: l
 	};
 }
-function Hp(e, t, n, r, i, a, o, s, c, l, u, d) {
-	let f = ep(e);
+function em(e, t, n, r, i, a, o, s, c, l, u, d) {
+	let f = fp(e);
 	if (!f) return;
 	let p = {
 		documentId: f,
@@ -5579,17 +5643,17 @@ function Hp(e, t, n, r, i, a, o, s, c, l, u, d) {
 		pixelScale: r.pixelScale,
 		sourceSceneId: n,
 		spatial: r
-	}, h = Up(e, t, r, i, a);
-	t === "Tile" && (h.sort = (s + 1) * c + l), h = Gp(h, p), h = Wp(h, m), d?.(h, m), h = wp(h, p);
+	}, h = tm(e, t, r, i, a);
+	t === "Tile" && (h.sort = (s + 1) * c + l), h = rm(h, p), h = nm(h, m), d?.(h, m), h = Ip(h, p);
 	let g = ic(Z(h), o);
-	return delete g._id, delete g._stats, Kp(g), {
+	return delete g._id, delete g._stats, im(g), {
 		creationData: g,
 		data: h,
 		identity: p,
 		type: t
 	};
 }
-function Up(e, t, n, r, i) {
+function tm(e, t, n, r, i) {
 	let a = {
 		...e,
 		x: $(e.x),
@@ -5623,18 +5687,18 @@ function Up(e, t, n, r, i) {
 		width: $(e.width)
 	}, n) : t === "AmbientLight" ? tc(a, n) : t === "AmbientSound" ? nc(a, n) : Zs(a, n);
 }
-function Wp(e, t) {
+function nm(e, t) {
 	let n = e;
-	for (let e of mp()) {
+	for (let e of Ep()) {
 		let r = e.documentTransformers?.[t.documentType];
 		r && (n = Z(r(n, t)));
 	}
 	return n;
 }
-function Gp(e, t) {
-	return t.documentType === "Region" && (e.behaviors = Qf(e.behaviors).map((e) => {
-		let n = ep(e);
-		return n ? wp(e, {
+function rm(e, t) {
+	return t.documentType === "Region" && (e.behaviors = up(e.behaviors).map((e) => {
+		let n = fp(e);
+		return n ? Ip(e, {
 			documentId: n,
 			documentType: "RegionBehavior",
 			parentIds: [t.documentId],
@@ -5642,8 +5706,8 @@ function Gp(e, t) {
 		}) : e;
 	})), e;
 }
-function Kp(e) {
-	let t = Qf(e.behaviors);
+function im(e) {
+	let t = up(e.behaviors);
 	t.length !== 0 && (e.behaviors = t.map((e) => {
 		let t = Z(e);
 		return delete t._id, delete t._stats, t;
@@ -5651,7 +5715,7 @@ function Kp(e) {
 }
 //#endregion
 //#region src/module/runtime/reference-updates.ts
-function qp(e, t, n, r, i) {
+function am(e, t, n, r, i) {
 	let a = /* @__PURE__ */ new Map(), o = /* @__PURE__ */ new Map(), s = [], c = 0;
 	for (let [l, u] of e) for (let e of u) {
 		let u = {
@@ -5666,17 +5730,17 @@ function qp(e, t, n, r, i) {
 		}
 		let f = Bs(l, e.data, u), p = Z(f.value);
 		c += f.rewritten, s.push(...f.unresolved);
-		for (let e of mp()) {
+		for (let e of Ep()) {
 			if (!e.referenceRewriter) continue;
 			let t = e.referenceRewriter(p, u);
 			p = Z(t.value), c += t.rewritten, s.push(...t.unresolved);
 		}
-		i?.(p, u), p._id = d, l === "Region" && Qp(p, e.identity.documentId, u, s), s.push(...$p(p, r, l)), p = Tp(p), o.set(d, $f(p.name, `${l} from ${e.identity.sceneId}.${e.identity.documentId}`));
+		i?.(p, u), p._id = d, l === "Region" && um(p, e.identity.documentId, u, s), s.push(...dm(p, r, l)), p = Lp(p), o.set(d, dp(p.name, `${l} from ${e.identity.sceneId}.${e.identity.documentId}`));
 		let m = {
 			...e.creationData,
 			_id: d
 		}, h = a.get(l) ?? [];
-		h.push(Jp(m, p)), a.set(l, h);
+		h.push(om(m, p)), a.set(l, h);
 	}
 	return {
 		labels: o,
@@ -5685,28 +5749,28 @@ function qp(e, t, n, r, i) {
 		updates: a
 	};
 }
-function Jp(e, t) {
-	let n = Yp(e, t);
+function om(e, t) {
+	let n = sm(e, t);
 	return n._id = t._id, n;
 }
-function Yp(e, t) {
+function sm(e, t) {
 	let n = {};
 	for (let [r, i] of Object.entries(t)) {
-		let t = Xp(e[r], i);
+		let t = cm(e[r], i);
 		t.changed && (n[r] = t.value);
 	}
 	for (let r of Object.keys(e)) Object.hasOwn(t, r) || (n[`-=${r}`] = null);
 	return n;
 }
-function Xp(e, t) {
+function cm(e, t) {
 	if (Object.is(e, t)) return { changed: !1 };
-	if (Array.isArray(e) && Array.isArray(t)) return Zp(e, t) ? { changed: !1 } : {
+	if (Array.isArray(e) && Array.isArray(t)) return lm(e, t) ? { changed: !1 } : {
 		changed: !0,
-		value: Zf(t)
+		value: lp(t)
 	};
 	let n = Q(e), r = Q(t);
 	if (n && r) {
-		let e = Yp(n, r);
+		let e = sm(n, r);
 		return Object.keys(e).length === 0 ? { changed: !1 } : {
 			changed: !0,
 			value: e
@@ -5714,15 +5778,15 @@ function Xp(e, t) {
 	}
 	return {
 		changed: !0,
-		value: Zf(t)
+		value: lp(t)
 	};
 }
-function Zp(e, t) {
-	return e.length === t.length ? e.every((e, n) => !Xp(e, t[n]).changed) : !1;
+function lm(e, t) {
+	return e.length === t.length ? e.every((e, n) => !cm(e, t[n]).changed) : !1;
 }
-function Qp(e, t, n, r) {
-	e.behaviors = Qf(e.behaviors).map((e) => {
-		let i = ep(e);
+function um(e, t, n, r) {
+	e.behaviors = up(e.behaviors).map((e) => {
+		let i = fp(e);
 		if (!i) return e;
 		let a = n.idMap.get(ks(n.sourceSceneId, "RegionBehavior", i, [t]));
 		return a ? {
@@ -5731,29 +5795,29 @@ function Qp(e, t, n, r) {
 		} : (r.push(`Region.${t}.RegionBehavior.${i}`), e);
 	});
 }
-function $p(e, t, n) {
+function dm(e, t, n) {
 	let r = Q(e.flags);
 	if (!r) return [];
 	let i = [];
-	return em(r, "flags", t, (t) => {
-		i.push(`${n}.${ep(e) ?? "unknown"}:${t}`);
+	return fm(r, "flags", t, (t) => {
+		i.push(`${n}.${fp(e) ?? "unknown"}:${t}`);
 	}), i;
 }
-function em(e, t, n, r) {
+function fm(e, t, n, r) {
 	if (typeof e == "string") {
 		n.some((t) => e.includes(`Scene.${t}.`)) && r(t);
 		return;
 	}
 	if (Array.isArray(e)) {
-		e.forEach((e, i) => em(e, `${t}[${i}]`, n, r));
+		e.forEach((e, i) => fm(e, `${t}[${i}]`, n, r));
 		return;
 	}
 	let i = Q(e);
-	if (i) for (let [e, a] of Object.entries(i)) em(a, `${t}.${e}`, n, r);
+	if (i) for (let [e, a] of Object.entries(i)) fm(a, `${t}.${e}`, n, r);
 }
 //#endregion
 //#region src/module/runtime/merge/workflow.ts
-var tm = 200, nm = [
+var pm = 200, mm = [
 	["Tile", "copyingTiles"],
 	["Wall", "copyingWalls"],
 	["AmbientLight", "copyingLights"],
@@ -5763,41 +5827,41 @@ var tm = 200, nm = [
 	["Region", "copyingRegions"],
 	["Token", "copyingTokens"]
 ];
-async function rm(e, t, n) {
-	let r = n.cancellation ?? new cp(), i = Math.max(1, n.batchSize ?? tm), a, o = "beforeDestination";
+async function hm(e, t, n) {
+	let r = n.cancellation ?? new bp(), i = Math.max(1, n.batchSize ?? pm), a, o = "beforeDestination";
 	try {
-		r.throwIfCancelled(), await vp(e), n.runtime.callHook("fvttSceneMergerPreMerge", e, t), o = "calculatingBounds", Fp(n, o, 0, 1, "Calculating normalized destination bounds");
+		r.throwIfCancelled(), await Ap(e), n.runtime.callHook("fvttSceneMergerPreMerge", e, t), o = "calculatingBounds", qp(n, o, 0, 1, "Calculating normalized destination bounds");
 		let s = fs(e.placements);
-		r.throwIfCancelled(), o = "creatingScene", Fp(n, o, 0, 1, "Creating destination Scene and Level"), a = await n.runtime.createDestination(im(e, t, s.width, s.height)), Fp(n, o, 1, 1, a.name), r.throwIfCancelled(), Lp(t, s.placements, a, e);
-		let c = am(t, a.levelId), l = { Level: 1 }, u = [];
-		o = "creatingBackgrounds", Fp(n, o, 0, 0, "Preparing background and foreground Tiles");
+		r.throwIfCancelled(), o = "creatingScene", qp(n, o, 0, 1, "Creating destination Scene and Level"), a = await n.runtime.createDestination(gm(e, t, s.width, s.height)), qp(n, o, 1, 1, a.name), r.throwIfCancelled(), Yp(t, s.placements, a, e);
+		let c = _m(t, a.levelId), l = { Level: 1 }, u = [];
+		o = "creatingBackgrounds", qp(n, o, 0, 0, "Preparing background and foreground Tiles");
 		let d = s.placements.filter((t) => cs(t, e.options.content).backgrounds);
 		if (d.length > 0) {
-			let s = bp(t, d, {
+			let s = Mp(t, d, {
 				...a.dimensions,
 				levelId: a.levelId
 			}, e.options.destination.lockBackgroundTiles);
-			await Ap(a, "Tile", s, o, n, r, i), l.Tile = s.length;
+			await Hp(a, "Tile", s, o, n, r, i), l.Tile = s.length;
 		}
-		let f = Vp(t, s.placements, {
+		let f = $p(t, s.placements, {
 			...a.dimensions,
 			id: a.id,
 			levelId: a.levelId
-		}, e, (e, t) => n.runtime.callHook("fvttSceneMergerTransformDocument", e, t)), p = Rp(t, e, f.skipped);
-		for (let [e, t] of nm) {
+		}, e, (e, t) => n.runtime.callHook("fvttSceneMergerTransformDocument", e, t)), p = Xp(t, e, f.skipped);
+		for (let [e, t] of mm) {
 			o = t;
 			let s = f.batches.get(e) ?? [];
-			Fp(n, o, 0, s.length, `Preparing ${e} documents`);
-			let d = await jp(a, e, s.map((e) => e.creationData), c, u, o, n, r, i);
-			l[e] = (l[e] ?? 0) + d, e === "Region" && (l.RegionBehavior = zp(s.map((e) => e.data)));
+			qp(n, o, 0, s.length, `Preparing ${e} documents`);
+			let d = await Up(a, e, s.map((e) => e.creationData), c, u, o, n, r, i);
+			l[e] = (l[e] ?? 0) + d, e === "Region" && (l.RegionBehavior = Zp(s.map((e) => e.data)));
 		}
-		o = "rewritingReferences", Fp(n, o, 0, 0, "Rewriting supported internal references");
-		let m = qp(f.batches, c, a.id, e.sourceSceneIds, (e, t) => n.runtime.callHook("fvttSceneMergerRewriteReferences", e, t));
+		o = "rewritingReferences", qp(n, o, 0, 0, "Rewriting supported internal references");
+		let m = am(f.batches, c, a.id, e.sourceSceneIds, (e, t) => n.runtime.callHook("fvttSceneMergerRewriteReferences", e, t));
 		u.push(...m.unresolved);
-		for (let [e, t] of m.updates) await Mp(a, e, t, m.labels, n, r, i);
-		o = "finalizing", Fp(n, o, 0, 1, "Finalizing destination Scene");
-		let h = Bp(t, a, l, p, m.referencesRewritten, u, n.validationWarnings ?? []);
-		return e.options.destination.activateAfterMerge && await a.activate(), e.options.destination.openAfterMerge && await a.open(), await yp(h), n.runtime.callHook("fvttSceneMergerPostMerge", h), Fp(n, o, 1, 1, a.name), h;
+		for (let [e, t] of m.updates) await Wp(a, e, t, m.labels, n, r, i);
+		o = "finalizing", qp(n, o, 0, 1, "Finalizing destination Scene");
+		let h = Qp(t, a, l, p, m.referencesRewritten, u, n.validationWarnings ?? []);
+		return e.options.destination.activateAfterMerge && await a.activate(), e.options.destination.openAfterMerge && await a.open(), await jp(h), n.runtime.callHook("fvttSceneMergerPostMerge", h), qp(n, o, 1, 1, a.name), h;
 	} catch (e) {
 		let t, r = !!a;
 		if (a && rs({
@@ -5809,7 +5873,7 @@ async function rm(e, t, n) {
 		} catch (e) {
 			t = e;
 		}
-		throw new sp({
+		throw new yp({
 			...t ? { cleanupError: t } : {},
 			...a && r ? { destinationSceneId: a.id } : {},
 			error: e,
@@ -5817,7 +5881,7 @@ async function rm(e, t, n) {
 		});
 	}
 }
-function im(e, t, n, r) {
+function gm(e, t, n, r) {
 	let i = t[0];
 	if (!i) throw Error("No source Scene is available for destination settings.");
 	let a = {
@@ -5849,7 +5913,7 @@ function im(e, t, n, r) {
 		width: n
 	};
 }
-function am(e, t) {
+function _m(e, t) {
 	let n = /* @__PURE__ */ new Map();
 	for (let r of e) {
 		let e = r.levels[0]?.id;
@@ -5861,7 +5925,7 @@ function am(e, t) {
 }
 //#endregion
 //#region src/module/runtime/scene-snapshots.ts
-var om = [
+var vm = [
 	"Tile",
 	"Wall",
 	"AmbientLight",
@@ -5870,7 +5934,7 @@ var om = [
 	"Note",
 	"Region",
 	"Token"
-], sm = new Set([
+], ym = new Set([
 	"circle",
 	"cone",
 	"ellipse",
@@ -5882,20 +5946,20 @@ var om = [
 	"ring",
 	"token"
 ]);
-async function cm() {
-	return Jf().scenes.contents.map((e) => dm(e, !1));
+async function bm() {
+	return op().scenes.contents.map((e) => Cm(e, !1));
 }
-async function lm() {
-	return Jf().folders.contents.filter((e) => e.id && e.type === "Scene").map((e) => ({
+async function xm() {
+	return op().folders.contents.filter((e) => e.id && e.type === "Scene").map((e) => ({
 		id: e.id ?? "",
 		name: e.name
 	}));
 }
-function um(e) {
-	return e.map((e) => dm(Yf(e), !0));
+function Sm(e) {
+	return e.map((e) => Cm(sp(e), !0));
 }
-function dm(e, t) {
-	let n = Jf(), r = fm(e), i = e.levels.contents.map((e) => ({
+function Cm(e, t) {
+	let n = op(), r = wm(e), i = e.levels.contents.map((e) => ({
 		elevation: {
 			bottom: $(e.elevation?.bottom),
 			top: $(e.elevation?.top)
@@ -5903,7 +5967,7 @@ function dm(e, t) {
 		id: e.id ?? "",
 		name: e.name ?? "Level"
 	})), a = {
-		background: pm(e),
+		background: Tm(e),
 		canMerge: n.user.isGM && Scene.implementation.canUserCreate(n.user) && e.canUserModify(n.user, "update"),
 		dimensions: {
 			height: e.dimensions.height,
@@ -5923,25 +5987,25 @@ function dm(e, t) {
 		},
 		id: e.id ?? "",
 		levels: i,
-		metrics: mm(e, r),
+		metrics: Em(e, r),
 		name: e.name ?? "Untitled Scene",
 		thumbnail: e.thumbnail
 	};
 	return t ? {
 		...a,
 		documents: r,
-		source: Xf(e)
+		source: cp(e)
 	} : a;
 }
-function fm(e) {
-	let t = { Level: e.levels.contents.map(Xf) };
-	for (let n of om) t[n] = e.getEmbeddedCollection(n).contents.map(Xf);
+function wm(e) {
+	let t = { Level: e.levels.contents.map(cp) };
+	for (let n of vm) t[n] = e.getEmbeddedCollection(n).contents.map(cp);
 	return t;
 }
-function pm(e) {
-	let t = e.levels.contents[0], n = Q((t ? Xf(t) : void 0)?.background), r = n?.src, i = n?.color, a = typeof r == "string" && r.length > 0, o = typeof i == "string" && i.length > 0 || typeof i == "number" && Number.isFinite(i);
+function Tm(e) {
+	let t = e.levels.contents[0], n = Q((t ? cp(t) : void 0)?.background), r = n?.src, i = n?.color, a = typeof r == "string" && r.length > 0, o = typeof i == "string" && i.length > 0 || typeof i == "number" && Number.isFinite(i);
 	return !a && !o ? null : {
-		animated: a && np(r),
+		animated: a && mp(r),
 		color: o ? i : null,
 		height: e.dimensions.sceneHeight,
 		rotation: 0,
@@ -5953,21 +6017,21 @@ function pm(e) {
 		y: 0
 	};
 }
-function mm(e, t) {
+function Em(e, t) {
 	let n = {}, r = 0, i = 0, a = 0, o = 0, s = 0, c = 0, l = 0, u = 0, d = 0, f = 0;
-	c += +!!gm(Xf(e));
+	c += +!!Om(cp(e));
 	for (let t of e.levels.contents) {
-		let n = Xf(t);
-		for (let t of [Q(n.background), Q(n.foreground)]) t?.src && (a += 1, i += +!!np(t.src), l += e.dimensions.sceneWidth * e.dimensions.sceneHeight);
+		let n = cp(t);
+		for (let t of [Q(n.background), Q(n.foreground)]) t?.src && (a += 1, i += +!!mp(t.src), l += e.dimensions.sceneWidth * e.dimensions.sceneHeight);
 	}
 	for (let [a, p] of Object.entries(t)) {
 		n[a] = p.length;
 		for (let t of p) {
-			let n = hm(t, e.id ?? "");
+			let n = Dm(t, e.id ?? "");
 			i += n.animated, r += n.attachedRegion, o += n.crossReferences, s += n.gridShapes, c += n.moduleFlags, l += n.texturePixels, u += n.tokenRegionShapes, d += n.regionBehaviors, f += n.unsupportedRegionShapes;
 		}
 	}
-	return n.RegionBehavior = (t.Region ?? []).reduce((e, t) => e + Qf(t.behaviors).length, 0), {
+	return n.RegionBehavior = (t.Region ?? []).reduce((e, t) => e + up(t.behaviors).length, 0), {
 		attachedRegions: r,
 		animatedAssets: i,
 		backgroundImages: a,
@@ -5981,64 +6045,64 @@ function mm(e, t) {
 		unsupportedRegionShapes: f
 	};
 }
-function hm(e, t) {
-	let n = Q(e.texture), r = n?.src, i = Q(e.attachment), a = Qf(e.shapes), o = Qf(e.behaviors);
+function Dm(e, t) {
+	let n = Q(e.texture), r = n?.src, i = Q(e.attachment), a = up(e.shapes), o = up(e.behaviors);
 	return {
-		animated: +!!np(r),
+		animated: +!!mp(r),
 		attachedRegion: +(typeof i?.token == "string" && i.token.length > 0),
-		crossReferences: _m(e, t),
-		gridShapes: a.filter((e) => $f(e.type) === "grid").length,
-		moduleFlags: +!!gm(e),
-		regionBehaviors: o.filter((e) => vm(e) || $f(e.type).toLowerCase().includes("changelevel")).length,
+		crossReferences: km(e, t),
+		gridShapes: a.filter((e) => dp(e.type) === "grid").length,
+		moduleFlags: +!!Om(e),
+		regionBehaviors: o.filter((e) => Am(e) || dp(e.type).toLowerCase().includes("changelevel")).length,
 		texturePixels: n ? $(e.width) * $(e.height) : 0,
-		tokenRegionShapes: a.filter((e) => $f(e.type) === "token").length,
-		unsupportedRegionShapes: a.filter((e) => !sm.has($f(e.type))).length
+		tokenRegionShapes: a.filter((e) => dp(e.type) === "token").length,
+		unsupportedRegionShapes: a.filter((e) => !ym.has(dp(e.type))).length
 	};
 }
-function gm(e) {
+function Om(e) {
 	let t = Q(e.flags);
 	return !!(t && Object.keys(t).some((e) => e !== "core" && e !== "fvtt-scene-merger"));
 }
-function _m(e, t) {
+function km(e, t) {
 	if (typeof e == "string") return [...e.matchAll(/Scene\.([A-Za-z0-9_-]+)/g)].filter((e) => e[1] !== t).length;
-	if (Array.isArray(e)) return e.reduce((e, n) => e + _m(n, t), 0);
+	if (Array.isArray(e)) return e.reduce((e, n) => e + km(n, t), 0);
 	let n = Q(e);
-	return n ? Object.values(n).reduce((e, n) => e + _m(n, t), 0) : 0;
+	return n ? Object.values(n).reduce((e, n) => e + km(n, t), 0) : 0;
 }
-function vm(e) {
+function Am(e) {
 	if (typeof e == "string") return /(?:Scene|Region|Token)\./.test(e);
-	if (Array.isArray(e)) return e.some(vm);
+	if (Array.isArray(e)) return e.some(Am);
 	let t = Q(e);
-	return t ? Object.entries(t).some(([e, t]) => /^(?:destination|region|scene|token|uuid)/i.test(e) ? !0 : vm(t)) : !1;
+	return t ? Object.entries(t).some(([e, t]) => /^(?:destination|region|scene|token|uuid)/i.test(e) ? !0 : Am(t)) : !1;
 }
 //#endregion
 //#region src/module/runtime/asset-validation.ts
-var ym = 64, bm = 4e3, xm = /* @__PURE__ */ new Map();
-async function Sm(e, t) {
+var jm = 64, Mm = 4e3, Nm = /* @__PURE__ */ new Map();
+async function Pm(e, t) {
 	return (await Promise.all(e.map(async (e) => {
-		let n = [], r = Cm(e, t), i = r.slice(0, ym), a = await Promise.all(i.map(Tm)), o = a.filter((e) => e === "missing").length, s = a.filter((e) => e === "unverified").length + Math.max(0, r.length - i.length);
-		return o > 0 && n.push(Dm("assets.unavailable", e.id, o)), s > 0 && n.push(Dm("assets.unverified", e.id, s)), n;
+		let n = [], r = Fm(e, t), i = r.slice(0, jm), a = await Promise.all(i.map(Lm)), o = a.filter((e) => e === "missing").length, s = a.filter((e) => e === "unverified").length + Math.max(0, r.length - i.length);
+		return o > 0 && n.push(zm("assets.unavailable", e.id, o)), s > 0 && n.push(zm("assets.unverified", e.id, s)), n;
 	}))).flat();
 }
-function Cm(e, t) {
+function Fm(e, t) {
 	let n = /* @__PURE__ */ new Set();
-	if (t.backgrounds) for (let t of e.documents.Level ?? []) wm(n, Q(t.background)), wm(n, Q(t.foreground));
-	if (t.tiles) for (let t of e.documents.Tile ?? []) wm(n, Q(t.texture));
+	if (t.backgrounds) for (let t of e.documents.Level ?? []) Im(n, Q(t.background)), Im(n, Q(t.foreground));
+	if (t.tiles) for (let t of e.documents.Tile ?? []) Im(n, Q(t.texture));
 	return [...n];
 }
-function wm(e, t) {
+function Im(e, t) {
 	let n = t?.src;
 	typeof n == "string" && n.trim().length > 0 && e.add(n);
 }
-function Tm(e) {
-	let t = xm.get(e);
+function Lm(e) {
+	let t = Nm.get(e);
 	if (t) return t;
-	let n = Em(e);
-	return xm.set(e, n), n;
+	let n = Rm(e);
+	return Nm.set(e, n), n;
 }
-async function Em(e) {
+async function Rm(e) {
 	if (/^(?:data|blob):/i.test(e)) return "available";
-	let t = new AbortController(), n = globalThis.setTimeout(() => t.abort(), bm);
+	let t = new AbortController(), n = globalThis.setTimeout(() => t.abort(), Mm);
 	try {
 		let n = await fetch(e, {
 			credentials: "same-origin",
@@ -6052,7 +6116,7 @@ async function Em(e) {
 		globalThis.clearTimeout(n);
 	}
 }
-function Dm(e, t, n) {
+function zm(e, t, n) {
 	return {
 		code: e,
 		details: { count: n },
@@ -6063,15 +6127,15 @@ function Dm(e, t, n) {
 }
 //#endregion
 //#region src/module/runtime/validation-service.ts
-async function Om(e) {
-	return (await km(e)).report;
+async function Bm(e) {
+	return (await Vm(e)).report;
 }
-async function km(e) {
-	let t = Jf(), n = e.sourceSceneIds.filter((e) => !t.scenes.get(e)), r = um(e.sourceSceneIds.filter((e) => t.scenes.get(e))), i = fs(e.placements).placements, a = new Map(i.map((e) => [e.sceneId, e])), o = Tc(r, i, e.options), s = await Promise.all(r.map((t) => Sm([t], cs(a.get(t.id), e.options.content)))), c = [
+async function Vm(e) {
+	let t = op(), n = e.sourceSceneIds.filter((e) => !t.scenes.get(e)), r = Sm(e.sourceSceneIds.filter((e) => t.scenes.get(e))), i = fs(e.placements).placements, a = new Map(i.map((e) => [e.sceneId, e])), o = Tc(r, i, e.options), s = await Promise.all(r.map((t) => Pm([t], cs(a.get(t.id), e.options.content)))), c = [
 		...o.blocking,
 		...o.warnings,
 		...s.flat(),
-		...n.map((e) => Mm(e))
+		...n.map((e) => Wm(e))
 	], l = e.options.destination.folderId, u = l ? t.folders.get(l) : void 0;
 	l && (!u || u.type !== "Scene") && c.push({
 		code: "destination.folderUnavailable",
@@ -6090,21 +6154,21 @@ async function km(e) {
 			severity: "warning"
 		});
 	}
-	(!t.user.isGM || !Scene.implementation.canUserCreate(t.user)) && c.push(Mm("destination"));
-	for (let t of mp()) t.validate && c.push(...t.validate(r, e));
+	(!t.user.isGM || !Scene.implementation.canUserCreate(t.user)) && c.push(Wm("destination"));
+	for (let t of Ep()) t.validate && c.push(...t.validate(r, e));
 	return {
 		report: wc(c),
 		scenes: r
 	};
 }
-function Am(e, t) {
+function Hm(e, t) {
 	let n = new Set(e.acknowledgedWarnings);
-	return t.warnings.filter((e) => e.severity === "warning" && !n.has(e.code) && !n.has(jm(e)));
+	return t.warnings.filter((e) => e.severity === "warning" && !n.has(e.code) && !n.has(Um(e)));
 }
-function jm(e) {
+function Um(e) {
 	return `${e.code}:${[...e.sceneIds].sort().join(",")}`;
 }
-function Mm(e) {
+function Wm(e) {
 	return {
 		code: "selection.unavailable",
 		details: {},
@@ -6115,11 +6179,11 @@ function Mm(e) {
 }
 //#endregion
 //#region src/module/runtime/scene-merger-service.ts
-var Nm;
-async function Pm(e, t) {
-	if (Nm) throw Error("Another Scene merge is already in progress on this client.");
-	let n = new cp();
-	Nm = n;
+var Gm;
+async function Km(e, t) {
+	if (Gm) throw Error("Another Scene merge is already in progress on this client.");
+	let n = new bp();
+	Gm = n;
 	try {
 		t?.({
 			completed: 0,
@@ -6127,16 +6191,16 @@ async function Pm(e, t) {
 			stage: "validating",
 			total: 1
 		});
-		let r = await km(e);
-		if (qf.debug("Scene merge request validated", {
+		let r = await Vm(e);
+		if (ap.debug("Scene merge request validated", {
 			acknowledgedWarnings: e.acknowledgedWarnings.length,
 			blocking: r.report.blocking.map((e) => e.code),
 			enabledContent: Object.entries(e.options.content).flatMap(([e, t]) => t ? [e] : []),
 			placementCount: e.placements.length,
 			sourceCount: r.scenes.length,
 			warnings: r.report.warnings.map((e) => e.code)
-		}), r.report.blocking.length > 0) throw Error(`Scene merge is blocked: ${r.report.blocking.map((e) => ip(e.code)).join(", ")}.`);
-		let i = Am(e, r.report);
+		}), r.report.blocking.length > 0) throw Error(`Scene merge is blocked: ${r.report.blocking.map((e) => gp(e.code)).join(", ")}.`);
+		let i = Hm(e, r.report);
 		if (i.length > 0) throw Error(`Review and acknowledge ${i.length} merge warning(s) before continuing.`);
 		t?.({
 			completed: 1,
@@ -6144,34 +6208,34 @@ async function Pm(e, t) {
 			stage: "validating",
 			total: 1
 		}), n.throwIfCancelled();
-		let a = await rm(e, r.scenes, {
+		let a = await hm(e, r.scenes, {
 			cancellation: n,
-			cleanupPartial: ap(),
+			cleanupPartial: _p(),
 			...t ? { onProgress: t } : {},
-			runtime: dp,
-			validationWarnings: r.report.warnings.map(jm)
+			runtime: Cp,
+			validationWarnings: r.report.warnings.map(Um)
 		});
-		return qf.info("Scene merge completed", a), dp.notifyInfo(`Created Scene “${a.destinationSceneName}”.`), a;
+		return ap.info("Scene merge completed", a), Cp.notifyInfo(`Created Scene “${a.destinationSceneName}”.`), a;
 	} catch (e) {
-		throw qf.error("Scene merge failed", e), dp.notifyError(e instanceof Error ? e.message : String(e)), e;
+		throw ap.error("Scene merge failed", e), Cp.notifyError(e instanceof Error ? e.message : String(e)), e;
 	} finally {
-		Nm = void 0;
+		Gm = void 0;
 	}
 }
-var Fm = {
+var qm = {
 	cancelActiveMerge() {
-		Nm?.cancel();
+		Gm?.cancel();
 	},
-	listSceneFolders: lm,
-	listScenes: cm,
-	merge: Pm,
+	listSceneFolders: xm,
+	listScenes: bm,
+	merge: Km,
 	async openScene(e) {
-		await Yf(e).view();
+		await sp(e).view();
 	},
 	validate(e) {
-		return Om(e);
+		return Bm(e);
 	}
-}, Im = class extends foundry.applications.api.ApplicationV2 {
+}, Jm = class extends foundry.applications.api.ApplicationV2 {
 	#e;
 	getVueProps() {}
 	async _renderHTML(e, t) {
@@ -6187,7 +6251,7 @@ var Fm = {
 	unmountVue() {
 		this.#e?.unmount(), this.#e = void 0;
 	}
-}, Lm = class e extends Im {
+}, Ym = class e extends Jm {
 	static DEFAULT_OPTIONS = {
 		id: `${X}-application`,
 		position: {
@@ -6198,7 +6262,7 @@ var Fm = {
 		window: {
 			icon: "fa-solid fa-object-group",
 			resizable: !0,
-			title: `${Gf}.App.Title`
+			title: `${rp}.App.Title`
 		}
 	};
 	static async open() {
@@ -6214,107 +6278,107 @@ var Fm = {
 		await new e().render({ force: !0 });
 	}
 	getVueComponent() {
-		return Uf;
+		return tp;
 	}
 	getVueProps() {
 		return {
-			services: Fm,
+			services: qm,
 			t: (e, t) => {
-				let n = Jf().i18n;
+				let n = op().i18n;
 				return t ? n.format(e, t) : n.localize(e);
 			}
 		};
 	}
 };
-async function Rm() {
-	await Lm.open();
+async function Xm() {
+	await Ym.open();
 }
 //#endregion
 //#region src/module/api/create-module-api.ts
-function zm() {
+function Zm() {
 	return {
-		cancelActiveMerge: Fm.cancelActiveMerge,
-		listSceneFolders: Fm.listSceneFolders,
-		listScenes: Fm.listScenes,
-		merge: Fm.merge,
-		open: Rm,
-		openScene: Fm.openScene,
-		registerDocumentTransformer: hp,
-		registerExtension: pp,
-		registerReferenceRewriter: _p,
-		registerValidator: gp,
-		validate: Fm.validate
+		cancelActiveMerge: qm.cancelActiveMerge,
+		listSceneFolders: qm.listSceneFolders,
+		listScenes: qm.listScenes,
+		merge: qm.merge,
+		open: Xm,
+		openScene: qm.openScene,
+		registerDocumentTransformer: Dp,
+		registerExtension: Tp,
+		registerReferenceRewriter: kp,
+		registerValidator: Op,
+		validate: qm.validate
 	};
 }
 //#endregion
 //#region src/module/api/register-module-api.ts
-function Bm() {
+function Qm() {
 	if (!game) throw Error("Foundry game global is unavailable during module API registration.");
 	let e = game.modules.get(X);
 	if (!e) throw Error(`Foundry module registry entry was not found for ${X}.`);
-	e.api = zm();
+	e.api = Zm();
 }
 //#endregion
 //#region src/module/settings/register-settings.ts
-function Vm() {
-	let e = Jf().settings;
+function $m() {
+	let e = op().settings;
 	e.register(X, "cleanupPartialDestination", {
 		config: !0,
 		default: !0,
-		hint: `${Gf}.Settings.CleanupPartial.Hint`,
-		name: `${Gf}.Settings.CleanupPartial.Name`,
+		hint: `${rp}.Settings.CleanupPartial.Hint`,
+		name: `${rp}.Settings.CleanupPartial.Name`,
 		scope: "world",
 		type: Boolean
 	}), e.register(X, "debugLogging", {
 		config: !0,
 		default: !1,
-		hint: `${Gf}.Settings.DebugLogging.Hint`,
-		name: `${Gf}.Settings.DebugLogging.Name`,
+		hint: `${rp}.Settings.DebugLogging.Hint`,
+		name: `${rp}.Settings.DebugLogging.Name`,
 		scope: "client",
 		type: Boolean
 	}), e.registerMenu(X, "sceneMerger", {
 		icon: "fa-solid fa-object-group",
-		label: `${Gf}.Settings.Open.Label`,
-		name: `${Gf}.Settings.Open.Name`,
+		label: `${rp}.Settings.Open.Label`,
+		name: `${rp}.Settings.Open.Name`,
 		restricted: !0,
-		type: Lm
+		type: Ym
 	});
 }
 //#endregion
 //#region src/module/hooks/register-module-hooks.ts
-function Hm() {
+function eh() {
 	Hooks.once("init", () => {
-		Vm(), Bm();
+		$m(), Qm();
 	}), Hooks.once("ready", () => {
-		let e = Wm();
+		let e = nh();
 		Hooks.callAll("fvttSceneMergerRegisterExtensions", e), Hooks.callAll("fvttSceneMergerReady", e);
 	}), Hooks.on("getSceneControlButtons", (...e) => {
-		Um(e[0]);
+		th(e[0]);
 	});
 }
-function Um(e) {
-	if (!Jf().user.isGM) return;
+function th(e) {
+	if (!op().user.isGM) return;
 	let t = e.tiles ?? e.tokens;
 	t && (t.tools[`${X}-open`] = {
 		button: !0,
 		icon: "fa-solid fa-object-group",
 		name: `${X}-open`,
 		onChange: () => {
-			Rm();
+			Xm();
 		},
 		order: Object.keys(t.tools).length,
-		title: `${Gf}.Controls.Open`,
+		title: `${rp}.Controls.Open`,
 		visible: !0
 	});
 }
-function Wm() {
-	let e = Jf().modules.get(X)?.api;
+function nh() {
+	let e = op().modules.get(X)?.api;
 	if (!e) throw Error("Scene Merger API is unavailable after initialization.");
 	return e;
 }
 //#endregion
 //#region src/main.ts
-Hm();
+eh();
 //#endregion
 
 //# sourceMappingURL=fvtt-scene-merger.mjs.map
