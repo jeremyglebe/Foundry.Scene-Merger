@@ -15,10 +15,10 @@
     "App": {
       "GmBadge": "GM tool",
       "Subtitle": "Arrange existing Scenes, review compatibility, then create a separate combined Scene.",
-      "Title": "Scene Merger"
+      "Title": "Drowsy's Scene Merger"
     },
     "Controls": {
-      "Open": "Open Scene Merger"
+      "Open": "Open Drowsy's Scene Merger"
     },
     "Defaults": {
       "DestinationName": "Merged Scene"
@@ -68,7 +68,7 @@
     },
     "Loading": {
       "Body": "Checking permissions and loading World Scenes…",
-      "Title": "Preparing Scene Merger"
+      "Title": "Preparing Drowsy's Scene Merger"
     },
     "MergeStage": {
       "beforeDestination": "Before destination creation",
@@ -173,7 +173,7 @@
       "UnavailableV14": "Unavailable in Foundry v14"
     },
     "Preview": {
-      "Title": "Foundry VTT Scene Merger"
+      "Title": "Drowsy's Scene Merger"
     },
     "Results": {
       "Copied": "Documents copied",
@@ -221,12 +221,12 @@
         "Name": "Clean up partial destinations"
       },
       "DebugLogging": {
-        "Hint": "Write additional Scene Merger diagnostics to the browser console for troubleshooting.",
+        "Hint": "Write additional diagnostics from Drowsy's Scene Merger to the browser console for troubleshooting.",
         "Name": "Enable debug logging"
       },
       "Open": {
-        "Label": "Open Scene Merger",
-        "Name": "Scene Merger"
+        "Label": "Open Drowsy's Scene Merger",
+        "Name": "Drowsy's Scene Merger"
       }
     },
     "Status": {

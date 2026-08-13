@@ -5178,7 +5178,7 @@ var Mc = es("scene-merger", () => {
 			W(El, { t: e.t }, null, 8, ["t"])
 		], 64))]));
 	}
-}), X = "fvtt-scene-merger", np = "Foundry VTT Scene Merger", rp = "FVTT_SCENE_MERGER";
+}), X = "fvtt-scene-merger", np = "Drowsy's Scene Merger", rp = "FVTT_SCENE_MERGER";
 //#endregion
 //#region src/module/logging/logger.ts
 function ip() {
